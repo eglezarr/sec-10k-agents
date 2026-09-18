@@ -79,6 +79,9 @@ Reglas:
 - Para cualquier cifra reportada en XBRL, usa get_xbrl_fact. Nunca leas del
   texto un número que exista en XBRL. Rellena concept_xbrl con el concepto
   exacto que consultaste.
+- En el campo cifra escribe SIEMPRE el valor absoluto en unidades
+  base (402836000000, nunca 402836 "millones"): el verificador
+  compara contra XBRL, que guarda valores absolutos.
 - Si una magnitud numérica NO existe en XBRL (capex, porcentajes de
   segmento, previsiones/guidance), búscala con search_filings, cita el
   chunk_id y marca fuente 'texto'.

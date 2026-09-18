@@ -10,16 +10,22 @@ Este módulo ES ese contrato. `responder` recibe la pregunta (y un
 propia conversación) y devuelve el dict de la invocación más `coste_usd` y
 `latencia_s`, exactamente con la forma que el arnés de la S2 espera.
 
-`evaluar(ruta_jsonl)` se expone aquí mismo cuando lleguen los tres
-evaluadores; hasta entonces no hay stub — un import que existe a medias es
-peor que uno que no existe.
+`evaluar(ruta_jsonl)` es la otra mitad del contrato: carga un golden en
+JSONL, ejecuta `responder` sobre cada pregunta (un thread aislado por
+pregunta), aplica los tres evaluadores y deja el detalle en
+`resultados/eval_<etiqueta>.csv`. La columna recall se mide con la MISMA
+configuración de búsqueda que usa la herramienta del agente
+(`retrieval.buscar_agente`) sobre la consulta reescrita en inglés — el
+régimen en el que el agente consulta de verdad.
 """
 
 from __future__ import annotations
 
 import functools
 
-from . import trazas
+from pathlib import Path
+
+from . import evaluadores, metricas, retrieval, trazas
 from .agente import MODELO, crear_agente
 
 
@@ -55,3 +61,41 @@ def responder(pregunta: str, thread_id: str | None = None) -> dict:
     return {**resultado,
             "coste_usd": trazas.coste_de(resultado, MODELO),
             "latencia_s": segundos}
+
+
+def _buscar_como_el_agente(item: dict) -> list[dict]:
+    """El retrieval que mide la columna recall: el MISMO que usa la tool
+    (buscar_agente), sobre la consulta reescrita en inglés."""
+    return retrieval.buscar_agente(
+        retrieval.reescribir(item["pregunta"]),
+        ticker=item.get("ticker"),
+        fiscal_year=item.get("fiscal_year"),
+        item=item.get("item_esperado"),
+        k=metricas.K,
+    )
+
+
+def evaluar(ruta_jsonl: str, etiqueta: str = "eval"):
+    """Evalúa el agente sobre un golden set en JSONL (contrato del día 24).
+
+    Ejecuta las preguntas con `responder`, aplica los tres evaluadores,
+    guarda el detalle por pregunta en resultados/eval_<etiqueta>.csv e
+    imprime el resumen y el desglose por familia. Devuelve el DataFrame.
+    """
+    preguntas = evaluadores.cargar_golden(ruta_jsonl)
+    raiz = Path(__file__).resolve().parents[1]
+    df = evaluadores.evaluar(
+        preguntas, responder, etiqueta=etiqueta,
+        buscar_para_recall=_buscar_como_el_agente,
+        ruta_salida=raiz / "resultados" / f"eval_{etiqueta}.csv",
+    )
+    resumen = evaluadores.resumir(df, etiqueta)
+    print(f"[{etiqueta}] n={resumen['n']}  cita={resumen['cita_ok']:.2f}  "
+          f"cifra={resumen['cifra_ok']:.2f}  tool={resumen['tool_ok']:.2f}  "
+          f"recall@5={resumen['recall@5']:.2f}  "
+          f"coste={resumen['coste_medio_¢']:.2f}¢  "
+          f"latencia={resumen['latencia_media_s']:.1f}s  "
+          f"tools/pregunta={resumen['tools_por_pregunta']:.1f}  "
+          f"errores={resumen['errores']}")
+    print(evaluadores.por_familia(df))
+    return df

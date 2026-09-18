@@ -140,8 +140,8 @@ def search_filings(query: str, ticker: str | None = None,
     Devuelve k fragmentos, cada uno con su chunk_id para poder citarlo.
     """
     return datos.formatear_fragmentos(
-        retrieval.buscar_densa(query, ticker=ticker, fiscal_year=fiscal_year,
-                               item=item, k=k)
+        retrieval.buscar_agente(query, ticker=ticker,
+                                fiscal_year=fiscal_year, item=item, k=k)
     )
 
 

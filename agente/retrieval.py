@@ -178,3 +178,12 @@ def reescribir(pregunta: str, modelo: str = MODELO_REESCRITURA) -> str:
         return reescrita or pregunta
     except Exception:
         return pregunta
+
+
+# ---------------------------------------------------------------------------
+# El punto de intercambio: qué búsqueda usa la HERRAMIENTA del agente.
+# Baseline = densa+filtros (día 10). La decisión medida del notebook 01
+# (híbrida gana 0.77 vs 0.69 en régimen inglés) se aplicará AQUÍ, en una
+# línea, cuando el baseline esté congelado — y la columna recall de
+# evaluar() usa este mismo alias, para que cada sistema mida SU retrieval.
+buscar_agente = buscar_densa
