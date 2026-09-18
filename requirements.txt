@@ -1,0 +1,14 @@
+# Versiones FIJADAS: las mismas que el profesor verificó contra la
+# documentación oficial el 2/09/2026. LangChain publica cada pocos días y
+# una API que se mueve debajo rompe el sistema sin tocar una línea.
+langchain==1.3.18
+langchain-core==1.6.1
+langgraph==1.2.11
+langchain-openrouter==0.2.8
+langchain-huggingface==1.2.2
+sentence-transformers==6.0.1
+faiss-cpu==1.15.0
+rank-bm25==0.2.2
+# Datos (sin fijar: API estable para lo que usamos)
+pandas
+pyarrow
