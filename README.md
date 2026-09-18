@@ -29,8 +29,18 @@ python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\act
 pip install -r requirements.txt
 
 # Copiar los dos ZIP del profesor a dataset/ (ver dataset/COLOCA_AQUI.md)
-python scripts/preparar_corpus.py      # extrae y verifica hashes -> corpus/
-python scripts/humo_herramientas.py    # prueba de humo, sin clave de API
+python golden/
+  oficial_20.jsonl  las 20 preguntas oficiales del profesor
+notebooks/
+  01_retrieval.ipynb  la escalera medida, con argumentación
+resultados/           CSV de mediciones (regenerables desde los notebooks)
+scripts/preparar_corpus.py      # extrae y verifica hashes -> corpus/
+python golden/
+  oficial_20.jsonl  las 20 preguntas oficiales del profesor
+notebooks/
+  01_retrieval.ipynb  la escalera medida, con argumentación
+resultados/           CSV de mediciones (regenerables desde los notebooks)
+scripts/humo_herramientas.py    # prueba de humo, sin clave de API
 ```
 
 La clave hace falta desde la entrega 2 (el agente):
@@ -45,8 +55,14 @@ agente/
   interfaz.py       responder(pregunta, thread_id) — contrato del día 24
   trazas.py         coste, tokens, latencia, trayectoria (pretty_trace)
   datos.py          localización, verificación (SHA-256) y carga del corpus
-  retrieval.py      búsqueda; punto de intercambio baseline/final
+  retrieval.py      escalera de búsqueda: densa, +filtros, híbrida RRF, reescritura
+  metricas.py       acierta, recall@5, posición del ancla
   herramientas.py   las 4 tools del contrato (docstrings = enrutado)
+golden/
+  oficial_20.jsonl  las 20 preguntas oficiales del profesor
+notebooks/
+  01_retrieval.ipynb  la escalera medida, con argumentación
+resultados/           CSV de mediciones (regenerables desde los notebooks)
 scripts/
   preparar_corpus.py
   humo_herramientas.py   sin clave
@@ -58,7 +74,7 @@ dataset/            los ZIP del profesor (versionados; corpus/ es derivado)
 
 - [x] Entrega 1 — corpus verificado + 4 herramientas + humo
 - [x] Entrega 2 — agente baseline (`create_agent` + `RespuestaFinanciera` + `concept_xbrl`) e interfaz `responder`
-- [ ] Retrieval medido: filtros / híbrido RRF / reescritura (recall@5)
+- [x] Entrega 3 — escalera de retrieval (filtros / híbrido RRF / reescritura) + métricas + notebook 01 (recall@5)
 - [ ] Middleware: límites + verificación de cifras contra XBRL por concepto
 - [ ] Evaluadores (cita, cifra, trayectoria) + `evaluar()` + tabla
 - [ ] Golden set propio (20, ≥6 comparativas) validado
