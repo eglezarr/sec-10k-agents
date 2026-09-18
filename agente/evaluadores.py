@@ -140,7 +140,8 @@ EVALUADORES = {
 # La tanda completa
 # ---------------------------------------------------------------------------
 def evaluar(preguntas: list[dict], funcion_responder, etiqueta: str = "run",
-            buscar_para_recall=None, ruta_salida: str | Path | None = None):
+            buscar_para_recall=None, ruta_salida: str | Path | None = None,
+            progreso: bool = False):
     """Ejecuta `funcion_responder` sobre cada pregunta y aplica los tres
     evaluadores. Devuelve un DataFrame con una fila por pregunta.
 
@@ -173,6 +174,13 @@ def evaluar(preguntas: list[dict], funcion_responder, etiqueta: str = "run",
         except Exception as e:                    # la tanda no se para
             fila["error"] = f"{type(e).__name__}: {e}"
         filas.append(fila)
+        if progreso:
+            marca = "ERR " if fila["error"] else "ok  "
+            coste = (f"{fila['coste_usd']*100:5.2f}c"
+                     if fila["coste_usd"] is not None else "  -  ")
+            print(f"  {marca}{fila['id']:10s} {coste}  "
+                  f"cita={fila['cita_ok']} cifra={fila['cifra_ok']} "
+                  f"tool={fila['tool_ok']}", flush=True)
 
     df = pd.DataFrame(filas)
     if ruta_salida is not None:

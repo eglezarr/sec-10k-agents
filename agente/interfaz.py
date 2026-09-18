@@ -88,6 +88,7 @@ def evaluar(ruta_jsonl: str, etiqueta: str = "eval"):
         preguntas, responder, etiqueta=etiqueta,
         buscar_para_recall=_buscar_como_el_agente,
         ruta_salida=raiz / "resultados" / f"eval_{etiqueta}.csv",
+        progreso=True,
     )
     resumen = evaluadores.resumir(df, etiqueta)
     print(f"[{etiqueta}] n={resumen['n']}  cita={resumen['cita_ok']:.2f}  "
