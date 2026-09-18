@@ -30,13 +30,19 @@ pip install -r requirements.txt
 
 # Copiar los dos ZIP del profesor a dataset/ (ver dataset/COLOCA_AQUI.md)
 python golden/
-  oficial_20.jsonl  las 20 preguntas oficiales del profesor
+  oficial_20.jsonl       las 20 preguntas oficiales del profesor
+  propio_borrador.jsonl  28 candidatas propias (en revisión)
+  huecos_humo.jsonl      5 preguntas sin respuesta (ensayo 'fuente=ninguna')
+  revision_borrador.md   documento de revisión de las candidatas
 notebooks/
   01_retrieval.ipynb  la escalera medida, con argumentación
 resultados/           CSV de mediciones (regenerables desde los notebooks)
 scripts/preparar_corpus.py      # extrae y verifica hashes -> corpus/
 python golden/
-  oficial_20.jsonl  las 20 preguntas oficiales del profesor
+  oficial_20.jsonl       las 20 preguntas oficiales del profesor
+  propio_borrador.jsonl  28 candidatas propias (en revisión)
+  huecos_humo.jsonl      5 preguntas sin respuesta (ensayo 'fuente=ninguna')
+  revision_borrador.md   documento de revisión de las candidatas
 notebooks/
   01_retrieval.ipynb  la escalera medida, con argumentación
 resultados/           CSV de mediciones (regenerables desde los notebooks)
@@ -60,7 +66,10 @@ agente/
   evaluadores.py    cita/cifra/trayectoria + evaluar() + resumir() + por_familia()
   herramientas.py   las 4 tools del contrato (docstrings = enrutado)
 golden/
-  oficial_20.jsonl  las 20 preguntas oficiales del profesor
+  oficial_20.jsonl       las 20 preguntas oficiales del profesor
+  propio_borrador.jsonl  28 candidatas propias (en revisión)
+  huecos_humo.jsonl      5 preguntas sin respuesta (ensayo 'fuente=ninguna')
+  revision_borrador.md   documento de revisión de las candidatas
 notebooks/
   01_retrieval.ipynb  la escalera medida, con argumentación
 resultados/           CSV de mediciones (regenerables desde los notebooks)
@@ -69,6 +78,7 @@ scripts/
   humo_herramientas.py   sin clave
   humo_agente.py         con clave (~10-15 ¢)
   humo_evaluadores.py    sin clave (resultados sintéticos)
+  validar_golden.py      validador del golden (núcleo del taller + checks propios)
 dataset/            los ZIP del profesor (versionados; corpus/ es derivado)
 ```
 
@@ -78,6 +88,7 @@ dataset/            los ZIP del profesor (versionados; corpus/ es derivado)
 - [x] Entrega 2 — agente baseline (`create_agent` + `RespuestaFinanciera` + `concept_xbrl`) e interfaz `responder`
 - [x] Entrega 3 — escalera de retrieval (filtros / híbrido RRF / reescritura) + métricas + notebook 01 (recall@5)
 - [x] Entrega 4 — evaluadores (cita / cifra con huecos / trayectoria) + `evaluar()` + `resumir()` + humo offline
+- [x] Entrega 5 — validador del golden + borrador propio (28 candidatas verificadas) + set de huecos
 - [ ] Middleware: límites + verificación de cifras contra XBRL por concepto
-- [ ] Golden set propio (20, ≥6 comparativas) validado
+- [ ] Golden propio congelado (20 = 7/7/6, `--final`)
 - [ ] Baseline congelado · mejoras medidas · informe
