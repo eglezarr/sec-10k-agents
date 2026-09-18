@@ -5,4 +5,7 @@ venv/
 .env
 .ipynb_checkpoints/
 .DS_Store
+# Derivado de dataset/*.zip por scripts/preparar_corpus.py — no se versiona
 corpus/
+# Salidas locales de los scripts de humo
+humo_*.txt

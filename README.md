@@ -12,7 +12,7 @@ El hold-out de 10 preguntas ciegas se ejecuta contra este repositorio, en
 un clon limpio y sin editar nada:
 
 ```python
-from agente.interfaz import responder, evaluar   # (próxima entrega)
+from agente.interfaz import responder            # evaluar: con los evaluadores
 
 responder("¿Cuál fue el revenue de NVIDIA en FY2024?")
 evaluar("holdout.jsonl")
@@ -33,7 +33,7 @@ python scripts/preparar_corpus.py      # extrae y verifica hashes -> corpus/
 python scripts/humo_herramientas.py    # prueba de humo, sin clave de API
 ```
 
-La clave solo hace falta a partir del agente (próxima entrega):
+La clave hace falta desde la entrega 2 (el agente):
 `export OPENROUTER_API_KEY=...` (se obtiene en openrouter.ai/keys). Nunca
 se escribe en código ni se versiona.
 
@@ -41,19 +41,23 @@ se escribe en código ni se versiona.
 
 ```
 agente/
+  agente.py         RespuestaFinanciera + system prompt + crear_agente()
+  interfaz.py       responder(pregunta, thread_id) — contrato del día 24
+  trazas.py         coste, tokens, latencia, trayectoria (pretty_trace)
   datos.py          localización, verificación (SHA-256) y carga del corpus
   retrieval.py      búsqueda; punto de intercambio baseline/final
   herramientas.py   las 4 tools del contrato (docstrings = enrutado)
 scripts/
   preparar_corpus.py
-  humo_herramientas.py
+  humo_herramientas.py   sin clave
+  humo_agente.py         con clave (~10-15 ¢)
 dataset/            los ZIP del profesor (versionados; corpus/ es derivado)
 ```
 
 ## Estado
 
 - [x] Entrega 1 — corpus verificado + 4 herramientas + humo
-- [ ] Agente (`create_agent` + `RespuestaFinanciera`) e interfaz `responder`
+- [x] Entrega 2 — agente baseline (`create_agent` + `RespuestaFinanciera` + `concept_xbrl`) e interfaz `responder`
 - [ ] Retrieval medido: filtros / híbrido RRF / reescritura (recall@5)
 - [ ] Middleware: límites + verificación de cifras contra XBRL por concepto
 - [ ] Evaluadores (cita, cifra, trayectoria) + `evaluar()` + tabla
