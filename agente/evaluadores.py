@@ -93,7 +93,7 @@ def _chunks_por_id() -> dict:
 def cita_correcta(item: dict, resultado) -> bool | None:
     r = _estructurada(resultado)
     if not r.chunk_id:
-        return None if item["familia"] == "numerica" else False
+        return None if item.get("familia") == "numerica" else False
     chunk = _chunks_por_id().get(r.chunk_id)
     if chunk is None:                     # chunk_id inventado
         return False
@@ -107,14 +107,16 @@ def cita_correcta(item: dict, resultado) -> bool | None:
 # Evaluador 2 · la cifra coincide con XBRL (con huecos)
 # ---------------------------------------------------------------------------
 def cifra_coincide_xbrl(item: dict, resultado) -> bool | None:
-    r = _estructurada(resultado)
     esperada = item.get("cifra_esperada")
+    hueco = item.get("familia") in ("numerica", "comparativa")
 
-    if esperada is None:
-        if item["familia"] in ("numerica", "comparativa"):
-            # Hueco codificado: la respuesta correcta es NO dar cifra.
-            return r.cifra is None and r.fuente == "ninguna"
+    if esperada is None and not hueco:
         return None                       # extractiva: no aplica
+
+    r = _estructurada(resultado)
+    if esperada is None:
+        # Hueco codificado: la respuesta correcta es NO dar cifra.
+        return r.cifra is None and r.fuente == "ninguna"
 
     if r.cifra is None:                   # había cifra y no la dio
         return False
@@ -126,7 +128,7 @@ def cifra_coincide_xbrl(item: dict, resultado) -> bool | None:
 # ---------------------------------------------------------------------------
 def uso_la_tool_correcta(item: dict, resultado) -> bool:
     usadas = set(trazas.herramientas_usadas(resultado))
-    return set(item["herramienta_esperada"]).issubset(usadas)
+    return set(item.get("herramienta_esperada") or []).issubset(usadas)
 
 
 EVALUADORES = {
@@ -155,7 +157,7 @@ def evaluar(preguntas: list[dict], funcion_responder, etiqueta: str = "run",
 
     filas = []
     for item in preguntas:
-        fila = {"id": item["id"], "familia": item["familia"],
+        fila = {"id": item["id"], "familia": item.get("familia"),
                 "cita_ok": None, "cifra_ok": None, "tool_ok": None,
                 "recall": None, "n_tools": None,
                 "coste_usd": None, "latencia_s": None, "error": None}

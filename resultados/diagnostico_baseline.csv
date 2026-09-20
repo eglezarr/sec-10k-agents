@@ -1,0 +1,17 @@
+golden,id,familia,causa,mejora candidata
+oficial,of-001,extractiva,retrieval (la respuesta salió bien),Búsqueda híbrida en search_filings
+oficial,of-005,extractiva,cita,Prompt: citar el chunk_id del fragmento usado
+oficial,of-014,comparativa,cifra: variación absoluta,"Convención en el prompt (cifra = valor del ejercicio; la variación, en la prosa) + middleware"
+oficial,of-014,comparativa,cita,Prompt: citar el chunk_id del fragmento usado
+oficial,of-015,comparativa,cifra: variación absoluta,"Convención en el prompt (cifra = valor del ejercicio; la variación, en la prosa) + middleware"
+oficial,of-016,comparativa,cifra: variación absoluta,"Convención en el prompt (cifra = valor del ejercicio; la variación, en la prosa) + middleware"
+oficial,of-018,comparativa,cifra: variación absoluta,"Convención en el prompt (cifra = valor del ejercicio; la variación, en la prosa) + middleware"
+oficial,of-018,comparativa,retrieval,Búsqueda híbrida en search_filings
+oficial,of-019,comparativa,no se reproduce,Ninguna: ruido del modelo
+oficial,of-020,comparativa,cifra: variación absoluta,"Convención en el prompt (cifra = valor del ejercicio; la variación, en la prosa) + middleware"
+propio,pr-c09,comparativa,cifra: variación absoluta,"Convención en el prompt (cifra = valor del ejercicio; la variación, en la prosa) + middleware"
+propio,pr-c10,comparativa,no se reproduce,Ninguna: ruido del modelo
+propio,pr-c11,comparativa,cifra: sin respaldo en XBRL,Middleware de cifras contra XBRL
+propio,pr-c13,comparativa,no se reproduce,Ninguna: ruido del modelo
+propio,pr-e15,extractiva,retrieval (la respuesta salió bien),Búsqueda híbrida en search_filings
+propio,pr-e16,extractiva,retrieval (la respuesta salió bien),Búsqueda híbrida en search_filings
