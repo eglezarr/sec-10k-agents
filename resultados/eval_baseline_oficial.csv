@@ -1,21 +1,21 @@
 id,familia,cita_ok,cifra_ok,tool_ok,recall,n_tools,coste_usd,latencia_s,error
-of-001,extractiva,True,,True,False,4.0,0.018759,19.300999799976125,
-of-002,extractiva,True,,True,True,3.0,0.008913,25.45221669995226,
-of-003,extractiva,False,,True,True,3.0,0.01202175,12.275685200002044,
-of-004,extractiva,True,,True,True,3.0,0.00967875,18.720129600027576,
-of-005,extractiva,False,,True,True,3.0,0.0109725,13.138926199870184,
-of-006,extractiva,True,,True,True,3.0,0.00949875,23.198935700114816,
-of-007,numerica,,True,True,,2.0,0.004203,5.6284862998872995,
-of-008,numerica,,True,True,,3.0,0.005976,6.6526866001077,
-of-009,numerica,,True,True,,3.0,0.00633975,8.659125400008634,
-of-010,numerica,,True,True,,2.0,0.003816,6.280862799845636,
-of-011,numerica,,True,True,,3.0,0.006198,7.366214199922979,
-of-012,numerica,,True,True,,3.0,0.00566475,7.664268299937248,
-of-013,numerica,,True,True,,2.0,0.0037665,4.712215300183743,
-of-014,comparativa,,,,,,,,TooManyRequestsResponseError: Rate limit exceeded: new-account-rpm/google/gemini-3.8-flash-20260902. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.
-of-015,comparativa,,,,,,,,TooManyRequestsResponseError: Rate limit exceeded: new-account-rpm/google/gemini-3.8-flash-20260902. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.
-of-016,comparativa,,,,,,,,TooManyRequestsResponseError: Rate limit exceeded: new-account-rpm/google/gemini-3.8-flash-20260902. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.
-of-017,comparativa,,,,,,,,TooManyRequestsResponseError: Rate limit exceeded: new-account-rpm/google/gemini-3.8-flash-20260902. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.
-of-018,comparativa,,,,,,,,TooManyRequestsResponseError: Rate limit exceeded: new-account-rpm/google/gemini-3.8-flash-20260902. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.
-of-019,comparativa,,,,,,,,TooManyRequestsResponseError: Rate limit exceeded: new-account-rpm/google/gemini-3.8-flash-20260902. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.
-of-020,comparativa,,,,,,,,TooManyRequestsResponseError: Rate limit exceeded: new-account-rpm/google/gemini-3.8-flash-20260902. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.
+of-001,extractiva,True,,True,False,5,0.0280755,30.794045799877495,
+of-002,extractiva,True,,True,True,4,0.01360725,3.612191899912432,
+of-003,extractiva,True,,True,True,4,0.019752,40.3785310999956,
+of-004,extractiva,True,,True,True,4,0.01536,3.8199375001713634,
+of-005,extractiva,False,,True,True,4,0.0169575,3.4646133000496775,
+of-006,extractiva,True,,True,True,4,0.013752,2.444949199911207,
+of-007,numerica,,True,True,,3,0.00623325,3.560321999946609,
+of-008,numerica,,True,True,,4,0.0082815,3.077935399953276,
+of-009,numerica,,True,True,,4,0.00867525,8.199065200053155,
+of-010,numerica,,True,True,,3,0.00575775,3.7281780000776052,
+of-011,numerica,,True,True,,4,0.0085935,3.054168500006199,
+of-012,numerica,,True,True,,4,0.007875,8.443477499997243,
+of-013,numerica,,True,True,,3,0.00573225,2.1248780998867005,
+of-014,comparativa,True,False,True,True,11,0.0779895,52.015805300092325,
+of-015,comparativa,True,False,True,True,5,0.01308375,26.596265399828553,
+of-016,comparativa,True,False,True,True,5,0.01230075,14.487061099847779,
+of-017,comparativa,True,True,True,True,5,0.01555875,17.22953059989959,
+of-018,comparativa,False,False,True,False,6,0.02268675,30.128081999951974,
+of-019,comparativa,True,False,True,True,5,0.0228285,44.609716600039974,
+of-020,comparativa,False,False,True,False,8,0.02750325,39.63629309996031,

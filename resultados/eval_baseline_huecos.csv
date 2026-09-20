@@ -1,6 +1,6 @@
 id,familia,cita_ok,cifra_ok,tool_ok,recall,n_tools,coste_usd,latencia_s,error
-hx-01,numerica,,,,,,,,TooManyRequestsResponseError: Rate limit exceeded: new-account-rpm/google/gemini-3.8-flash-20260902. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.
-hx-02,numerica,,,,,,,,TooManyRequestsResponseError: Rate limit exceeded: new-account-rpm/google/gemini-3.8-flash-20260902. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.
-hx-03,numerica,,,,,,,,TooManyRequestsResponseError: Rate limit exceeded: new-account-rpm/google/gemini-3.8-flash-20260902. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.
-hx-04,numerica,,,,,,,,TooManyRequestsResponseError: Rate limit exceeded: new-account-rpm/google/gemini-3.8-flash-20260902. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.
-hx-05,numerica,,,,,,,,TooManyRequestsResponseError: Rate limit exceeded: new-account-rpm/google/gemini-3.8-flash-20260902. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.
+hx-01,numerica,True,True,True,,6,0.0262305,3.3663947000168264,
+hx-02,numerica,True,True,True,,8,0.0459975,3.9057293999940157,
+hx-03,numerica,,True,True,,7,0.0339075,5.6965580999385566,
+hx-04,numerica,,True,True,,3,0.0062745,4.273693900089711,
+hx-05,numerica,,True,True,,3,0.00546825,7.6489860999863595,

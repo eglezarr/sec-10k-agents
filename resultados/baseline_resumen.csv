@@ -1,4 +1,4 @@
 sistema,n,cita_ok,cifra_ok,tool_ok,recall@5,coste_medio_¢,latencia_media_s,tools_por_pregunta,errores
 baseline · propio (20),20,0.846,0.769,1.0,0.692,1.277,23.453,3.6,0
-baseline · oficial (20),20,0.667,1.0,1.0,0.833,0.814,12.235,2.846,7
-baseline · huecos (5),5,,,,,,,,5
+baseline · oficial (20),20,0.769,0.571,1.0,0.769,1.753,17.07,4.75,0
+baseline · huecos (5),5,1.0,1.0,1.0,,2.358,4.978,5.4,0
