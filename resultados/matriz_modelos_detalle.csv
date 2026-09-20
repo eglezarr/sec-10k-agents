@@ -1,0 +1,1041 @@
+modo,llm,embedding,id,golden,acierto
+densa,ES sin reescribir,"bge-small (ctl, local)",pr-e13,propio,True
+densa,ES sin reescribir,"bge-small (ctl, local)",pr-e14,propio,True
+densa,ES sin reescribir,"bge-small (ctl, local)",pr-e15,propio,False
+densa,ES sin reescribir,"bge-small (ctl, local)",pr-e16,propio,False
+densa,ES sin reescribir,"bge-small (ctl, local)",pr-e18,propio,True
+densa,ES sin reescribir,"bge-small (ctl, local)",pr-e19,propio,True
+densa,ES sin reescribir,"bge-small (ctl, local)",pr-e20,propio,False
+densa,ES sin reescribir,"bge-small (ctl, local)",pr-c06,propio,True
+densa,ES sin reescribir,"bge-small (ctl, local)",pr-c09,propio,False
+densa,ES sin reescribir,"bge-small (ctl, local)",pr-c10,propio,False
+densa,ES sin reescribir,"bge-small (ctl, local)",pr-c11,propio,False
+densa,ES sin reescribir,"bge-small (ctl, local)",pr-c12,propio,False
+densa,ES sin reescribir,"bge-small (ctl, local)",pr-c13,propio,False
+densa,ES sin reescribir,"bge-small (ctl, local)",of-001,oficial,False
+densa,ES sin reescribir,"bge-small (ctl, local)",of-002,oficial,True
+densa,ES sin reescribir,"bge-small (ctl, local)",of-003,oficial,True
+densa,ES sin reescribir,"bge-small (ctl, local)",of-004,oficial,False
+densa,ES sin reescribir,"bge-small (ctl, local)",of-005,oficial,False
+densa,ES sin reescribir,"bge-small (ctl, local)",of-006,oficial,True
+densa,ES sin reescribir,"bge-small (ctl, local)",of-014,oficial,True
+densa,ES sin reescribir,"bge-small (ctl, local)",of-015,oficial,False
+densa,ES sin reescribir,"bge-small (ctl, local)",of-016,oficial,False
+densa,ES sin reescribir,"bge-small (ctl, local)",of-017,oficial,True
+densa,ES sin reescribir,"bge-small (ctl, local)",of-018,oficial,False
+densa,ES sin reescribir,"bge-small (ctl, local)",of-019,oficial,False
+densa,ES sin reescribir,"bge-small (ctl, local)",of-020,oficial,True
+hibrida,ES sin reescribir,"bge-small (ctl, local)",pr-e13,propio,True
+hibrida,ES sin reescribir,"bge-small (ctl, local)",pr-e14,propio,True
+hibrida,ES sin reescribir,"bge-small (ctl, local)",pr-e15,propio,False
+hibrida,ES sin reescribir,"bge-small (ctl, local)",pr-e16,propio,False
+hibrida,ES sin reescribir,"bge-small (ctl, local)",pr-e18,propio,True
+hibrida,ES sin reescribir,"bge-small (ctl, local)",pr-e19,propio,True
+hibrida,ES sin reescribir,"bge-small (ctl, local)",pr-e20,propio,True
+hibrida,ES sin reescribir,"bge-small (ctl, local)",pr-c06,propio,True
+hibrida,ES sin reescribir,"bge-small (ctl, local)",pr-c09,propio,False
+hibrida,ES sin reescribir,"bge-small (ctl, local)",pr-c10,propio,False
+hibrida,ES sin reescribir,"bge-small (ctl, local)",pr-c11,propio,False
+hibrida,ES sin reescribir,"bge-small (ctl, local)",pr-c12,propio,False
+hibrida,ES sin reescribir,"bge-small (ctl, local)",pr-c13,propio,False
+hibrida,ES sin reescribir,"bge-small (ctl, local)",of-001,oficial,False
+hibrida,ES sin reescribir,"bge-small (ctl, local)",of-002,oficial,False
+hibrida,ES sin reescribir,"bge-small (ctl, local)",of-003,oficial,True
+hibrida,ES sin reescribir,"bge-small (ctl, local)",of-004,oficial,False
+hibrida,ES sin reescribir,"bge-small (ctl, local)",of-005,oficial,True
+hibrida,ES sin reescribir,"bge-small (ctl, local)",of-006,oficial,True
+hibrida,ES sin reescribir,"bge-small (ctl, local)",of-014,oficial,True
+hibrida,ES sin reescribir,"bge-small (ctl, local)",of-015,oficial,False
+hibrida,ES sin reescribir,"bge-small (ctl, local)",of-016,oficial,False
+hibrida,ES sin reescribir,"bge-small (ctl, local)",of-017,oficial,True
+hibrida,ES sin reescribir,"bge-small (ctl, local)",of-018,oficial,False
+hibrida,ES sin reescribir,"bge-small (ctl, local)",of-019,oficial,False
+hibrida,ES sin reescribir,"bge-small (ctl, local)",of-020,oficial,True
+densa,deepseek-v4-flash,"bge-small (ctl, local)",pr-e13,propio,True
+densa,deepseek-v4-flash,"bge-small (ctl, local)",pr-e14,propio,True
+densa,deepseek-v4-flash,"bge-small (ctl, local)",pr-e15,propio,False
+densa,deepseek-v4-flash,"bge-small (ctl, local)",pr-e16,propio,False
+densa,deepseek-v4-flash,"bge-small (ctl, local)",pr-e18,propio,True
+densa,deepseek-v4-flash,"bge-small (ctl, local)",pr-e19,propio,True
+densa,deepseek-v4-flash,"bge-small (ctl, local)",pr-e20,propio,True
+densa,deepseek-v4-flash,"bge-small (ctl, local)",pr-c06,propio,True
+densa,deepseek-v4-flash,"bge-small (ctl, local)",pr-c09,propio,True
+densa,deepseek-v4-flash,"bge-small (ctl, local)",pr-c10,propio,True
+densa,deepseek-v4-flash,"bge-small (ctl, local)",pr-c11,propio,False
+densa,deepseek-v4-flash,"bge-small (ctl, local)",pr-c12,propio,True
+densa,deepseek-v4-flash,"bge-small (ctl, local)",pr-c13,propio,True
+densa,deepseek-v4-flash,"bge-small (ctl, local)",of-001,oficial,False
+densa,deepseek-v4-flash,"bge-small (ctl, local)",of-002,oficial,True
+densa,deepseek-v4-flash,"bge-small (ctl, local)",of-003,oficial,True
+densa,deepseek-v4-flash,"bge-small (ctl, local)",of-004,oficial,False
+densa,deepseek-v4-flash,"bge-small (ctl, local)",of-005,oficial,True
+densa,deepseek-v4-flash,"bge-small (ctl, local)",of-006,oficial,True
+densa,deepseek-v4-flash,"bge-small (ctl, local)",of-014,oficial,True
+densa,deepseek-v4-flash,"bge-small (ctl, local)",of-015,oficial,False
+densa,deepseek-v4-flash,"bge-small (ctl, local)",of-016,oficial,True
+densa,deepseek-v4-flash,"bge-small (ctl, local)",of-017,oficial,True
+densa,deepseek-v4-flash,"bge-small (ctl, local)",of-018,oficial,False
+densa,deepseek-v4-flash,"bge-small (ctl, local)",of-019,oficial,False
+densa,deepseek-v4-flash,"bge-small (ctl, local)",of-020,oficial,True
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",pr-e13,propio,True
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",pr-e14,propio,True
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",pr-e15,propio,True
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",pr-e16,propio,False
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",pr-e18,propio,True
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",pr-e19,propio,True
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",pr-e20,propio,True
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",pr-c06,propio,True
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",pr-c09,propio,True
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",pr-c10,propio,True
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",pr-c11,propio,False
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",pr-c12,propio,True
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",pr-c13,propio,True
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",of-001,oficial,False
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",of-002,oficial,True
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",of-003,oficial,True
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",of-004,oficial,True
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",of-005,oficial,True
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",of-006,oficial,True
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",of-014,oficial,True
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",of-015,oficial,True
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",of-016,oficial,True
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",of-017,oficial,True
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",of-018,oficial,False
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",of-019,oficial,True
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",of-020,oficial,True
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-e13,propio,True
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-e14,propio,True
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-e15,propio,False
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-e16,propio,True
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-e18,propio,True
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-e19,propio,True
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-e20,propio,True
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-c06,propio,True
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-c09,propio,True
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-c10,propio,True
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-c11,propio,False
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-c12,propio,True
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-c13,propio,False
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-001,oficial,False
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-002,oficial,True
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-003,oficial,True
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-004,oficial,True
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-005,oficial,True
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-006,oficial,True
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-014,oficial,True
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-015,oficial,True
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-016,oficial,True
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-017,oficial,True
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-018,oficial,False
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-019,oficial,False
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-020,oficial,False
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-e13,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-e14,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-e15,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-e16,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-e18,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-e19,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-e20,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-c06,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-c09,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-c10,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-c11,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-c12,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",pr-c13,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-001,oficial,False
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-002,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-003,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-004,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-005,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-006,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-014,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-015,oficial,False
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-016,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-017,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-018,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-019,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",of-020,oficial,False
+densa,gemini-3.8-flash,"bge-small (ctl, local)",pr-e13,propio,True
+densa,gemini-3.8-flash,"bge-small (ctl, local)",pr-e14,propio,True
+densa,gemini-3.8-flash,"bge-small (ctl, local)",pr-e15,propio,False
+densa,gemini-3.8-flash,"bge-small (ctl, local)",pr-e16,propio,False
+densa,gemini-3.8-flash,"bge-small (ctl, local)",pr-e18,propio,True
+densa,gemini-3.8-flash,"bge-small (ctl, local)",pr-e19,propio,True
+densa,gemini-3.8-flash,"bge-small (ctl, local)",pr-e20,propio,True
+densa,gemini-3.8-flash,"bge-small (ctl, local)",pr-c06,propio,True
+densa,gemini-3.8-flash,"bge-small (ctl, local)",pr-c09,propio,True
+densa,gemini-3.8-flash,"bge-small (ctl, local)",pr-c10,propio,True
+densa,gemini-3.8-flash,"bge-small (ctl, local)",pr-c11,propio,True
+densa,gemini-3.8-flash,"bge-small (ctl, local)",pr-c12,propio,True
+densa,gemini-3.8-flash,"bge-small (ctl, local)",pr-c13,propio,False
+densa,gemini-3.8-flash,"bge-small (ctl, local)",of-001,oficial,False
+densa,gemini-3.8-flash,"bge-small (ctl, local)",of-002,oficial,True
+densa,gemini-3.8-flash,"bge-small (ctl, local)",of-003,oficial,True
+densa,gemini-3.8-flash,"bge-small (ctl, local)",of-004,oficial,False
+densa,gemini-3.8-flash,"bge-small (ctl, local)",of-005,oficial,True
+densa,gemini-3.8-flash,"bge-small (ctl, local)",of-006,oficial,True
+densa,gemini-3.8-flash,"bge-small (ctl, local)",of-014,oficial,True
+densa,gemini-3.8-flash,"bge-small (ctl, local)",of-015,oficial,False
+densa,gemini-3.8-flash,"bge-small (ctl, local)",of-016,oficial,True
+densa,gemini-3.8-flash,"bge-small (ctl, local)",of-017,oficial,True
+densa,gemini-3.8-flash,"bge-small (ctl, local)",of-018,oficial,False
+densa,gemini-3.8-flash,"bge-small (ctl, local)",of-019,oficial,True
+densa,gemini-3.8-flash,"bge-small (ctl, local)",of-020,oficial,False
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",pr-e13,propio,True
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",pr-e14,propio,True
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",pr-e15,propio,True
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",pr-e16,propio,True
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",pr-e18,propio,True
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",pr-e19,propio,True
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",pr-e20,propio,True
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",pr-c06,propio,True
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",pr-c09,propio,True
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",pr-c10,propio,True
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",pr-c11,propio,True
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",pr-c12,propio,True
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",pr-c13,propio,False
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",of-001,oficial,False
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",of-002,oficial,True
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",of-003,oficial,True
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",of-004,oficial,True
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",of-005,oficial,True
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",of-006,oficial,True
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",of-014,oficial,True
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",of-015,oficial,False
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",of-016,oficial,True
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",of-017,oficial,True
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",of-018,oficial,True
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",of-019,oficial,True
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",of-020,oficial,False
+densa,ES sin reescribir,nemotron-embed-1b · free,pr-e13,propio,True
+densa,ES sin reescribir,nemotron-embed-1b · free,pr-e14,propio,True
+densa,ES sin reescribir,nemotron-embed-1b · free,pr-e15,propio,False
+densa,ES sin reescribir,nemotron-embed-1b · free,pr-e16,propio,True
+densa,ES sin reescribir,nemotron-embed-1b · free,pr-e18,propio,True
+densa,ES sin reescribir,nemotron-embed-1b · free,pr-e19,propio,True
+densa,ES sin reescribir,nemotron-embed-1b · free,pr-e20,propio,True
+densa,ES sin reescribir,nemotron-embed-1b · free,pr-c06,propio,True
+densa,ES sin reescribir,nemotron-embed-1b · free,pr-c09,propio,True
+densa,ES sin reescribir,nemotron-embed-1b · free,pr-c10,propio,True
+densa,ES sin reescribir,nemotron-embed-1b · free,pr-c11,propio,True
+densa,ES sin reescribir,nemotron-embed-1b · free,pr-c12,propio,True
+densa,ES sin reescribir,nemotron-embed-1b · free,pr-c13,propio,False
+densa,ES sin reescribir,nemotron-embed-1b · free,of-001,oficial,False
+densa,ES sin reescribir,nemotron-embed-1b · free,of-002,oficial,True
+densa,ES sin reescribir,nemotron-embed-1b · free,of-003,oficial,True
+densa,ES sin reescribir,nemotron-embed-1b · free,of-004,oficial,False
+densa,ES sin reescribir,nemotron-embed-1b · free,of-005,oficial,True
+densa,ES sin reescribir,nemotron-embed-1b · free,of-006,oficial,True
+densa,ES sin reescribir,nemotron-embed-1b · free,of-014,oficial,True
+densa,ES sin reescribir,nemotron-embed-1b · free,of-015,oficial,False
+densa,ES sin reescribir,nemotron-embed-1b · free,of-016,oficial,True
+densa,ES sin reescribir,nemotron-embed-1b · free,of-017,oficial,True
+densa,ES sin reescribir,nemotron-embed-1b · free,of-018,oficial,False
+densa,ES sin reescribir,nemotron-embed-1b · free,of-019,oficial,True
+densa,ES sin reescribir,nemotron-embed-1b · free,of-020,oficial,False
+hibrida,ES sin reescribir,nemotron-embed-1b · free,pr-e13,propio,False
+hibrida,ES sin reescribir,nemotron-embed-1b · free,pr-e14,propio,True
+hibrida,ES sin reescribir,nemotron-embed-1b · free,pr-e15,propio,False
+hibrida,ES sin reescribir,nemotron-embed-1b · free,pr-e16,propio,False
+hibrida,ES sin reescribir,nemotron-embed-1b · free,pr-e18,propio,True
+hibrida,ES sin reescribir,nemotron-embed-1b · free,pr-e19,propio,True
+hibrida,ES sin reescribir,nemotron-embed-1b · free,pr-e20,propio,True
+hibrida,ES sin reescribir,nemotron-embed-1b · free,pr-c06,propio,True
+hibrida,ES sin reescribir,nemotron-embed-1b · free,pr-c09,propio,False
+hibrida,ES sin reescribir,nemotron-embed-1b · free,pr-c10,propio,True
+hibrida,ES sin reescribir,nemotron-embed-1b · free,pr-c11,propio,False
+hibrida,ES sin reescribir,nemotron-embed-1b · free,pr-c12,propio,False
+hibrida,ES sin reescribir,nemotron-embed-1b · free,pr-c13,propio,False
+hibrida,ES sin reescribir,nemotron-embed-1b · free,of-001,oficial,False
+hibrida,ES sin reescribir,nemotron-embed-1b · free,of-002,oficial,False
+hibrida,ES sin reescribir,nemotron-embed-1b · free,of-003,oficial,True
+hibrida,ES sin reescribir,nemotron-embed-1b · free,of-004,oficial,False
+hibrida,ES sin reescribir,nemotron-embed-1b · free,of-005,oficial,True
+hibrida,ES sin reescribir,nemotron-embed-1b · free,of-006,oficial,True
+hibrida,ES sin reescribir,nemotron-embed-1b · free,of-014,oficial,True
+hibrida,ES sin reescribir,nemotron-embed-1b · free,of-015,oficial,False
+hibrida,ES sin reescribir,nemotron-embed-1b · free,of-016,oficial,True
+hibrida,ES sin reescribir,nemotron-embed-1b · free,of-017,oficial,True
+hibrida,ES sin reescribir,nemotron-embed-1b · free,of-018,oficial,False
+hibrida,ES sin reescribir,nemotron-embed-1b · free,of-019,oficial,True
+hibrida,ES sin reescribir,nemotron-embed-1b · free,of-020,oficial,False
+densa,deepseek-v4-flash,nemotron-embed-1b · free,pr-e13,propio,True
+densa,deepseek-v4-flash,nemotron-embed-1b · free,pr-e14,propio,True
+densa,deepseek-v4-flash,nemotron-embed-1b · free,pr-e15,propio,False
+densa,deepseek-v4-flash,nemotron-embed-1b · free,pr-e16,propio,True
+densa,deepseek-v4-flash,nemotron-embed-1b · free,pr-e18,propio,True
+densa,deepseek-v4-flash,nemotron-embed-1b · free,pr-e19,propio,True
+densa,deepseek-v4-flash,nemotron-embed-1b · free,pr-e20,propio,True
+densa,deepseek-v4-flash,nemotron-embed-1b · free,pr-c06,propio,True
+densa,deepseek-v4-flash,nemotron-embed-1b · free,pr-c09,propio,True
+densa,deepseek-v4-flash,nemotron-embed-1b · free,pr-c10,propio,True
+densa,deepseek-v4-flash,nemotron-embed-1b · free,pr-c11,propio,True
+densa,deepseek-v4-flash,nemotron-embed-1b · free,pr-c12,propio,True
+densa,deepseek-v4-flash,nemotron-embed-1b · free,pr-c13,propio,False
+densa,deepseek-v4-flash,nemotron-embed-1b · free,of-001,oficial,False
+densa,deepseek-v4-flash,nemotron-embed-1b · free,of-002,oficial,True
+densa,deepseek-v4-flash,nemotron-embed-1b · free,of-003,oficial,True
+densa,deepseek-v4-flash,nemotron-embed-1b · free,of-004,oficial,True
+densa,deepseek-v4-flash,nemotron-embed-1b · free,of-005,oficial,True
+densa,deepseek-v4-flash,nemotron-embed-1b · free,of-006,oficial,True
+densa,deepseek-v4-flash,nemotron-embed-1b · free,of-014,oficial,True
+densa,deepseek-v4-flash,nemotron-embed-1b · free,of-015,oficial,False
+densa,deepseek-v4-flash,nemotron-embed-1b · free,of-016,oficial,True
+densa,deepseek-v4-flash,nemotron-embed-1b · free,of-017,oficial,True
+densa,deepseek-v4-flash,nemotron-embed-1b · free,of-018,oficial,False
+densa,deepseek-v4-flash,nemotron-embed-1b · free,of-019,oficial,True
+densa,deepseek-v4-flash,nemotron-embed-1b · free,of-020,oficial,False
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,pr-e13,propio,True
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,pr-e14,propio,True
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,pr-e15,propio,True
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,pr-e16,propio,True
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,pr-e18,propio,True
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,pr-e19,propio,True
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,pr-e20,propio,True
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,pr-c06,propio,True
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,pr-c09,propio,True
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,pr-c10,propio,True
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,pr-c11,propio,True
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,pr-c12,propio,True
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,pr-c13,propio,False
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,of-001,oficial,False
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,of-002,oficial,True
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,of-003,oficial,True
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,of-004,oficial,True
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,of-005,oficial,True
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,of-006,oficial,True
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,of-014,oficial,True
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,of-015,oficial,False
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,of-016,oficial,True
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,of-017,oficial,True
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,of-018,oficial,True
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,of-019,oficial,True
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,of-020,oficial,False
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-e13,propio,True
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-e14,propio,True
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-e15,propio,True
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-e16,propio,True
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-e18,propio,True
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-e19,propio,True
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-e20,propio,True
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-c06,propio,True
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-c09,propio,True
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-c10,propio,True
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-c11,propio,True
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-c12,propio,True
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-c13,propio,False
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-001,oficial,False
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-002,oficial,True
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-003,oficial,True
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-004,oficial,True
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-005,oficial,True
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-006,oficial,True
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-014,oficial,True
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-015,oficial,False
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-016,oficial,True
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-017,oficial,True
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-018,oficial,False
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-019,oficial,True
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-020,oficial,False
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-e13,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-e14,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-e15,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-e16,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-e18,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-e19,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-e20,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-c06,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-c09,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-c10,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-c11,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-c12,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,pr-c13,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-001,oficial,False
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-002,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-003,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-004,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-005,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-006,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-014,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-015,oficial,False
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-016,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-017,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-018,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-019,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,of-020,oficial,False
+densa,gemini-3.8-flash,nemotron-embed-1b · free,pr-e13,propio,True
+densa,gemini-3.8-flash,nemotron-embed-1b · free,pr-e14,propio,True
+densa,gemini-3.8-flash,nemotron-embed-1b · free,pr-e15,propio,True
+densa,gemini-3.8-flash,nemotron-embed-1b · free,pr-e16,propio,True
+densa,gemini-3.8-flash,nemotron-embed-1b · free,pr-e18,propio,True
+densa,gemini-3.8-flash,nemotron-embed-1b · free,pr-e19,propio,True
+densa,gemini-3.8-flash,nemotron-embed-1b · free,pr-e20,propio,True
+densa,gemini-3.8-flash,nemotron-embed-1b · free,pr-c06,propio,True
+densa,gemini-3.8-flash,nemotron-embed-1b · free,pr-c09,propio,True
+densa,gemini-3.8-flash,nemotron-embed-1b · free,pr-c10,propio,True
+densa,gemini-3.8-flash,nemotron-embed-1b · free,pr-c11,propio,True
+densa,gemini-3.8-flash,nemotron-embed-1b · free,pr-c12,propio,True
+densa,gemini-3.8-flash,nemotron-embed-1b · free,pr-c13,propio,True
+densa,gemini-3.8-flash,nemotron-embed-1b · free,of-001,oficial,False
+densa,gemini-3.8-flash,nemotron-embed-1b · free,of-002,oficial,True
+densa,gemini-3.8-flash,nemotron-embed-1b · free,of-003,oficial,True
+densa,gemini-3.8-flash,nemotron-embed-1b · free,of-004,oficial,False
+densa,gemini-3.8-flash,nemotron-embed-1b · free,of-005,oficial,True
+densa,gemini-3.8-flash,nemotron-embed-1b · free,of-006,oficial,True
+densa,gemini-3.8-flash,nemotron-embed-1b · free,of-014,oficial,True
+densa,gemini-3.8-flash,nemotron-embed-1b · free,of-015,oficial,False
+densa,gemini-3.8-flash,nemotron-embed-1b · free,of-016,oficial,True
+densa,gemini-3.8-flash,nemotron-embed-1b · free,of-017,oficial,True
+densa,gemini-3.8-flash,nemotron-embed-1b · free,of-018,oficial,True
+densa,gemini-3.8-flash,nemotron-embed-1b · free,of-019,oficial,True
+densa,gemini-3.8-flash,nemotron-embed-1b · free,of-020,oficial,False
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,pr-e13,propio,True
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,pr-e14,propio,True
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,pr-e15,propio,True
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,pr-e16,propio,True
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,pr-e18,propio,True
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,pr-e19,propio,True
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,pr-e20,propio,True
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,pr-c06,propio,True
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,pr-c09,propio,True
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,pr-c10,propio,True
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,pr-c11,propio,True
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,pr-c12,propio,True
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,pr-c13,propio,True
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,of-001,oficial,False
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,of-002,oficial,True
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,of-003,oficial,True
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,of-004,oficial,True
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,of-005,oficial,True
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,of-006,oficial,True
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,of-014,oficial,True
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,of-015,oficial,False
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,of-016,oficial,True
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,of-017,oficial,True
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,of-018,oficial,True
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,of-019,oficial,True
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,of-020,oficial,False
+densa,ES sin reescribir,bge-m3,pr-e13,propio,True
+densa,ES sin reescribir,bge-m3,pr-e14,propio,True
+densa,ES sin reescribir,bge-m3,pr-e15,propio,False
+densa,ES sin reescribir,bge-m3,pr-e16,propio,False
+densa,ES sin reescribir,bge-m3,pr-e18,propio,True
+densa,ES sin reescribir,bge-m3,pr-e19,propio,True
+densa,ES sin reescribir,bge-m3,pr-e20,propio,True
+densa,ES sin reescribir,bge-m3,pr-c06,propio,True
+densa,ES sin reescribir,bge-m3,pr-c09,propio,True
+densa,ES sin reescribir,bge-m3,pr-c10,propio,True
+densa,ES sin reescribir,bge-m3,pr-c11,propio,False
+densa,ES sin reescribir,bge-m3,pr-c12,propio,False
+densa,ES sin reescribir,bge-m3,pr-c13,propio,False
+densa,ES sin reescribir,bge-m3,of-001,oficial,False
+densa,ES sin reescribir,bge-m3,of-002,oficial,False
+densa,ES sin reescribir,bge-m3,of-003,oficial,True
+densa,ES sin reescribir,bge-m3,of-004,oficial,False
+densa,ES sin reescribir,bge-m3,of-005,oficial,True
+densa,ES sin reescribir,bge-m3,of-006,oficial,True
+densa,ES sin reescribir,bge-m3,of-014,oficial,True
+densa,ES sin reescribir,bge-m3,of-015,oficial,False
+densa,ES sin reescribir,bge-m3,of-016,oficial,True
+densa,ES sin reescribir,bge-m3,of-017,oficial,True
+densa,ES sin reescribir,bge-m3,of-018,oficial,False
+densa,ES sin reescribir,bge-m3,of-019,oficial,True
+densa,ES sin reescribir,bge-m3,of-020,oficial,False
+hibrida,ES sin reescribir,bge-m3,pr-e13,propio,True
+hibrida,ES sin reescribir,bge-m3,pr-e14,propio,True
+hibrida,ES sin reescribir,bge-m3,pr-e15,propio,False
+hibrida,ES sin reescribir,bge-m3,pr-e16,propio,False
+hibrida,ES sin reescribir,bge-m3,pr-e18,propio,True
+hibrida,ES sin reescribir,bge-m3,pr-e19,propio,True
+hibrida,ES sin reescribir,bge-m3,pr-e20,propio,True
+hibrida,ES sin reescribir,bge-m3,pr-c06,propio,True
+hibrida,ES sin reescribir,bge-m3,pr-c09,propio,False
+hibrida,ES sin reescribir,bge-m3,pr-c10,propio,False
+hibrida,ES sin reescribir,bge-m3,pr-c11,propio,False
+hibrida,ES sin reescribir,bge-m3,pr-c12,propio,False
+hibrida,ES sin reescribir,bge-m3,pr-c13,propio,False
+hibrida,ES sin reescribir,bge-m3,of-001,oficial,False
+hibrida,ES sin reescribir,bge-m3,of-002,oficial,False
+hibrida,ES sin reescribir,bge-m3,of-003,oficial,True
+hibrida,ES sin reescribir,bge-m3,of-004,oficial,False
+hibrida,ES sin reescribir,bge-m3,of-005,oficial,True
+hibrida,ES sin reescribir,bge-m3,of-006,oficial,True
+hibrida,ES sin reescribir,bge-m3,of-014,oficial,True
+hibrida,ES sin reescribir,bge-m3,of-015,oficial,False
+hibrida,ES sin reescribir,bge-m3,of-016,oficial,True
+hibrida,ES sin reescribir,bge-m3,of-017,oficial,True
+hibrida,ES sin reescribir,bge-m3,of-018,oficial,False
+hibrida,ES sin reescribir,bge-m3,of-019,oficial,False
+hibrida,ES sin reescribir,bge-m3,of-020,oficial,False
+densa,deepseek-v4-flash,bge-m3,pr-e13,propio,True
+densa,deepseek-v4-flash,bge-m3,pr-e14,propio,True
+densa,deepseek-v4-flash,bge-m3,pr-e15,propio,True
+densa,deepseek-v4-flash,bge-m3,pr-e16,propio,False
+densa,deepseek-v4-flash,bge-m3,pr-e18,propio,True
+densa,deepseek-v4-flash,bge-m3,pr-e19,propio,True
+densa,deepseek-v4-flash,bge-m3,pr-e20,propio,True
+densa,deepseek-v4-flash,bge-m3,pr-c06,propio,True
+densa,deepseek-v4-flash,bge-m3,pr-c09,propio,True
+densa,deepseek-v4-flash,bge-m3,pr-c10,propio,True
+densa,deepseek-v4-flash,bge-m3,pr-c11,propio,False
+densa,deepseek-v4-flash,bge-m3,pr-c12,propio,True
+densa,deepseek-v4-flash,bge-m3,pr-c13,propio,False
+densa,deepseek-v4-flash,bge-m3,of-001,oficial,False
+densa,deepseek-v4-flash,bge-m3,of-002,oficial,True
+densa,deepseek-v4-flash,bge-m3,of-003,oficial,True
+densa,deepseek-v4-flash,bge-m3,of-004,oficial,False
+densa,deepseek-v4-flash,bge-m3,of-005,oficial,True
+densa,deepseek-v4-flash,bge-m3,of-006,oficial,True
+densa,deepseek-v4-flash,bge-m3,of-014,oficial,True
+densa,deepseek-v4-flash,bge-m3,of-015,oficial,False
+densa,deepseek-v4-flash,bge-m3,of-016,oficial,True
+densa,deepseek-v4-flash,bge-m3,of-017,oficial,True
+densa,deepseek-v4-flash,bge-m3,of-018,oficial,False
+densa,deepseek-v4-flash,bge-m3,of-019,oficial,True
+densa,deepseek-v4-flash,bge-m3,of-020,oficial,True
+hibrida,deepseek-v4-flash,bge-m3,pr-e13,propio,True
+hibrida,deepseek-v4-flash,bge-m3,pr-e14,propio,True
+hibrida,deepseek-v4-flash,bge-m3,pr-e15,propio,True
+hibrida,deepseek-v4-flash,bge-m3,pr-e16,propio,False
+hibrida,deepseek-v4-flash,bge-m3,pr-e18,propio,True
+hibrida,deepseek-v4-flash,bge-m3,pr-e19,propio,True
+hibrida,deepseek-v4-flash,bge-m3,pr-e20,propio,True
+hibrida,deepseek-v4-flash,bge-m3,pr-c06,propio,True
+hibrida,deepseek-v4-flash,bge-m3,pr-c09,propio,True
+hibrida,deepseek-v4-flash,bge-m3,pr-c10,propio,True
+hibrida,deepseek-v4-flash,bge-m3,pr-c11,propio,False
+hibrida,deepseek-v4-flash,bge-m3,pr-c12,propio,True
+hibrida,deepseek-v4-flash,bge-m3,pr-c13,propio,False
+hibrida,deepseek-v4-flash,bge-m3,of-001,oficial,False
+hibrida,deepseek-v4-flash,bge-m3,of-002,oficial,True
+hibrida,deepseek-v4-flash,bge-m3,of-003,oficial,True
+hibrida,deepseek-v4-flash,bge-m3,of-004,oficial,True
+hibrida,deepseek-v4-flash,bge-m3,of-005,oficial,True
+hibrida,deepseek-v4-flash,bge-m3,of-006,oficial,True
+hibrida,deepseek-v4-flash,bge-m3,of-014,oficial,True
+hibrida,deepseek-v4-flash,bge-m3,of-015,oficial,False
+hibrida,deepseek-v4-flash,bge-m3,of-016,oficial,True
+hibrida,deepseek-v4-flash,bge-m3,of-017,oficial,True
+hibrida,deepseek-v4-flash,bge-m3,of-018,oficial,False
+hibrida,deepseek-v4-flash,bge-m3,of-019,oficial,True
+hibrida,deepseek-v4-flash,bge-m3,of-020,oficial,True
+densa,gemini-3.5-flash-lite (ctl),bge-m3,pr-e13,propio,True
+densa,gemini-3.5-flash-lite (ctl),bge-m3,pr-e14,propio,True
+densa,gemini-3.5-flash-lite (ctl),bge-m3,pr-e15,propio,True
+densa,gemini-3.5-flash-lite (ctl),bge-m3,pr-e16,propio,True
+densa,gemini-3.5-flash-lite (ctl),bge-m3,pr-e18,propio,True
+densa,gemini-3.5-flash-lite (ctl),bge-m3,pr-e19,propio,True
+densa,gemini-3.5-flash-lite (ctl),bge-m3,pr-e20,propio,True
+densa,gemini-3.5-flash-lite (ctl),bge-m3,pr-c06,propio,True
+densa,gemini-3.5-flash-lite (ctl),bge-m3,pr-c09,propio,True
+densa,gemini-3.5-flash-lite (ctl),bge-m3,pr-c10,propio,True
+densa,gemini-3.5-flash-lite (ctl),bge-m3,pr-c11,propio,False
+densa,gemini-3.5-flash-lite (ctl),bge-m3,pr-c12,propio,True
+densa,gemini-3.5-flash-lite (ctl),bge-m3,pr-c13,propio,False
+densa,gemini-3.5-flash-lite (ctl),bge-m3,of-001,oficial,False
+densa,gemini-3.5-flash-lite (ctl),bge-m3,of-002,oficial,True
+densa,gemini-3.5-flash-lite (ctl),bge-m3,of-003,oficial,True
+densa,gemini-3.5-flash-lite (ctl),bge-m3,of-004,oficial,True
+densa,gemini-3.5-flash-lite (ctl),bge-m3,of-005,oficial,True
+densa,gemini-3.5-flash-lite (ctl),bge-m3,of-006,oficial,True
+densa,gemini-3.5-flash-lite (ctl),bge-m3,of-014,oficial,True
+densa,gemini-3.5-flash-lite (ctl),bge-m3,of-015,oficial,False
+densa,gemini-3.5-flash-lite (ctl),bge-m3,of-016,oficial,True
+densa,gemini-3.5-flash-lite (ctl),bge-m3,of-017,oficial,True
+densa,gemini-3.5-flash-lite (ctl),bge-m3,of-018,oficial,False
+densa,gemini-3.5-flash-lite (ctl),bge-m3,of-019,oficial,True
+densa,gemini-3.5-flash-lite (ctl),bge-m3,of-020,oficial,False
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,pr-e13,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,pr-e14,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,pr-e15,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,pr-e16,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,pr-e18,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,pr-e19,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,pr-e20,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,pr-c06,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,pr-c09,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,pr-c10,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,pr-c11,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,pr-c12,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,pr-c13,propio,False
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,of-001,oficial,False
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,of-002,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,of-003,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,of-004,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,of-005,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,of-006,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,of-014,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,of-015,oficial,False
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,of-016,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,of-017,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,of-018,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,of-019,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,of-020,oficial,False
+densa,gemini-3.8-flash,bge-m3,pr-e13,propio,True
+densa,gemini-3.8-flash,bge-m3,pr-e14,propio,True
+densa,gemini-3.8-flash,bge-m3,pr-e15,propio,True
+densa,gemini-3.8-flash,bge-m3,pr-e16,propio,False
+densa,gemini-3.8-flash,bge-m3,pr-e18,propio,True
+densa,gemini-3.8-flash,bge-m3,pr-e19,propio,True
+densa,gemini-3.8-flash,bge-m3,pr-e20,propio,True
+densa,gemini-3.8-flash,bge-m3,pr-c06,propio,True
+densa,gemini-3.8-flash,bge-m3,pr-c09,propio,True
+densa,gemini-3.8-flash,bge-m3,pr-c10,propio,True
+densa,gemini-3.8-flash,bge-m3,pr-c11,propio,True
+densa,gemini-3.8-flash,bge-m3,pr-c12,propio,True
+densa,gemini-3.8-flash,bge-m3,pr-c13,propio,False
+densa,gemini-3.8-flash,bge-m3,of-001,oficial,False
+densa,gemini-3.8-flash,bge-m3,of-002,oficial,True
+densa,gemini-3.8-flash,bge-m3,of-003,oficial,True
+densa,gemini-3.8-flash,bge-m3,of-004,oficial,False
+densa,gemini-3.8-flash,bge-m3,of-005,oficial,True
+densa,gemini-3.8-flash,bge-m3,of-006,oficial,True
+densa,gemini-3.8-flash,bge-m3,of-014,oficial,True
+densa,gemini-3.8-flash,bge-m3,of-015,oficial,False
+densa,gemini-3.8-flash,bge-m3,of-016,oficial,True
+densa,gemini-3.8-flash,bge-m3,of-017,oficial,True
+densa,gemini-3.8-flash,bge-m3,of-018,oficial,False
+densa,gemini-3.8-flash,bge-m3,of-019,oficial,True
+densa,gemini-3.8-flash,bge-m3,of-020,oficial,False
+hibrida,gemini-3.8-flash,bge-m3,pr-e13,propio,True
+hibrida,gemini-3.8-flash,bge-m3,pr-e14,propio,True
+hibrida,gemini-3.8-flash,bge-m3,pr-e15,propio,True
+hibrida,gemini-3.8-flash,bge-m3,pr-e16,propio,False
+hibrida,gemini-3.8-flash,bge-m3,pr-e18,propio,True
+hibrida,gemini-3.8-flash,bge-m3,pr-e19,propio,True
+hibrida,gemini-3.8-flash,bge-m3,pr-e20,propio,True
+hibrida,gemini-3.8-flash,bge-m3,pr-c06,propio,True
+hibrida,gemini-3.8-flash,bge-m3,pr-c09,propio,True
+hibrida,gemini-3.8-flash,bge-m3,pr-c10,propio,True
+hibrida,gemini-3.8-flash,bge-m3,pr-c11,propio,True
+hibrida,gemini-3.8-flash,bge-m3,pr-c12,propio,True
+hibrida,gemini-3.8-flash,bge-m3,pr-c13,propio,False
+hibrida,gemini-3.8-flash,bge-m3,of-001,oficial,False
+hibrida,gemini-3.8-flash,bge-m3,of-002,oficial,True
+hibrida,gemini-3.8-flash,bge-m3,of-003,oficial,True
+hibrida,gemini-3.8-flash,bge-m3,of-004,oficial,False
+hibrida,gemini-3.8-flash,bge-m3,of-005,oficial,True
+hibrida,gemini-3.8-flash,bge-m3,of-006,oficial,True
+hibrida,gemini-3.8-flash,bge-m3,of-014,oficial,True
+hibrida,gemini-3.8-flash,bge-m3,of-015,oficial,False
+hibrida,gemini-3.8-flash,bge-m3,of-016,oficial,True
+hibrida,gemini-3.8-flash,bge-m3,of-017,oficial,True
+hibrida,gemini-3.8-flash,bge-m3,of-018,oficial,False
+hibrida,gemini-3.8-flash,bge-m3,of-019,oficial,True
+hibrida,gemini-3.8-flash,bge-m3,of-020,oficial,False
+densa,ES sin reescribir,qwen3-embedding-8b,pr-e13,propio,True
+densa,ES sin reescribir,qwen3-embedding-8b,pr-e14,propio,True
+densa,ES sin reescribir,qwen3-embedding-8b,pr-e15,propio,False
+densa,ES sin reescribir,qwen3-embedding-8b,pr-e16,propio,True
+densa,ES sin reescribir,qwen3-embedding-8b,pr-e18,propio,True
+densa,ES sin reescribir,qwen3-embedding-8b,pr-e19,propio,True
+densa,ES sin reescribir,qwen3-embedding-8b,pr-e20,propio,True
+densa,ES sin reescribir,qwen3-embedding-8b,pr-c06,propio,True
+densa,ES sin reescribir,qwen3-embedding-8b,pr-c09,propio,True
+densa,ES sin reescribir,qwen3-embedding-8b,pr-c10,propio,True
+densa,ES sin reescribir,qwen3-embedding-8b,pr-c11,propio,False
+densa,ES sin reescribir,qwen3-embedding-8b,pr-c12,propio,True
+densa,ES sin reescribir,qwen3-embedding-8b,pr-c13,propio,True
+densa,ES sin reescribir,qwen3-embedding-8b,of-001,oficial,False
+densa,ES sin reescribir,qwen3-embedding-8b,of-002,oficial,True
+densa,ES sin reescribir,qwen3-embedding-8b,of-003,oficial,True
+densa,ES sin reescribir,qwen3-embedding-8b,of-004,oficial,False
+densa,ES sin reescribir,qwen3-embedding-8b,of-005,oficial,True
+densa,ES sin reescribir,qwen3-embedding-8b,of-006,oficial,True
+densa,ES sin reescribir,qwen3-embedding-8b,of-014,oficial,True
+densa,ES sin reescribir,qwen3-embedding-8b,of-015,oficial,True
+densa,ES sin reescribir,qwen3-embedding-8b,of-016,oficial,True
+densa,ES sin reescribir,qwen3-embedding-8b,of-017,oficial,True
+densa,ES sin reescribir,qwen3-embedding-8b,of-018,oficial,False
+densa,ES sin reescribir,qwen3-embedding-8b,of-019,oficial,True
+densa,ES sin reescribir,qwen3-embedding-8b,of-020,oficial,False
+hibrida,ES sin reescribir,qwen3-embedding-8b,pr-e13,propio,False
+hibrida,ES sin reescribir,qwen3-embedding-8b,pr-e14,propio,True
+hibrida,ES sin reescribir,qwen3-embedding-8b,pr-e15,propio,False
+hibrida,ES sin reescribir,qwen3-embedding-8b,pr-e16,propio,False
+hibrida,ES sin reescribir,qwen3-embedding-8b,pr-e18,propio,True
+hibrida,ES sin reescribir,qwen3-embedding-8b,pr-e19,propio,True
+hibrida,ES sin reescribir,qwen3-embedding-8b,pr-e20,propio,True
+hibrida,ES sin reescribir,qwen3-embedding-8b,pr-c06,propio,True
+hibrida,ES sin reescribir,qwen3-embedding-8b,pr-c09,propio,False
+hibrida,ES sin reescribir,qwen3-embedding-8b,pr-c10,propio,True
+hibrida,ES sin reescribir,qwen3-embedding-8b,pr-c11,propio,False
+hibrida,ES sin reescribir,qwen3-embedding-8b,pr-c12,propio,False
+hibrida,ES sin reescribir,qwen3-embedding-8b,pr-c13,propio,False
+hibrida,ES sin reescribir,qwen3-embedding-8b,of-001,oficial,False
+hibrida,ES sin reescribir,qwen3-embedding-8b,of-002,oficial,False
+hibrida,ES sin reescribir,qwen3-embedding-8b,of-003,oficial,True
+hibrida,ES sin reescribir,qwen3-embedding-8b,of-004,oficial,False
+hibrida,ES sin reescribir,qwen3-embedding-8b,of-005,oficial,True
+hibrida,ES sin reescribir,qwen3-embedding-8b,of-006,oficial,True
+hibrida,ES sin reescribir,qwen3-embedding-8b,of-014,oficial,True
+hibrida,ES sin reescribir,qwen3-embedding-8b,of-015,oficial,False
+hibrida,ES sin reescribir,qwen3-embedding-8b,of-016,oficial,True
+hibrida,ES sin reescribir,qwen3-embedding-8b,of-017,oficial,True
+hibrida,ES sin reescribir,qwen3-embedding-8b,of-018,oficial,False
+hibrida,ES sin reescribir,qwen3-embedding-8b,of-019,oficial,True
+hibrida,ES sin reescribir,qwen3-embedding-8b,of-020,oficial,False
+densa,deepseek-v4-flash,qwen3-embedding-8b,pr-e13,propio,True
+densa,deepseek-v4-flash,qwen3-embedding-8b,pr-e14,propio,True
+densa,deepseek-v4-flash,qwen3-embedding-8b,pr-e15,propio,True
+densa,deepseek-v4-flash,qwen3-embedding-8b,pr-e16,propio,True
+densa,deepseek-v4-flash,qwen3-embedding-8b,pr-e18,propio,True
+densa,deepseek-v4-flash,qwen3-embedding-8b,pr-e19,propio,True
+densa,deepseek-v4-flash,qwen3-embedding-8b,pr-e20,propio,True
+densa,deepseek-v4-flash,qwen3-embedding-8b,pr-c06,propio,True
+densa,deepseek-v4-flash,qwen3-embedding-8b,pr-c09,propio,True
+densa,deepseek-v4-flash,qwen3-embedding-8b,pr-c10,propio,True
+densa,deepseek-v4-flash,qwen3-embedding-8b,pr-c11,propio,False
+densa,deepseek-v4-flash,qwen3-embedding-8b,pr-c12,propio,True
+densa,deepseek-v4-flash,qwen3-embedding-8b,pr-c13,propio,True
+densa,deepseek-v4-flash,qwen3-embedding-8b,of-001,oficial,False
+densa,deepseek-v4-flash,qwen3-embedding-8b,of-002,oficial,True
+densa,deepseek-v4-flash,qwen3-embedding-8b,of-003,oficial,True
+densa,deepseek-v4-flash,qwen3-embedding-8b,of-004,oficial,True
+densa,deepseek-v4-flash,qwen3-embedding-8b,of-005,oficial,True
+densa,deepseek-v4-flash,qwen3-embedding-8b,of-006,oficial,True
+densa,deepseek-v4-flash,qwen3-embedding-8b,of-014,oficial,True
+densa,deepseek-v4-flash,qwen3-embedding-8b,of-015,oficial,True
+densa,deepseek-v4-flash,qwen3-embedding-8b,of-016,oficial,True
+densa,deepseek-v4-flash,qwen3-embedding-8b,of-017,oficial,True
+densa,deepseek-v4-flash,qwen3-embedding-8b,of-018,oficial,False
+densa,deepseek-v4-flash,qwen3-embedding-8b,of-019,oficial,True
+densa,deepseek-v4-flash,qwen3-embedding-8b,of-020,oficial,False
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,pr-e13,propio,True
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,pr-e14,propio,True
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,pr-e15,propio,True
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,pr-e16,propio,True
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,pr-e18,propio,True
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,pr-e19,propio,True
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,pr-e20,propio,True
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,pr-c06,propio,True
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,pr-c09,propio,True
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,pr-c10,propio,True
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,pr-c11,propio,True
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,pr-c12,propio,True
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,pr-c13,propio,True
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,of-001,oficial,False
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,of-002,oficial,True
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,of-003,oficial,True
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,of-004,oficial,True
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,of-005,oficial,True
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,of-006,oficial,True
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,of-014,oficial,True
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,of-015,oficial,True
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,of-016,oficial,True
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,of-017,oficial,True
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,of-018,oficial,True
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,of-019,oficial,True
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,of-020,oficial,False
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-e13,propio,True
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-e14,propio,True
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-e15,propio,True
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-e16,propio,True
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-e18,propio,True
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-e19,propio,True
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-e20,propio,True
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-c06,propio,True
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-c09,propio,True
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-c10,propio,True
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-c11,propio,True
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-c12,propio,True
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-c13,propio,False
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-001,oficial,False
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-002,oficial,True
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-003,oficial,True
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-004,oficial,True
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-005,oficial,True
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-006,oficial,True
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-014,oficial,True
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-015,oficial,True
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-016,oficial,True
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-017,oficial,True
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-018,oficial,False
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-019,oficial,True
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-020,oficial,False
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-e13,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-e14,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-e15,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-e16,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-e18,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-e19,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-e20,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-c06,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-c09,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-c10,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-c11,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-c12,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,pr-c13,propio,False
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-001,oficial,False
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-002,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-003,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-004,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-005,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-006,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-014,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-015,oficial,False
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-016,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-017,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-018,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-019,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,of-020,oficial,False
+densa,gemini-3.8-flash,qwen3-embedding-8b,pr-e13,propio,True
+densa,gemini-3.8-flash,qwen3-embedding-8b,pr-e14,propio,True
+densa,gemini-3.8-flash,qwen3-embedding-8b,pr-e15,propio,True
+densa,gemini-3.8-flash,qwen3-embedding-8b,pr-e16,propio,True
+densa,gemini-3.8-flash,qwen3-embedding-8b,pr-e18,propio,True
+densa,gemini-3.8-flash,qwen3-embedding-8b,pr-e19,propio,True
+densa,gemini-3.8-flash,qwen3-embedding-8b,pr-e20,propio,True
+densa,gemini-3.8-flash,qwen3-embedding-8b,pr-c06,propio,True
+densa,gemini-3.8-flash,qwen3-embedding-8b,pr-c09,propio,True
+densa,gemini-3.8-flash,qwen3-embedding-8b,pr-c10,propio,True
+densa,gemini-3.8-flash,qwen3-embedding-8b,pr-c11,propio,True
+densa,gemini-3.8-flash,qwen3-embedding-8b,pr-c12,propio,True
+densa,gemini-3.8-flash,qwen3-embedding-8b,pr-c13,propio,True
+densa,gemini-3.8-flash,qwen3-embedding-8b,of-001,oficial,False
+densa,gemini-3.8-flash,qwen3-embedding-8b,of-002,oficial,True
+densa,gemini-3.8-flash,qwen3-embedding-8b,of-003,oficial,True
+densa,gemini-3.8-flash,qwen3-embedding-8b,of-004,oficial,True
+densa,gemini-3.8-flash,qwen3-embedding-8b,of-005,oficial,True
+densa,gemini-3.8-flash,qwen3-embedding-8b,of-006,oficial,True
+densa,gemini-3.8-flash,qwen3-embedding-8b,of-014,oficial,True
+densa,gemini-3.8-flash,qwen3-embedding-8b,of-015,oficial,True
+densa,gemini-3.8-flash,qwen3-embedding-8b,of-016,oficial,True
+densa,gemini-3.8-flash,qwen3-embedding-8b,of-017,oficial,True
+densa,gemini-3.8-flash,qwen3-embedding-8b,of-018,oficial,True
+densa,gemini-3.8-flash,qwen3-embedding-8b,of-019,oficial,True
+densa,gemini-3.8-flash,qwen3-embedding-8b,of-020,oficial,False
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,pr-e13,propio,True
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,pr-e14,propio,True
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,pr-e15,propio,True
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,pr-e16,propio,True
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,pr-e18,propio,True
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,pr-e19,propio,True
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,pr-e20,propio,True
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,pr-c06,propio,True
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,pr-c09,propio,True
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,pr-c10,propio,True
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,pr-c11,propio,True
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,pr-c12,propio,True
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,pr-c13,propio,True
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,of-001,oficial,False
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,of-002,oficial,True
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,of-003,oficial,True
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,of-004,oficial,True
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,of-005,oficial,True
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,of-006,oficial,True
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,of-014,oficial,True
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,of-015,oficial,True
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,of-016,oficial,True
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,of-017,oficial,True
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,of-018,oficial,True
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,of-019,oficial,True
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,of-020,oficial,False
+densa,ES sin reescribir,gemini-embedding-001,pr-e13,propio,True
+densa,ES sin reescribir,gemini-embedding-001,pr-e14,propio,True
+densa,ES sin reescribir,gemini-embedding-001,pr-e15,propio,True
+densa,ES sin reescribir,gemini-embedding-001,pr-e16,propio,False
+densa,ES sin reescribir,gemini-embedding-001,pr-e18,propio,True
+densa,ES sin reescribir,gemini-embedding-001,pr-e19,propio,True
+densa,ES sin reescribir,gemini-embedding-001,pr-e20,propio,True
+densa,ES sin reescribir,gemini-embedding-001,pr-c06,propio,True
+densa,ES sin reescribir,gemini-embedding-001,pr-c09,propio,True
+densa,ES sin reescribir,gemini-embedding-001,pr-c10,propio,True
+densa,ES sin reescribir,gemini-embedding-001,pr-c11,propio,True
+densa,ES sin reescribir,gemini-embedding-001,pr-c12,propio,True
+densa,ES sin reescribir,gemini-embedding-001,pr-c13,propio,False
+densa,ES sin reescribir,gemini-embedding-001,of-001,oficial,False
+densa,ES sin reescribir,gemini-embedding-001,of-002,oficial,True
+densa,ES sin reescribir,gemini-embedding-001,of-003,oficial,True
+densa,ES sin reescribir,gemini-embedding-001,of-004,oficial,True
+densa,ES sin reescribir,gemini-embedding-001,of-005,oficial,True
+densa,ES sin reescribir,gemini-embedding-001,of-006,oficial,True
+densa,ES sin reescribir,gemini-embedding-001,of-014,oficial,True
+densa,ES sin reescribir,gemini-embedding-001,of-015,oficial,True
+densa,ES sin reescribir,gemini-embedding-001,of-016,oficial,True
+densa,ES sin reescribir,gemini-embedding-001,of-017,oficial,True
+densa,ES sin reescribir,gemini-embedding-001,of-018,oficial,False
+densa,ES sin reescribir,gemini-embedding-001,of-019,oficial,True
+densa,ES sin reescribir,gemini-embedding-001,of-020,oficial,False
+hibrida,ES sin reescribir,gemini-embedding-001,pr-e13,propio,True
+hibrida,ES sin reescribir,gemini-embedding-001,pr-e14,propio,True
+hibrida,ES sin reescribir,gemini-embedding-001,pr-e15,propio,False
+hibrida,ES sin reescribir,gemini-embedding-001,pr-e16,propio,False
+hibrida,ES sin reescribir,gemini-embedding-001,pr-e18,propio,True
+hibrida,ES sin reescribir,gemini-embedding-001,pr-e19,propio,True
+hibrida,ES sin reescribir,gemini-embedding-001,pr-e20,propio,True
+hibrida,ES sin reescribir,gemini-embedding-001,pr-c06,propio,True
+hibrida,ES sin reescribir,gemini-embedding-001,pr-c09,propio,False
+hibrida,ES sin reescribir,gemini-embedding-001,pr-c10,propio,True
+hibrida,ES sin reescribir,gemini-embedding-001,pr-c11,propio,False
+hibrida,ES sin reescribir,gemini-embedding-001,pr-c12,propio,False
+hibrida,ES sin reescribir,gemini-embedding-001,pr-c13,propio,False
+hibrida,ES sin reescribir,gemini-embedding-001,of-001,oficial,False
+hibrida,ES sin reescribir,gemini-embedding-001,of-002,oficial,False
+hibrida,ES sin reescribir,gemini-embedding-001,of-003,oficial,True
+hibrida,ES sin reescribir,gemini-embedding-001,of-004,oficial,False
+hibrida,ES sin reescribir,gemini-embedding-001,of-005,oficial,True
+hibrida,ES sin reescribir,gemini-embedding-001,of-006,oficial,True
+hibrida,ES sin reescribir,gemini-embedding-001,of-014,oficial,True
+hibrida,ES sin reescribir,gemini-embedding-001,of-015,oficial,False
+hibrida,ES sin reescribir,gemini-embedding-001,of-016,oficial,True
+hibrida,ES sin reescribir,gemini-embedding-001,of-017,oficial,True
+hibrida,ES sin reescribir,gemini-embedding-001,of-018,oficial,False
+hibrida,ES sin reescribir,gemini-embedding-001,of-019,oficial,True
+hibrida,ES sin reescribir,gemini-embedding-001,of-020,oficial,False
+densa,deepseek-v4-flash,gemini-embedding-001,pr-e13,propio,True
+densa,deepseek-v4-flash,gemini-embedding-001,pr-e14,propio,True
+densa,deepseek-v4-flash,gemini-embedding-001,pr-e15,propio,True
+densa,deepseek-v4-flash,gemini-embedding-001,pr-e16,propio,False
+densa,deepseek-v4-flash,gemini-embedding-001,pr-e18,propio,True
+densa,deepseek-v4-flash,gemini-embedding-001,pr-e19,propio,True
+densa,deepseek-v4-flash,gemini-embedding-001,pr-e20,propio,True
+densa,deepseek-v4-flash,gemini-embedding-001,pr-c06,propio,True
+densa,deepseek-v4-flash,gemini-embedding-001,pr-c09,propio,True
+densa,deepseek-v4-flash,gemini-embedding-001,pr-c10,propio,True
+densa,deepseek-v4-flash,gemini-embedding-001,pr-c11,propio,True
+densa,deepseek-v4-flash,gemini-embedding-001,pr-c12,propio,True
+densa,deepseek-v4-flash,gemini-embedding-001,pr-c13,propio,True
+densa,deepseek-v4-flash,gemini-embedding-001,of-001,oficial,False
+densa,deepseek-v4-flash,gemini-embedding-001,of-002,oficial,True
+densa,deepseek-v4-flash,gemini-embedding-001,of-003,oficial,True
+densa,deepseek-v4-flash,gemini-embedding-001,of-004,oficial,True
+densa,deepseek-v4-flash,gemini-embedding-001,of-005,oficial,True
+densa,deepseek-v4-flash,gemini-embedding-001,of-006,oficial,True
+densa,deepseek-v4-flash,gemini-embedding-001,of-014,oficial,True
+densa,deepseek-v4-flash,gemini-embedding-001,of-015,oficial,True
+densa,deepseek-v4-flash,gemini-embedding-001,of-016,oficial,True
+densa,deepseek-v4-flash,gemini-embedding-001,of-017,oficial,True
+densa,deepseek-v4-flash,gemini-embedding-001,of-018,oficial,False
+densa,deepseek-v4-flash,gemini-embedding-001,of-019,oficial,True
+densa,deepseek-v4-flash,gemini-embedding-001,of-020,oficial,False
+hibrida,deepseek-v4-flash,gemini-embedding-001,pr-e13,propio,True
+hibrida,deepseek-v4-flash,gemini-embedding-001,pr-e14,propio,True
+hibrida,deepseek-v4-flash,gemini-embedding-001,pr-e15,propio,True
+hibrida,deepseek-v4-flash,gemini-embedding-001,pr-e16,propio,True
+hibrida,deepseek-v4-flash,gemini-embedding-001,pr-e18,propio,True
+hibrida,deepseek-v4-flash,gemini-embedding-001,pr-e19,propio,True
+hibrida,deepseek-v4-flash,gemini-embedding-001,pr-e20,propio,True
+hibrida,deepseek-v4-flash,gemini-embedding-001,pr-c06,propio,True
+hibrida,deepseek-v4-flash,gemini-embedding-001,pr-c09,propio,True
+hibrida,deepseek-v4-flash,gemini-embedding-001,pr-c10,propio,True
+hibrida,deepseek-v4-flash,gemini-embedding-001,pr-c11,propio,True
+hibrida,deepseek-v4-flash,gemini-embedding-001,pr-c12,propio,True
+hibrida,deepseek-v4-flash,gemini-embedding-001,pr-c13,propio,True
+hibrida,deepseek-v4-flash,gemini-embedding-001,of-001,oficial,False
+hibrida,deepseek-v4-flash,gemini-embedding-001,of-002,oficial,True
+hibrida,deepseek-v4-flash,gemini-embedding-001,of-003,oficial,True
+hibrida,deepseek-v4-flash,gemini-embedding-001,of-004,oficial,True
+hibrida,deepseek-v4-flash,gemini-embedding-001,of-005,oficial,True
+hibrida,deepseek-v4-flash,gemini-embedding-001,of-006,oficial,True
+hibrida,deepseek-v4-flash,gemini-embedding-001,of-014,oficial,True
+hibrida,deepseek-v4-flash,gemini-embedding-001,of-015,oficial,True
+hibrida,deepseek-v4-flash,gemini-embedding-001,of-016,oficial,True
+hibrida,deepseek-v4-flash,gemini-embedding-001,of-017,oficial,True
+hibrida,deepseek-v4-flash,gemini-embedding-001,of-018,oficial,False
+hibrida,deepseek-v4-flash,gemini-embedding-001,of-019,oficial,True
+hibrida,deepseek-v4-flash,gemini-embedding-001,of-020,oficial,False
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-e13,propio,True
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-e14,propio,True
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-e15,propio,True
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-e16,propio,True
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-e18,propio,True
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-e19,propio,True
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-e20,propio,True
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-c06,propio,True
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-c09,propio,True
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-c10,propio,True
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-c11,propio,True
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-c12,propio,True
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-c13,propio,False
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-001,oficial,False
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-002,oficial,True
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-003,oficial,True
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-004,oficial,True
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-005,oficial,True
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-006,oficial,True
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-014,oficial,True
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-015,oficial,True
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-016,oficial,True
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-017,oficial,True
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-018,oficial,False
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-019,oficial,True
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-020,oficial,False
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-e13,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-e14,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-e15,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-e16,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-e18,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-e19,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-e20,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-c06,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-c09,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-c10,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-c11,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-c12,propio,True
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,pr-c13,propio,False
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-001,oficial,False
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-002,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-003,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-004,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-005,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-006,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-014,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-015,oficial,False
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-016,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-017,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-018,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-019,oficial,True
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,of-020,oficial,False
+densa,gemini-3.8-flash,gemini-embedding-001,pr-e13,propio,True
+densa,gemini-3.8-flash,gemini-embedding-001,pr-e14,propio,True
+densa,gemini-3.8-flash,gemini-embedding-001,pr-e15,propio,True
+densa,gemini-3.8-flash,gemini-embedding-001,pr-e16,propio,False
+densa,gemini-3.8-flash,gemini-embedding-001,pr-e18,propio,True
+densa,gemini-3.8-flash,gemini-embedding-001,pr-e19,propio,True
+densa,gemini-3.8-flash,gemini-embedding-001,pr-e20,propio,True
+densa,gemini-3.8-flash,gemini-embedding-001,pr-c06,propio,True
+densa,gemini-3.8-flash,gemini-embedding-001,pr-c09,propio,True
+densa,gemini-3.8-flash,gemini-embedding-001,pr-c10,propio,True
+densa,gemini-3.8-flash,gemini-embedding-001,pr-c11,propio,True
+densa,gemini-3.8-flash,gemini-embedding-001,pr-c12,propio,True
+densa,gemini-3.8-flash,gemini-embedding-001,pr-c13,propio,False
+densa,gemini-3.8-flash,gemini-embedding-001,of-001,oficial,False
+densa,gemini-3.8-flash,gemini-embedding-001,of-002,oficial,True
+densa,gemini-3.8-flash,gemini-embedding-001,of-003,oficial,True
+densa,gemini-3.8-flash,gemini-embedding-001,of-004,oficial,True
+densa,gemini-3.8-flash,gemini-embedding-001,of-005,oficial,True
+densa,gemini-3.8-flash,gemini-embedding-001,of-006,oficial,True
+densa,gemini-3.8-flash,gemini-embedding-001,of-014,oficial,True
+densa,gemini-3.8-flash,gemini-embedding-001,of-015,oficial,False
+densa,gemini-3.8-flash,gemini-embedding-001,of-016,oficial,True
+densa,gemini-3.8-flash,gemini-embedding-001,of-017,oficial,True
+densa,gemini-3.8-flash,gemini-embedding-001,of-018,oficial,False
+densa,gemini-3.8-flash,gemini-embedding-001,of-019,oficial,True
+densa,gemini-3.8-flash,gemini-embedding-001,of-020,oficial,False
+hibrida,gemini-3.8-flash,gemini-embedding-001,pr-e13,propio,True
+hibrida,gemini-3.8-flash,gemini-embedding-001,pr-e14,propio,True
+hibrida,gemini-3.8-flash,gemini-embedding-001,pr-e15,propio,True
+hibrida,gemini-3.8-flash,gemini-embedding-001,pr-e16,propio,True
+hibrida,gemini-3.8-flash,gemini-embedding-001,pr-e18,propio,True
+hibrida,gemini-3.8-flash,gemini-embedding-001,pr-e19,propio,True
+hibrida,gemini-3.8-flash,gemini-embedding-001,pr-e20,propio,True
+hibrida,gemini-3.8-flash,gemini-embedding-001,pr-c06,propio,True
+hibrida,gemini-3.8-flash,gemini-embedding-001,pr-c09,propio,True
+hibrida,gemini-3.8-flash,gemini-embedding-001,pr-c10,propio,True
+hibrida,gemini-3.8-flash,gemini-embedding-001,pr-c11,propio,True
+hibrida,gemini-3.8-flash,gemini-embedding-001,pr-c12,propio,True
+hibrida,gemini-3.8-flash,gemini-embedding-001,pr-c13,propio,True
+hibrida,gemini-3.8-flash,gemini-embedding-001,of-001,oficial,False
+hibrida,gemini-3.8-flash,gemini-embedding-001,of-002,oficial,True
+hibrida,gemini-3.8-flash,gemini-embedding-001,of-003,oficial,True
+hibrida,gemini-3.8-flash,gemini-embedding-001,of-004,oficial,True
+hibrida,gemini-3.8-flash,gemini-embedding-001,of-005,oficial,True
+hibrida,gemini-3.8-flash,gemini-embedding-001,of-006,oficial,True
+hibrida,gemini-3.8-flash,gemini-embedding-001,of-014,oficial,True
+hibrida,gemini-3.8-flash,gemini-embedding-001,of-015,oficial,False
+hibrida,gemini-3.8-flash,gemini-embedding-001,of-016,oficial,True
+hibrida,gemini-3.8-flash,gemini-embedding-001,of-017,oficial,True
+hibrida,gemini-3.8-flash,gemini-embedding-001,of-018,oficial,True
+hibrida,gemini-3.8-flash,gemini-embedding-001,of-019,oficial,True
+hibrida,gemini-3.8-flash,gemini-embedding-001,of-020,oficial,False

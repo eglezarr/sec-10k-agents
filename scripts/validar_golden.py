@@ -24,7 +24,7 @@ A nivel de FICHERO (con --final): 20 preguntas y >=6 comparativas.
 
 Uso:
     python scripts/validar_golden.py golden/golden_set.jsonl --final
-    python scripts/validar_golden.py golden/propio_borrador.jsonl
+    python scripts/validar_golden.py golden/oficial_20.jsonl --final
 """
 
 from __future__ import annotations

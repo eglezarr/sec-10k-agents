@@ -1,0 +1,105 @@
+llm,id,consulta
+ES sin reescribir,pr-e13,¿A qué queda limitada la exposición máxima de Alphabet por sus arrendamientos con entidades de interés variable (VIE)?
+ES sin reescribir,pr-e14,¿Por qué no consolida Meta en su balance el joint venture del campus de datacenters de Luisiana?
+ES sin reescribir,pr-e15,¿Qué importe de pagos fijos por arrendamientos adicionales aún no iniciados tenía comprometidos Apple al cierre de su ejercicio 2024?
+ES sin reescribir,pr-e16,¿Qué dice NVIDIA en su 10-K del ejercicio cerrado en enero de 2024 sobre las primas y depósitos pagados para asegurar suministro y capacidad?
+ES sin reescribir,pr-e18,¿Qué porcentaje de los ingresos consolidados de Amazon aportó su segmento internacional en 2024?
+ES sin reescribir,pr-e19,"¿Cuánto disminuiría el valor razonable de los valores de renta variable de Alphabet ante una caída adversa del 10 % de su precio, a 31 de diciembre de 2024?"
+ES sin reescribir,pr-e20,¿Qué riesgo señalaba Microsoft en su 10-K de FY2024 por la impugnación de la FTC a la adquisición de Activision Blizzard?
+ES sin reescribir,pr-c06,"¿Cómo evolucionó el beneficio neto de Apple entre FY2024 y FY2025, y qué papel jugaron los Servicios?"
+ES sin reescribir,pr-c09,"¿Cuánto creció el gasto en I+D de Microsoft entre FY2024 y FY2025, y qué lo impulsó?"
+ES sin reescribir,pr-c10,"¿Cómo varió el beneficio bruto de NVIDIA entre FY2024 y FY2025, y qué impulsó el margen?"
+ES sin reescribir,pr-c11,"¿Cómo cambió Meta la política de amortización de sus servidores entre 2024 y 2025, y cómo afectó a su beneficio neto?"
+ES sin reescribir,pr-c12,"¿Cómo cambió Amazon la vida útil de sus servidores y equipos de red entre 2024 y 2025, y cómo evolucionó su resultado operativo?"
+ES sin reescribir,pr-c13,"¿Cómo varió el flujo de caja operativo de Alphabet entre 2024 y 2025, y qué dice la dirección sobre su inversión en infraestructura técnica?"
+ES sin reescribir,of-001,¿Qué dice NVIDIA en su 10-K de FY2025 sobre la competencia en el mercado chino y los controles de exportación?
+ES sin reescribir,of-002,¿Qué riesgo de seguridad asocia Microsoft en FY2025 al uso creciente de modelos de IA generativa en sus sistemas internos?
+ES sin reescribir,of-003,¿Qué dice Meta en FY2025 sobre las bases legales en las que se apoya para transferir datos de la Unión Europea a Estados Unidos?
+ES sin reescribir,of-004,¿Qué novedad arancelaria señala Apple entre los riesgos de su 10-K de FY2025?
+ES sin reescribir,of-005,¿Qué demanda antimonopolio sobre su negocio de búsqueda menciona Alphabet en su 10-K de FY2025?
+ES sin reescribir,of-006,"¿Qué porcentaje de los ingresos consolidados de Amazon aportó el segmento internacional en 2025, según el apartado de riesgo de mercado de su 10-K?"
+ES sin reescribir,of-014,"¿Cuánto creció el revenue de Microsoft entre FY2024 y FY2025, y qué destaca la dirección como motor de ese crecimiento?"
+ES sin reescribir,of-015,"¿Cuánto creció el revenue de NVIDIA entre FY2024 y FY2025, y a qué lo atribuye la dirección?"
+ES sin reescribir,of-016,"¿Cuánto aumentó el gasto en I+D de Meta entre 2024 y 2025, y a qué lo atribuye la compañía?"
+ES sin reescribir,of-017,"¿Cómo evolucionó el beneficio operativo de Amazon entre 2024 y 2025, y qué previsión dio para el primer trimestre siguiente?"
+ES sin reescribir,of-018,"¿Cuánto crecieron los ingresos de Alphabet entre 2024 y 2025, y cuánto invirtió en capex en cada uno de esos ejercicios?"
+ES sin reescribir,of-019,"¿Cómo cambió el beneficio bruto de Apple entre FY2024 y FY2025, y qué dice la dirección del margen bruto de productos?"
+ES sin reescribir,of-020,"¿Cómo varió el beneficio neto de Meta entre 2024 y 2025, y qué explica esa variación?"
+deepseek-v4-flash,pr-e13,What is the maximum exposure to loss for Alphabet Inc. related to operating leases with variable interest entities (VIEs)?
+deepseek-v4-flash,pr-e14,Meta consolidation policy joint venture Louisiana data center campus balance sheet
+deepseek-v4-flash,pr-e15,Apple fixed lease payments for leases not yet commenced fiscal 2024
+deepseek-v4-flash,pr-e16,NVIDIA 10-K January 2024 premiums deposits paid secure supply capacity
+deepseek-v4-flash,pr-e18,Amazon 10-K 2024 international segment net sales as percentage of consolidated revenue
+deepseek-v4-flash,pr-e19,Alphabet Inc. fair value of equity securities adverse 10% price decline December 31 2024
+deepseek-v4-flash,pr-e20,Microsoft FY2024 10-K risk factor FTC challenge Activision Blizzard acquisition
+deepseek-v4-flash,pr-c06,Apple net income comparison fiscal year 2024 2025 Services segment impact
+deepseek-v4-flash,pr-c09,Microsoft research and development expenses increase fiscal year 2024 to 2025 drivers
+deepseek-v4-flash,pr-c10,NVIDIA gross profit change FY2024 FY2025 gross margin drivers
+deepseek-v4-flash,pr-c11,Meta depreciation policy change servers 2024 2025 impact net income
+deepseek-v4-flash,pr-c12,Amazon change in estimated useful lives servers network equipment 2024 2025 operating income impact
+deepseek-v4-flash,pr-c13,Alphabet operating cash flow change 2024 2025 management discussion investment in technical infrastructure
+deepseek-v4-flash,of-001,NVIDIA FY2025 10-K China competition export controls
+deepseek-v4-flash,of-002,security risk from increased use of generative AI models in internal systems Microsoft fiscal year 2025
+deepseek-v4-flash,of-003,Meta Platforms 10-K FY2025 legal bases transfer personal data European Union United States adequacy decision standard contractual clauses safeguards
+deepseek-v4-flash,of-004,Apple 10-K FY2025 risk factors tariffs
+deepseek-v4-flash,of-005,antitrust lawsuit search business Google Alphabet 10-K 2025
+deepseek-v4-flash,of-006,Amazon international segment percentage of consolidated revenue 2025 market risk
+deepseek-v4-flash,of-014,Microsoft revenue growth fiscal year 2024 to fiscal year 2025 management discussion drivers
+deepseek-v4-flash,of-015,NVIDIA revenue growth fiscal year 2024 to fiscal year 2025 management discussion attribution
+deepseek-v4-flash,of-016,Meta research and development expenses increase from fiscal year 2024 to 2025 attributed to
+deepseek-v4-flash,of-017,Amazon operating income 2024 2025 year-over-year change and first quarter guidance
+deepseek-v4-flash,of-018,Alphabet revenue growth 2024 2025 capital expenditures annual
+deepseek-v4-flash,of-019,Apple gross profit change FY2024 FY2025 management discussion product gross margin
+deepseek-v4-flash,of-020,Meta net income change 2024 to 2025 factors explanation
+gemini-3.5-flash-lite (ctl),pr-e13,Alphabet maximum exposure to loss variable interest entities VIE leases
+gemini-3.5-flash-lite (ctl),pr-e14,Meta unsolidified variable interest entity data center joint venture Louisiana balance sheet accounting treatment
+gemini-3.5-flash-lite (ctl),pr-e15,Apple future lease commitments not yet commenced fixed payments 2024
+gemini-3.5-flash-lite (ctl),pr-e16,supply obligations prepayments purchase commitments inventory component capacity payments
+gemini-3.5-flash-lite (ctl),pr-e18,International segment net sales percentage of consolidated revenue 2024
+gemini-3.5-flash-lite (ctl),pr-e19,Alphabet equity securities fair value sensitivity analysis 10 percent adverse change December 31 2024
+gemini-3.5-flash-lite (ctl),pr-e20,Activision Blizzard acquisition FTC challenge regulatory antitrust risk
+gemini-3.5-flash-lite (ctl),pr-c06,Apple net income growth FY2025 FY2024 Services segment revenue contribution drivers
+gemini-3.5-flash-lite (ctl),pr-c09,Microsoft Research and Development R&D expense increase growth drivers fiscal year 2025 2024
+gemini-3.5-flash-lite (ctl),pr-c10,NVIDIA gross profit increase decrease FY2025 FY2024 gross margin drivers revenue cost of sales
+gemini-3.5-flash-lite (ctl),pr-c11,Meta servers useful life depreciation policy change net income impact 2024 2025
+gemini-3.5-flash-lite (ctl),pr-c12,Amazon estimated useful life servers networking equipment operating income change 2024 2025
+gemini-3.5-flash-lite (ctl),pr-c13,Alphabet operating cash flow variance 2024 to 2025 technical infrastructure capital expenditures management discussion and analysis
+gemini-3.5-flash-lite (ctl),of-001,NVIDIA FY2025 Form 10-K China market competition export controls restrictions US government
+gemini-3.5-flash-lite (ctl),of-002,Microsoft generative AI internal systems security risks FY2025
+gemini-3.5-flash-lite (ctl),of-003,Meta Platforms EU US data transfer legal basis GDPR standard contractual clauses adequacy decision FY 2025 10-K
+gemini-3.5-flash-lite (ctl),of-004,tariff risk trade policy import duties international trade custom tariffs
+gemini-3.5-flash-lite (ctl),of-005,Alphabet antitrust search lawsuit litigation business 10-K FY2025
+gemini-3.5-flash-lite (ctl),of-006,International segment percentage of consolidated revenue 2025 quantitative and qualitative disclosures about market risk
+gemini-3.5-flash-lite (ctl),of-014,Microsoft revenue growth FY2025 compared to FY2024 drivers management discussion and analysis
+gemini-3.5-flash-lite (ctl),of-015,NVIDIA revenue growth fiscal year 2025 compared to 2024 drivers management discussion and analysis MD&A
+gemini-3.5-flash-lite (ctl),of-016,Meta Platforms research and development expense increase 2025 2024 drivers reasons
+gemini-3.5-flash-lite (ctl),of-017,Amazon operating income 2024 2025 guidance first quarter Q1
+gemini-3.5-flash-lite (ctl),of-018,Alphabet revenue growth 2024 to 2025 capital expenditures additions to property and equipment each fiscal year
+gemini-3.5-flash-lite (ctl),of-019,Apple gross profit change FY2024 FY2025 products gross margin management discussion and analysis MD&A
+gemini-3.5-flash-lite (ctl),of-020,Meta Platforms net income increase decrease drivers 2025 2024 consolidated statements of operations management discussion and analysis
+gemini-3.8-flash,pr-e13,"Alphabet ""maximum exposure to loss"" (""variable interest entities"" OR ""VIEs"") leases"
+gemini-3.8-flash,pr-e14,"Meta Platforms ""data center"" Louisiana (""joint venture"" OR ""variable interest entity"" OR ""VIE"") (""equity method"" OR consolidation OR ""primary beneficiary"")"
+gemini-3.8-flash,pr-e15,"Apple ""leases that have not yet commenced"" undiscounted fixed payments 2024"
+gemini-3.8-flash,pr-e16,"NVIDIA 10-K fiscal 2024 ""advance payments"" OR prepayments OR deposits ""secure supply"" OR ""manufacturing capacity"" purchase commitments"
+gemini-3.8-flash,pr-e18,Amazon 2024 International segment net sales percentage of consolidated net sales
+gemini-3.8-flash,pr-e19,"Alphabet ""December 31, 2024"" ""equity price risk"" ""fair value"" ""equity securities"" (""hypothetical 10%"" OR ""10% adverse"")"
+gemini-3.8-flash,pr-e20,"Microsoft"" ""Activision Blizzard"" (""Federal Trade Commission"" OR ""FTC"") (""Risk Factors"" OR ""Item 1A"" OR ""Legal Proceedings"") (challenge OR appeal OR litigation)"
+gemini-3.8-flash,pr-c06,"Apple ""net income"" ""Services"" net sales fiscal year 2025 2024 results of operations"
+gemini-3.8-flash,pr-c09,"research and development"" expenses ""fiscal year 2025"" ""fiscal year 2024"" (""increased"" OR ""increase"") (""driven by"" OR ""primarily due to"")"
+gemini-3.8-flash,pr-c10,"NVIDIA ""gross profit"" OR ""gross margin"" ""fiscal 2025"" ""fiscal 2024"" drivers ""Results of Operations"
+gemini-3.8-flash,pr-c11,Meta Platforms change in estimated useful lives servers network equipment depreciation expense effect on net income
+gemini-3.8-flash,pr-c12,"Amazon ""useful life"" servers networking equipment ""operating income"" ""change in accounting estimate"
+gemini-3.8-flash,pr-c13,"Alphabet ""net cash provided by operating activities"" ""technical infrastructure"" ""capital expenditures"" 2024 2025"
+gemini-3.8-flash,of-001,"NVIDIA China ""export controls"" competition ""licensing requirements"
+gemini-3.8-flash,of-002,"Microsoft ""generative artificial intelligence"" OR ""generative AI"" internal systems cybersecurity security risks vulnerabilities"
+gemini-3.8-flash,of-003,Meta Platforms cross-border data transfers European Union to United States legal bases Standard Contractual Clauses EU-U.S. Data Privacy Framework
+gemini-3.8-flash,of-004,"Apple Inc."" ""Item 1A"" ""Risk Factors"" tariffs ""import duties"" OR ""trade restrictions"" OR ""trade policies"
+gemini-3.8-flash,of-005,"Alphabet ""antitrust"" search (""Department of Justice"" OR DOJ) ""legal proceedings"
+gemini-3.8-flash,of-006,"Amazon ""International segment"" percentage OR percent of consolidated net sales 2025 ""market risk"
+gemini-3.8-flash,of-014,"Microsoft"" revenue ""fiscal year 2025 compared to fiscal year 2024"" ""Results of Operations"" ""primarily driven by"
+gemini-3.8-flash,of-015,"NVIDIA revenue increase fiscal year 2025 compared to 2024 ""primarily driven by"" OR ""primarily due to"
+gemini-3.8-flash,of-016,"Meta Platforms ""research and development"" expenses increase 2025 compared to 2024 ""primarily due to"" OR ""driven by"
+gemini-3.8-flash,of-017,"Amazon ""operating income"" 2024 2025 ""first quarter"" outlook guidance ""results of operations"
+gemini-3.8-flash,of-018,"Alphabet Inc. revenues ""capital expenditures"" OR ""purchases of property and equipment"" 2024 2025"
+gemini-3.8-flash,of-019,"Apple ""gross profit"" ""Products gross margin"" 2025 2024 ""Management's Discussion and Analysis"
+gemini-3.8-flash,of-020,"Meta Platforms"" ""net income"" ""results of operations"" ""2025 compared to 2024"

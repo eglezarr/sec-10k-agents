@@ -1,21 +1,21 @@
 id,familia,cita_ok,cifra_ok,tool_ok,recall,n_tools,coste_usd,latencia_s,error
-of-001,extractiva,True,,True,False,5.0,0.02683575,18.897787124999013,
-of-002,extractiva,True,,True,True,3.0,0.008232,12.165390666999883,
-of-003,extractiva,True,,True,True,3.0,0.0120285,12.896039582999947,
-of-004,extractiva,True,,True,True,3.0,0.0098655,9.931435916001647,
-of-005,extractiva,True,,True,True,3.0,0.01121925,10.868361541000922,
-of-006,extractiva,True,,True,True,3.0,0.00937425,9.807049292001466,
-of-007,numerica,,True,True,,2.0,0.003876,6.498793624999962,
-of-008,numerica,,True,True,,3.0,0.00607125,9.141821832999995,
-of-009,numerica,,True,True,,3.0,0.00564075,7.39216983300139,
-of-010,numerica,,True,True,,2.0,0.00395325,4.356209624998883,
-of-011,numerica,,True,True,,3.0,0.00538875,6.265524875001574,
-of-012,numerica,,True,True,,3.0,0.00613575,27.52422591699724,
-of-013,numerica,,True,True,,2.0,0.00395775,4.413525416999619,
-of-014,comparativa,True,False,True,True,5.0,0.0168675,25.77566166700126,
-of-015,comparativa,True,False,True,True,4.0,0.01105725,23.43751662499926,
-of-016,comparativa,True,False,True,True,5.0,0.01227075,17.809522750001634,
-of-017,comparativa,False,True,True,True,5.0,0.015015,13.83689291599876,
-of-018,comparativa,False,False,True,False,6.0,0.02079375,17.387289041998883,
-of-019,comparativa,,,,,,,,BadRequestResponseError: Provider returned error
-of-020,comparativa,False,True,True,False,8.0,0.0280845,14.98074600000109,
+of-001,extractiva,True,,True,False,4.0,0.018759,19.300999799976125,
+of-002,extractiva,True,,True,True,3.0,0.008913,25.45221669995226,
+of-003,extractiva,False,,True,True,3.0,0.01202175,12.275685200002044,
+of-004,extractiva,True,,True,True,3.0,0.00967875,18.720129600027576,
+of-005,extractiva,False,,True,True,3.0,0.0109725,13.138926199870184,
+of-006,extractiva,True,,True,True,3.0,0.00949875,23.198935700114816,
+of-007,numerica,,True,True,,2.0,0.004203,5.6284862998872995,
+of-008,numerica,,True,True,,3.0,0.005976,6.6526866001077,
+of-009,numerica,,True,True,,3.0,0.00633975,8.659125400008634,
+of-010,numerica,,True,True,,2.0,0.003816,6.280862799845636,
+of-011,numerica,,True,True,,3.0,0.006198,7.366214199922979,
+of-012,numerica,,True,True,,3.0,0.00566475,7.664268299937248,
+of-013,numerica,,True,True,,2.0,0.0037665,4.712215300183743,
+of-014,comparativa,,,,,,,,TooManyRequestsResponseError: Rate limit exceeded: new-account-rpm/google/gemini-3.8-flash-20260902. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.
+of-015,comparativa,,,,,,,,TooManyRequestsResponseError: Rate limit exceeded: new-account-rpm/google/gemini-3.8-flash-20260902. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.
+of-016,comparativa,,,,,,,,TooManyRequestsResponseError: Rate limit exceeded: new-account-rpm/google/gemini-3.8-flash-20260902. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.
+of-017,comparativa,,,,,,,,TooManyRequestsResponseError: Rate limit exceeded: new-account-rpm/google/gemini-3.8-flash-20260902. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.
+of-018,comparativa,,,,,,,,TooManyRequestsResponseError: Rate limit exceeded: new-account-rpm/google/gemini-3.8-flash-20260902. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.
+of-019,comparativa,,,,,,,,TooManyRequestsResponseError: Rate limit exceeded: new-account-rpm/google/gemini-3.8-flash-20260902. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.
+of-020,comparativa,,,,,,,,TooManyRequestsResponseError: Rate limit exceeded: new-account-rpm/google/gemini-3.8-flash-20260902. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.

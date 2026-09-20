@@ -1,0 +1,41 @@
+modo,llm,embedding,aciertos,n,recall
+densa,ES sin reescribir,"bge-small (ctl, local)",11,26,0.4230769230769231
+hibrida,ES sin reescribir,"bge-small (ctl, local)",12,26,0.46153846153846156
+densa,deepseek-v4-flash,"bge-small (ctl, local)",18,26,0.6923076923076923
+hibrida,deepseek-v4-flash,"bge-small (ctl, local)",22,26,0.8461538461538461
+densa,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",19,26,0.7307692307692307
+hibrida,gemini-3.5-flash-lite (ctl),"bge-small (ctl, local)",23,26,0.8846153846153846
+densa,gemini-3.8-flash,"bge-small (ctl, local)",18,26,0.6923076923076923
+hibrida,gemini-3.8-flash,"bge-small (ctl, local)",22,26,0.8461538461538461
+densa,ES sin reescribir,nemotron-embed-1b · free,19,26,0.7307692307692307
+hibrida,ES sin reescribir,nemotron-embed-1b · free,13,26,0.5
+densa,deepseek-v4-flash,nemotron-embed-1b · free,20,26,0.7692307692307693
+hibrida,deepseek-v4-flash,nemotron-embed-1b · free,22,26,0.8461538461538461
+densa,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,21,26,0.8076923076923077
+hibrida,gemini-3.5-flash-lite (ctl),nemotron-embed-1b · free,23,26,0.8846153846153846
+densa,gemini-3.8-flash,nemotron-embed-1b · free,22,26,0.8461538461538461
+hibrida,gemini-3.8-flash,nemotron-embed-1b · free,23,26,0.8846153846153846
+densa,ES sin reescribir,bge-m3,15,26,0.5769230769230769
+hibrida,ES sin reescribir,bge-m3,12,26,0.46153846153846156
+densa,deepseek-v4-flash,bge-m3,19,26,0.7307692307692307
+hibrida,deepseek-v4-flash,bge-m3,20,26,0.7692307692307693
+densa,gemini-3.5-flash-lite (ctl),bge-m3,20,26,0.7692307692307693
+hibrida,gemini-3.5-flash-lite (ctl),bge-m3,22,26,0.8461538461538461
+densa,gemini-3.8-flash,bge-m3,19,26,0.7307692307692307
+hibrida,gemini-3.8-flash,bge-m3,19,26,0.7307692307692307
+densa,ES sin reescribir,qwen3-embedding-8b,20,26,0.7692307692307693
+hibrida,ES sin reescribir,qwen3-embedding-8b,13,26,0.5
+densa,deepseek-v4-flash,qwen3-embedding-8b,22,26,0.8461538461538461
+hibrida,deepseek-v4-flash,qwen3-embedding-8b,24,26,0.9230769230769231
+densa,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,22,26,0.8461538461538461
+hibrida,gemini-3.5-flash-lite (ctl),qwen3-embedding-8b,22,26,0.8461538461538461
+densa,gemini-3.8-flash,qwen3-embedding-8b,24,26,0.9230769230769231
+hibrida,gemini-3.8-flash,qwen3-embedding-8b,24,26,0.9230769230769231
+densa,ES sin reescribir,gemini-embedding-001,21,26,0.8076923076923077
+hibrida,ES sin reescribir,gemini-embedding-001,14,26,0.5384615384615384
+densa,deepseek-v4-flash,gemini-embedding-001,22,26,0.8461538461538461
+hibrida,deepseek-v4-flash,gemini-embedding-001,23,26,0.8846153846153846
+densa,gemini-3.5-flash-lite (ctl),gemini-embedding-001,22,26,0.8461538461538461
+hibrida,gemini-3.5-flash-lite (ctl),gemini-embedding-001,22,26,0.8461538461538461
+densa,gemini-3.8-flash,gemini-embedding-001,20,26,0.7692307692307693
+hibrida,gemini-3.8-flash,gemini-embedding-001,23,26,0.8846153846153846
