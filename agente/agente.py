@@ -98,12 +98,43 @@ Reglas:
 """
 
 
-def crear_agente(modelo: str = MODELO, middleware: list | None = None):
+# Prompt v2: el v1 más tres reglas que salen del diagnóstico del baseline
+# (notebook 03): la convención de `cifra` en las comparaciones, las citas
+# literales y el vocabulario de las consultas. El v1 no se toca: es el baseline.
+SYSTEM_V2 = SYSTEM + """
+Reglas añadidas:
+- COMPARACIONES entre dos ejercicios: una llamada a get_xbrl_fact por ejercicio
+  y una búsqueda de texto (Item 7 del ejercicio más reciente) para la
+  explicación. En `cifra` y `ejercicio` va el valor XBRL del ejercicio MÁS
+  RECIENTE. La variación (absoluta o en %) y su explicación van SOLO en
+  `respuesta`, nunca en `cifra`. Cita el fragmento que explica el cambio.
+- CITAS: en `cita` copia LITERALMENTE una frase del fragmento recuperado, sin
+  traducir ni parafrasear, y en `chunk_id` el identificador de ESE fragmento.
+- CONSULTAS: usa el vocabulario del propio informe (por ejemplo "net sales",
+  "revenue increased", "operating income", "useful lives") en lugar de
+  traducir la pregunta palabra por palabra. Pasa ticker, ejercicio e item
+  siempre que la pregunta los mencione.
+"""
+
+# Los sistemas que se comparan. Cada uno añade UNA mejora al anterior, para
+# poder atribuir cada efecto. `busqueda` es la que usa la herramienta search_filings.
+CONFIGURACIONES = {
+    "baseline":   {"prompt": SYSTEM,    "guardrails": False, "busqueda": "densa"},
+    "prompt_v2":  {"prompt": SYSTEM_V2, "guardrails": False, "busqueda": "densa"},
+    "guardrails": {"prompt": SYSTEM_V2, "guardrails": True,  "busqueda": "densa"},
+    "final":      {"prompt": SYSTEM_V2, "guardrails": True,  "busqueda": "hibrida"},
+}
+CONFIG_POR_DEFECTO = "final"     # la que ejecuta responder() el día 24
+
+
+def crear_agente(modelo: str = MODELO, middleware: list | None = None,
+                 config: str | None = None):
     """El agente montado: modelo + 4 herramientas + salida estructurada.
 
     Devuelve el agente de `create_agent` con checkpointer en memoria (la
-    memoria entre turnos que exige `thread_id`). Baseline = sin middleware;
-    los guardrails llegan como lista en la entrega correspondiente.
+    memoria entre turnos que exige `thread_id`). Sin argumentos es el
+    baseline: prompt v1 y sin middleware. `config` elige uno de los sistemas
+    de CONFIGURACIONES (baseline, prompt_v2, guardrails o final).
 
     Nota de compatibilidad: si algún modelo alternativo no soportara salida
     estructurada nativa, la línea de `response_format` se envuelve así
@@ -117,10 +148,16 @@ def crear_agente(modelo: str = MODELO, middleware: list | None = None):
 
     from .herramientas import HERRAMIENTAS
 
+    system = SYSTEM
+    if config is not None:       # una de las CONFIGURACIONES fija prompt y guardrails
+        from .guardrails import crear_guardrails
+        system = CONFIGURACIONES[config]["prompt"]
+        middleware = crear_guardrails() if CONFIGURACIONES[config]["guardrails"] else []
+
     return create_agent(
         model=modelo,
         tools=HERRAMIENTAS,
-        system_prompt=SYSTEM,
+        system_prompt=system,
         response_format=RespuestaFinanciera,
         middleware=middleware or [],
         checkpointer=InMemorySaver(),

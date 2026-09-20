@@ -1,0 +1,21 @@
+id,familia,cita_ok,cifra_ok,tool_ok,recall,n_tools,coste_usd,latencia_s,error,cifra_agente,fuente,herramientas,n_avisos
+pr-n03,numerica,,True,True,,2.0,0.0046425,13.011074400041252,,8675000000.0,xbrl,"get_xbrl_fact,RespuestaFinanciera",0.0
+pr-n05,numerica,,True,True,,2.0,0.005004,6.056767599890009,,5.53,xbrl,"get_xbrl_fact,RespuestaFinanciera",0.0
+pr-n07,numerica,,True,True,,2.0,0.00411,6.2618501000106335,,56950000000.0,xbrl,"get_xbrl_fact,RespuestaFinanciera",0.0
+pr-n10,numerica,,True,True,,2.0,0.00461625,6.148995799943805,,243686000000.0,xbrl,"get_xbrl_fact,RespuestaFinanciera",0.0
+pr-n11,numerica,,True,True,,3.0,0.0084285,16.338257299968973,,350018000000.0,xbrl,"list_available,get_xbrl_fact,RespuestaFinanciera",0.0
+pr-n12,numerica,True,True,True,,4.0,0.01005675,52.71552430000156,,72880000000.0,xbrl,"list_available,get_xbrl_fact,search_filings,RespuestaFinanciera",0.0
+pr-n13,numerica,True,True,True,,6.0,0.021144,25.201234000036493,,200966000000.0,xbrl,"list_available,get_xbrl_fact,search_filings,search_filings,search_filings,RespuestaFinanciera",0.0
+pr-e13,extractiva,True,,True,True,4.0,0.01525875,18.78758280002512,,,texto,"list_available,search_filings,search_filings,RespuestaFinanciera",0.0
+pr-e14,extractiva,True,,True,True,3.0,0.01089,23.6120356998872,,,texto,"list_available,search_filings,RespuestaFinanciera",0.0
+pr-e15,extractiva,True,,True,False,2.0,0.00816375,14.553494600113481,,849000000.0,texto,"search_filings,RespuestaFinanciera",0.0
+pr-e16,extractiva,True,,True,True,5.0,0.02754,21.235720299882814,,,texto,"search_filings,search_filings,search_filings,search_filings,RespuestaFinanciera",0.0
+pr-e18,extractiva,True,,True,True,5.0,0.0323565,36.57641290011816,,22.0,texto,"list_available,search_filings,search_filings,get_xbrl_fact,RespuestaFinanciera",0.0
+pr-e19,extractiva,True,,True,True,3.0,0.0097545,17.8709265999496,,508000000.0,texto,"list_available,search_filings,RespuestaFinanciera",0.0
+pr-e20,extractiva,True,,True,True,2.0,0.007206,15.046422900166363,,,texto,"search_filings,RespuestaFinanciera",0.0
+pr-c06,comparativa,True,True,True,True,7.0,0.02638725,18.067537600174546,,112010000000.0,ambas,"list_available,get_xbrl_fact,get_xbrl_fact,search_filings,search_filings,search_filings,RespuestaFinanciera",0.0
+pr-c09,comparativa,True,True,True,True,5.0,0.013056,13.674181399866939,,32488000000.0,ambas,"list_available,get_xbrl_fact,get_xbrl_fact,search_filings,RespuestaFinanciera",0.0
+pr-c10,comparativa,,,,,,,,RuntimeError: La invocación no devolvió structured_response,,,,
+pr-c11,comparativa,,,,,,,,RuntimeError: La invocación no devolvió structured_response,,,,
+pr-c12,comparativa,,,,,,,,RuntimeError: La invocación no devolvió structured_response,,,,
+pr-c13,comparativa,True,True,True,False,5.0,0.0173295,28.262290500104427,,164713000000.0,ambas,"list_available,get_xbrl_fact,get_xbrl_fact,search_filings,RespuestaFinanciera",0.0

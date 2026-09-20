@@ -160,7 +160,9 @@ def evaluar(preguntas: list[dict], funcion_responder, etiqueta: str = "run",
         fila = {"id": item["id"], "familia": item.get("familia"),
                 "cita_ok": None, "cifra_ok": None, "tool_ok": None,
                 "recall": None, "n_tools": None,
-                "coste_usd": None, "latencia_s": None, "error": None}
+                "coste_usd": None, "latencia_s": None, "error": None,
+                "cifra_agente": None, "fuente": None,
+                "herramientas": None, "n_avisos": None}
         try:
             resultado = funcion_responder(
                 item["pregunta"], thread_id=f"{etiqueta}-{item['id']}")
@@ -168,6 +170,14 @@ def evaluar(preguntas: list[dict], funcion_responder, etiqueta: str = "run",
             fila["cifra_ok"] = cifra_coincide_xbrl(item, resultado)
             fila["tool_ok"] = uso_la_tool_correcta(item, resultado)
             fila["n_tools"] = len(trazas.herramientas_usadas(resultado))
+            # Lo que respondió el agente: sin esto, un fallo solo se puede
+            # diagnosticar repitiendo la pregunta.
+            s = resultado["structured_response"]
+            fila["cifra_agente"] = s.cifra
+            fila["fuente"] = s.fuente
+            fila["herramientas"] = ",".join(trazas.herramientas_usadas(resultado))
+            fila["n_avisos"] = max(0, sum(type(m).__name__ == "HumanMessage"
+                                          for m in resultado["messages"]) - 1)   # avisos de los guardrails
             fila["coste_usd"] = resultado.get("coste_usd")
             fila["latencia_s"] = resultado.get("latencia_s")
             if buscar_para_recall is not None and item.get("ancla_texto"):

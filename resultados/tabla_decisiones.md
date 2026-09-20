@@ -1,0 +1,25 @@
+| Área | Opción | Evidencia (de los CSV) | Decisión | Motivo |
+|---|---|---|---|---|
+| **Retrieval · escalera** | A · Densa plana (pregunta en español, sin filtros) | propio 3/13 · oficial 4/13 | ○ Referencia | Punto de partida del día 10: mezcla compañías y ejercicios |
+|  | B · + filtros de metadatos | propio 5/13 · oficial 6/13 | ✔ Adoptada | +4 ancla(s) sobre A: busca solo en el documento correcto. El agente pasa los filtros a search_filings |
+|  | C · + búsqueda híbrida (BM25 + densa), consulta aún en español | propio 6/13 · oficial 6/13 | ✖ Descartada | +1 ancla(s) sobre B: con la consulta en español, BM25 casi no encuentra palabras en común. Por sí sola no sirve |
+|  | D · + reescritura de la consulta ES→EN | propio 12/13 · oficial 9/13 | ✔ Adoptada | +9 ancla(s) sobre C: el cuello era el idioma. Se consigue pidiendo al agente que escriba en inglés (prompt), sin un paso extra dentro de la tool |
+| **Retrieval · matriz** | Búsqueda híbrida frente a densa (consulta en inglés) | híbrida ≥ densa en 15/15 parejas (embedding, LLM), mejor en 11 · con bge-small gana +4.0 anclas de media | ✔ Adoptada | Nunca pierde frente a la densa y compensa un embedding débil como el local |
+|  | Consulta en español, sin reescribir | la híbrida empeora a la densa en 4 de 5 embeddings | ✖ Descartada | BM25 necesita solape léxico: hay que consultar en inglés |
+|  | Embedding bge-small | híbrida 22–23/26 según el LLM · local | ✔ Adoptada | Es el control: sin dependencias ni coste, y con la híbrida llega a 23/26 |
+|  | Embedding nemotron-embed-1b · free | híbrida 22–23/26 según el LLM · por API | ✖ Descartada | No supera al control (23/26) y exige API |
+|  | Embedding bge-m3 | híbrida 19–22/26 según el LLM · por API | ✖ Descartada | No supera al control (23/26) y exige API |
+|  | Embedding qwen3-embedding-8b | híbrida 22–24/26 según el LLM · por API | ◐ Candidata | +1 ancla(s) sobre el control: no llega a 2, dentro del ruido. Exige API e índice nuevo; se confirma en el hold-out |
+|  | Embedding gemini-embedding-001 | híbrida 22–23/26 según el LLM · por API | ✖ Descartada | No supera al control (23/26) y exige API |
+|  | LLM de reescritura deepseek-v4-flash | con bge-small: densa 18/26 · híbrida 22/26 | ✖ Descartada | No supera al control (23/26) con el embedding local |
+|  | LLM de reescritura gemini-3.5-flash-lite | con bge-small: densa 19/26 · híbrida 23/26 | ○ Referencia | Instrumento de medida (columna recall y matriz); no forma parte de la tool |
+|  | LLM de reescritura gemini-3.8-flash | con bge-small: densa 18/26 · híbrida 22/26 | ○ Referencia | Es el modelo del propio agente: la reescritura la hace él mismo al escribir su consulta |
+| **Sistema · mejoras** | Baseline (densa, prompt v1, sin middleware) | cifra 10/13 · cita 11/13 · recall 9/13 · 1.28 ¢ · 23 s | ○ Referencia | Punto de partida congelado en el notebook 02 |
+|  | + Prompt v2 (convención de cifra, citas literales, vocabulario del informe) | ataca 6 fallos de cifra y 2 de cita · cifra 10/13 · cita 12/15 · recall 8/13 · 3 errores · 1.33 ¢ · 20 s | ◐ Se mantiene | Dentro del ruido (fallos evitados: cifra +0, cita -1, recall -1). Preguntas sin respuesta: 0 → 6. Es la base sobre la que actúan los guardrails |
+|  | + Guardrails (límites, reintento, verificador de cifras y de formato) | ataca 1 cifra sin respaldo, unidades y respuestas sin esquema · cifra 12/13 · cita 14/14 · recall 10/13 · 2.03 ¢ · 25 s | ✔ Adoptada | Mejora clara (fallos evitados: cifra +2, cita +3, recall +2). Preguntas sin respuesta: 6 → 0. |
+|  | + Búsqueda híbrida en search_filings (= sistema final) | ataca 4 fallos de retrieval · cifra 12/13 · cita 14/14 · recall 13/13 · 1.51 ¢ · 22 s | ✔ Adoptada | Mejora clara (fallos evitados: cifra +0, cita +0, recall +3). |
+| **Sistema · guardrails** | Límites de llamadas (12 a herramientas, 16 al modelo) y reintento con espera | máx. 10 llamadas a herramienta en una pregunta (límite 12) | ◐ Se mantiene | No llegó a activarse en estos golden; protege frente a bucles y a los límites de peticiones (el día 24 hay 20 por minuto) |
+|  | Verificador de cifras (tolerancia 0,1 %) y salida estructurada obligatoria | 6 avisos en las 40 preguntas del propio y el oficial · preguntas sin respuesta: prompt v2 6 → guardrails 0 | ✔ Adoptada | Recupera las preguntas que quedaban sin respuesta estructurada y corrige cifras |
+| **Modelo del agente** | gemini-3.8-flash (actual) | cifra 12/13 · cita 14/14 · recall 13/13 · 1.51 ¢ · 22 s | ✔ Adoptada | Es el modelo del baseline: cambiarlo mezclaría dos efectos |
+|  | deepseek-v4-flash | cifra 5/13 · cita 0/13 · recall 13/13 · 0.01 ¢ · 8 s | ✖ Descartada | Peor calidad (+40 fallos, coste ×0.01 y latencia ×0.34 frente al actual) |
+|  | gemini-3.5-flash-lite | cifra 13/13 · cita 18/18 · recall 13/13 · 0.42 ¢ · 4 s | ◐ Candidata | Calidad equivalente y más barato (-1 fallos, coste ×0.28 y latencia ×0.16 frente al actual). Solo medido en el golden propio y en una tirada: se confirmaría en el oficial y en el hold-out |

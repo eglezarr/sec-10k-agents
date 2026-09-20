@@ -187,3 +187,14 @@ def reescribir(pregunta: str, modelo: str = MODELO_REESCRITURA) -> str:
 # línea, cuando el baseline esté congelado — y la columna recall de
 # evaluar() usa este mismo alias, para que cada sistema mida SU retrieval.
 buscar_agente = buscar_densa
+
+
+def usar_busqueda(nombre: str) -> None:
+    """Elige la búsqueda que usa la herramienta del agente: 'densa' o 'hibrida'.
+
+    Cambia `buscar_agente`, que `search_filings` y la columna `recall` de
+    `evaluar()` consultan en cada llamada. Por defecto sigue siendo la densa:
+    es el baseline, y el notebook 02 lo comprueba antes de su tirada.
+    """
+    global buscar_agente
+    buscar_agente = {"densa": buscar_densa, "hibrida": buscar_hibrida}[nombre]
