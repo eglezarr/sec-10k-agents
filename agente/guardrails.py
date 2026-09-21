@@ -12,7 +12,8 @@ Cuatro piezas, tres de ellas ya hechas por LangChain:
    pregunta, y menos la de un hold-out.
 
 3. `VerificadorDeCifras`. Cuando el modelo da su respuesta final, se
-   comprueba su `cifra` contra los datos XBRL. Si no cuadra, el desajuste
+   comprueba su `cifra` contra los datos XBRL y, si es una comparación entre
+   dos ejercicios, también `cifra_anterior` y `variacion_pct`. Si no cuadra, el desajuste
    se le devuelve al modelo como un mensaje para que lo corrija. También
    exige la salida estructurada: si el modelo termina en texto suelto, se le
    pide que use el esquema. Solo se insiste `MAX_CORRECCIONES` veces: un
@@ -45,6 +46,10 @@ MARCA = "VERIFICACIÓN:"
 # get_xbrl_fact, así que copiarlo bien es fácil, y con un 0,1 % se distinguen
 # dos hechos vecinos (el pasivo y el revenue de Microsoft FY2024 están a un 0,59 %).
 TOLERANCIA = 0.001
+
+# Margen en puntos porcentuales para la variación: el agente la redondea a un
+# decimal, o incluso a un entero.
+TOLERANCIA_PP = 0.15
 
 
 def valor_xbrl(ticker: str, ejercicio: int, concepto: str) -> float | None:
@@ -97,6 +102,45 @@ def revisar_cifra(r) -> str | None:
             f"o das una variación, ponla en `respuesta`.")
 
 
+def revisar_comparacion(r) -> str | None:
+    """Aviso si `cifra_anterior` o `variacion_pct` no cuadran con XBRL.
+
+    Solo actúa en las comparaciones: si el agente no rellena esos campos, no
+    hace nada. La variación se contrasta con la que sale de los valores XBRL,
+    no con los números que el propio agente haya escrito.
+    """
+    if r.cifra_anterior is None and r.variacion_pct is None:
+        return None            # no es una comparación, o no las rellenó
+    if r.fuente not in ("xbrl", "ambas") or not (r.ticker and r.ejercicio and r.concept_xbrl):
+        return None            # revisar_cifra ya avisa de lo que falte
+
+    actual = valor_xbrl(r.ticker, r.ejercicio, r.concept_xbrl)
+    if actual is None:
+        return None            # revisar_cifra ya avisa de que el concepto no existe
+    anterior = valor_xbrl(r.ticker, r.ejercicio - 1, r.concept_xbrl)
+    if anterior is None:
+        return (f"{r.ticker} no reporta '{r.concept_xbrl}' en FY{r.ejercicio - 1}, así que "
+                f"no se puede comparar. Deja `cifra_anterior` y `variacion_pct` vacíos y "
+                f"explícalo en `respuesta`.")
+
+    avisos = []
+    if r.cifra_anterior is not None and not evaluadores.cuadra(r.cifra_anterior, anterior, TOLERANCIA):
+        avisos.append(f"Tu cifra_anterior {r.cifra_anterior:,.2f} no coincide con XBRL: "
+                      f"{r.concept_xbrl} de {r.ticker} en FY{r.ejercicio - 1} es {anterior:,.2f}.")
+    if r.variacion_pct is not None and anterior != 0:
+        esperada = (actual / anterior - 1) * 100
+        if abs(r.variacion_pct - esperada) > TOLERANCIA_PP:
+            avisos.append(f"Tu variacion_pct {r.variacion_pct:+.1f} % no coincide con la que sale de "
+                          f"XBRL: de {anterior:,.0f} a {actual:,.0f} es {esperada:+.1f} %.")
+    return " ".join(avisos) or None
+
+
+def revisar_respuesta(r) -> str | None:
+    """Todos los avisos de una respuesta: la cifra y, en comparaciones, las otras dos."""
+    avisos = [a for a in (revisar_cifra(r), revisar_comparacion(r)) if a]
+    return " ".join(avisos) or None
+
+
 class VerificadorDeCifras(AgentMiddleware):
     """Comprueba la cifra y exige que la respuesta venga estructurada."""
 
@@ -114,7 +158,7 @@ class VerificadorDeCifras(AgentMiddleware):
             else:
                 return None
         else:
-            aviso = revisar_cifra(respuesta)
+            aviso = revisar_respuesta(respuesta)
             if aviso is None:
                 return None        # la cifra cuadra
             aviso += " Vuelve a responder usando el esquema completo."

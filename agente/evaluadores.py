@@ -162,7 +162,8 @@ def evaluar(preguntas: list[dict], funcion_responder, etiqueta: str = "run",
                 "recall": None, "n_tools": None,
                 "coste_usd": None, "latencia_s": None, "error": None,
                 "cifra_agente": None, "fuente": None,
-                "herramientas": None, "n_avisos": None}
+                "herramientas": None, "n_avisos": None,
+                "cifra_anterior": None, "variacion_pct": None}
         try:
             resultado = funcion_responder(
                 item["pregunta"], thread_id=f"{etiqueta}-{item['id']}")
@@ -175,6 +176,8 @@ def evaluar(preguntas: list[dict], funcion_responder, etiqueta: str = "run",
             s = resultado["structured_response"]
             fila["cifra_agente"] = s.cifra
             fila["fuente"] = s.fuente
+            fila["cifra_anterior"] = s.cifra_anterior       # solo las comparaciones las rellenan
+            fila["variacion_pct"] = s.variacion_pct
             fila["herramientas"] = ",".join(trazas.herramientas_usadas(resultado))
             fila["n_avisos"] = max(0, sum(type(m).__name__ == "HumanMessage"
                                           for m in resultado["messages"]) - 1)   # avisos de los guardrails

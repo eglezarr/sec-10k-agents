@@ -71,6 +71,21 @@ class RespuestaFinanciera(BaseModel):
         description="Concepto US-GAAP exacto consultado en get_xbrl_fact "
                     "del que sale 'cifra', si fuente es 'xbrl' o 'ambas'")
 
+    # ---- Campos AÑADIDOS solo para las COMPARACIONES entre dos ejercicios ----
+    # En `cifra` va el valor del ejercicio más reciente; en una comparación el
+    # agente también recupera el del ejercicio anterior y calcula la variación.
+    # Estos dos campos permiten verificar contra XBRL las tres cifras y no solo
+    # una. Fuera de las comparaciones se dejan vacíos.
+    cifra_anterior: float | None = Field(
+        default=None,
+        description="SOLO en comparaciones entre dos ejercicios: valor XBRL "
+                    "del ejercicio anterior, mismo concept_xbrl y en "
+                    "unidades base")
+    variacion_pct: float | None = Field(
+        default=None,
+        description="SOLO en comparaciones: variación porcentual de cifra "
+                    "frente a cifra_anterior, con un decimal")
+
 
 SYSTEM = """Eres un analista financiero que responde preguntas sobre informes
 10-K usando ÚNICAMENTE las herramientas disponibles.
@@ -116,6 +131,15 @@ Reglas añadidas:
   siempre que la pregunta los mencione.
 """
 
+# Prompt v3: el v2 más la petición de las tres cifras en las comparaciones, que
+# el verificador comprueba contra XBRL. Solo afecta a las comparaciones.
+SYSTEM_V3 = SYSTEM_V2 + """- CIFRAS DE UNA COMPARACIÓN: además de `cifra`, rellena `cifra_anterior` con el
+  valor XBRL del ejercicio anterior (mismo concepto, en unidades base) y
+  `variacion_pct` con la variación porcentual ((cifra / cifra_anterior - 1) x 100,
+  con un decimal). Se verifican las tres contra XBRL. Fuera de las
+  comparaciones, déjalas vacías.
+"""
+
 # Los sistemas que se comparan. Cada uno añade UNA mejora al anterior, para
 # poder atribuir cada efecto. `busqueda` es la que usa la herramienta search_filings.
 CONFIGURACIONES = {
@@ -123,6 +147,8 @@ CONFIGURACIONES = {
     "prompt_v2":  {"prompt": SYSTEM_V2, "guardrails": False, "busqueda": "densa"},
     "guardrails": {"prompt": SYSTEM_V2, "guardrails": True,  "busqueda": "densa"},
     "final":      {"prompt": SYSTEM_V2, "guardrails": True,  "busqueda": "hibrida"},
+    # El final más las cifras completas de las comparaciones (opcional)
+    "cifras_comparadas": {"prompt": SYSTEM_V3, "guardrails": True, "busqueda": "hibrida"},
 }
 CONFIG_POR_DEFECTO = "final"     # la que ejecuta responder() el día 24
 

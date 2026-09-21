@@ -93,5 +93,8 @@ def pretty_trace(resultado, max_chars: int = 200) -> None:
               f"   concepto: {r.concept_xbrl}")
         print(f"  fuente    : {r.fuente}   ticker: {r.ticker}"
               f"   ejercicio: {r.ejercicio}")
+        if r.cifra_anterior is not None or r.variacion_pct is not None:
+            print(f"  comparación: anterior={r.cifra_anterior}"
+                  f"   variación={r.variacion_pct} %")
         print(f"  cita      : {(r.cita or '')[:120]}")
         print(f"  chunk_id  : {r.chunk_id}")
