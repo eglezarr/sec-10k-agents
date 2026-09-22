@@ -54,8 +54,9 @@ def responder(pregunta: str, thread_id: str | None = None,
 
     `thread_id` identifica la conversación: repetirlo encadena turnos con
     memoria; omitirlo usa el hilo 'interactivo'. `config` elige el sistema
-    (por defecto el final, que es el que se ejecuta el día 24) y `modelo` el
-    LLM del agente (solo se cambia en los análisis de sensibilidad).
+    (por defecto el oficial, `CONFIG_POR_DEFECTO`, que es el que se ejecuta
+    el día 24) y `modelo` el LLM del agente (solo se cambia en los análisis
+    de sensibilidad).
 
     Si el proveedor falla (límite de peticiones, error transitorio), espera
     y repite hasta tres veces: una pregunta no debería perderse por eso.

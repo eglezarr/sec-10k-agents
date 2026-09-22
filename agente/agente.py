@@ -147,10 +147,13 @@ CONFIGURACIONES = {
     "prompt_v2":  {"prompt": SYSTEM_V2, "guardrails": False, "busqueda": "densa"},
     "guardrails": {"prompt": SYSTEM_V2, "guardrails": True,  "busqueda": "densa"},
     "final":      {"prompt": SYSTEM_V2, "guardrails": True,  "busqueda": "hibrida"},
-    # El final más las cifras completas de las comparaciones (opcional)
+    # El final más las cifras completas de las comparaciones (prompt v3): el
+    # sistema OFICIAL. En su tirada real (notebook 05) rellenó cifra_anterior
+    # y variacion_pct en 13 de 13 comparativas (propio + oficial), las 13
+    # correctas contra XBRL y sin necesitar un solo aviso del verificador.
     "cifras_comparadas": {"prompt": SYSTEM_V3, "guardrails": True, "busqueda": "hibrida"},
 }
-CONFIG_POR_DEFECTO = "final"     # la que ejecuta responder() el día 24
+CONFIG_POR_DEFECTO = "cifras_comparadas"     # el sistema oficial: el que ejecuta responder() el día 24
 
 
 def crear_agente(modelo: str = MODELO, middleware: list | None = None,
