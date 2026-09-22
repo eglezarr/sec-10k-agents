@@ -1,21 +1,21 @@
-id,familia,cita_ok,cifra_ok,tool_ok,recall,n_tools,coste_usd,latencia_s,error,cifra_agente,fuente,herramientas,n_avisos,cifra_anterior,variacion_pct
-pr-n03,numerica,,False,False,,0,0.00032176,17.26424100017175,,9869000000.0,xbrl,,2,,
-pr-n05,numerica,,True,False,,0,0.00031528000000000003,14.510090600000694,,5.53,xbrl,,2,,
-pr-n07,numerica,,True,False,,0,0.00032192,14.680649599991739,,56950000000.0,xbrl,,2,,
-pr-n10,numerica,,False,False,,0,9.267999999999999e-05,3.968663699924946,,,xbrl,,0,,
-pr-n11,numerica,,True,False,,0,9.708000000000001e-05,5.038791500031948,,350018000000.0,xbrl,,0,,
-pr-n12,numerica,,False,False,,0,0.00010024,8.630789499962702,,,ninguna,,0,,
-pr-n13,numerica,,True,False,,0,0.00035552000000000007,27.005182499997318,,200966000000.0,xbrl,,2,,
-pr-e13,extractiva,False,,False,True,0,9.536e-05,4.12683350010775,,,texto,,0,,
-pr-e14,extractiva,False,,False,True,0,9.568e-05,4.487708299886435,,,ninguna,,0,,
-pr-e15,extractiva,False,,False,True,0,0.0001048,7.184077400015667,,,ninguna,,0,,
-pr-e16,extractiva,False,,False,True,0,0.00010448,8.146960499929264,,,ninguna,,0,,
-pr-e18,extractiva,False,,False,True,0,0.0001094,2244.2195562999696,,,ninguna,,0,,
-pr-e19,extractiva,False,,False,True,0,0.00010059999999999999,15.67472600005567,,,ninguna,,0,,
-pr-e20,extractiva,False,,False,True,0,9.864e-05,3.710739400004968,,,ninguna,,0,,
-pr-c06,comparativa,False,False,False,True,0,9.44e-05,3.239355699857697,,,ninguna,,0,,
-pr-c09,comparativa,False,False,False,True,0,9.803999999999999e-05,4.201311300043017,,,ninguna,,0,,
-pr-c10,comparativa,False,False,False,True,0,9.992e-05,4.492713900050148,,,xbrl,,0,,
-pr-c11,comparativa,False,False,False,True,0,0.00012984,10.644924100022763,,,texto,,0,,
-pr-c12,comparativa,False,False,False,True,0,0.00011687999999999999,7.372991499956697,,,ninguna,,0,,
-pr-c13,comparativa,False,False,False,False,0,9.392000000000002e-05,2.2685954000335187,,,xbrl,,0,,
+id,familia,cita_ok,cifra_ok,tool_ok,recall,n_tools,coste_usd,latencia_s,error,cifra_agente,fuente,herramientas,n_avisos,cifra_anterior,variacion_pct,avisos_texto
+pr-n03,numerica,,False,False,,0,9.408e-05,3.755699299999833,,,xbrl,,0,,,
+pr-n05,numerica,,False,False,,0,9.232000000000001e-05,3.730962599999657,,,ninguna,,0,,,
+pr-n07,numerica,,True,False,,0,0.00020444,7.01294340000004,,56950000000.0,xbrl,,1,,,"VERIFICACIÓN: Tu cifra 86,886,000,000.00 no coincide con XBRL: StockholdersEquity de AAPL en FY2024 es 56,950,000,000.00. En `cifra` va el valor XBRL del ejercicio pedido; si comparas dos ejercicios o das una variación, ponla en `respuesta`. Vuelve a responder usando el esquema completo."
+pr-n10,numerica,,False,False,,0,0.00034168,15.93581819999963,,77563000000.0,xbrl,,2,,,"VERIFICACIÓN: Rellena `ticker`, `ejercicio` y `concept_xbrl` para poder verificar la cifra contra XBRL. Vuelve a responder usando el esquema completo. || VERIFICACIÓN: Rellena `ticker`, `ejercicio` y `concept_xbrl` para poder verificar la cifra contra XBRL. Vuelve a responder usando el esquema completo."
+pr-n11,numerica,,False,False,,0,0.00030912,12.17458280000028,,339000000000.0,xbrl,,2,,0.0,"VERIFICACIÓN: Rellena `ticker`, `ejercicio` y `concept_xbrl` para poder verificar la cifra contra XBRL. Vuelve a responder usando el esquema completo. || VERIFICACIÓN: Rellena `ticker`, `ejercicio` y `concept_xbrl` para poder verificar la cifra contra XBRL. Vuelve a responder usando el esquema completo."
+pr-n12,numerica,,True,False,,0,0.00021351999999999998,20.83136680000007,,72880000000.0,xbrl,,1,,,"VERIFICACIÓN: Rellena `ticker`, `ejercicio` y `concept_xbrl` para poder verificar la cifra contra XBRL. Vuelve a responder usando el esquema completo."
+pr-n13,numerica,,True,False,,0,0.00032636000000000004,17.02530680000018,,200966000000.0,xbrl,,2,,,"VERIFICACIÓN: Rellena `ticker`, `ejercicio` y `concept_xbrl` para poder verificar la cifra contra XBRL. Vuelve a responder usando el esquema completo. || VERIFICACIÓN: Tu cifra 1,696,170,000,000.00 no coincide con XBRL: RevenueFromContractWithCustomerExcludingAssessedTax de META en FY2025 es 200,966,000,000.00. En `cifra` va el valor XBRL del ejercicio pedido; si comparas dos ejercicios o das una variación, ponla en `respuesta`. Vuelve a responder usando el esquema completo."
+pr-e13,extractiva,False,,False,True,0,9.648e-05,3.835158400000182,,,ninguna,,0,,,
+pr-e14,extractiva,False,,False,True,0,9.6e-05,3.251428799999303,,,ninguna,,0,,,
+pr-e15,extractiva,False,,False,True,0,0.00010512000000000001,6.368765799999892,,,ninguna,,0,,,
+pr-e16,extractiva,False,,False,True,0,0.00010216000000000001,5.289093200000025,,,texto,,0,,,
+pr-e18,extractiva,False,,False,True,0,9.756000000000001e-05,12.127749199999926,,28.0,texto,,0,,,
+pr-e19,extractiva,False,,False,True,0,0.00010356,6.062187700000322,,,texto,,0,,,
+pr-e20,extractiva,False,,False,True,0,9.895999999999999e-05,4.319278300000406,,,texto,,0,,,
+pr-c06,comparativa,False,False,False,True,0,0.00039936,23.545473199999833,,93736000000.0,xbrl,,2,,19.5,"VERIFICACIÓN: Rellena `ticker`, `ejercicio` y `concept_xbrl` para poder verificar la cifra contra XBRL. Vuelve a responder usando el esquema completo. || VERIFICACIÓN: Tu cifra 93,736,000,000.00 no coincide con XBRL: NetIncomeLoss de AAPL en FY2025 es 112,010,000,000.00. En `cifra` va el valor XBRL del ejercicio pedido; si comparas dos ejercicios o das una variación, ponla en `respuesta`. Tu variacion_pct -2.9 % no coincide con la que sale de XBRL: de 93,736,000,000 a 112,010,000,000 es +19.5 %. Vuelve a responder usando el esquema completo."
+pr-c09,comparativa,False,False,False,True,0,0.00036236,26.372443199999907,,29513000000.0,xbrl,,2,,8.5,"VERIFICACIÓN: Rellena `ticker`, `ejercicio` y `concept_xbrl` para poder verificar la cifra contra XBRL. Vuelve a responder usando el esquema completo. || VERIFICACIÓN: Rellena `ticker`, `ejercicio` y `concept_xbrl` para poder verificar la cifra contra XBRL. Vuelve a responder usando el esquema completo."
+pr-c10,comparativa,False,False,False,True,0,9.760000000000001e-05,4.103509699999449,,,ninguna,,0,,,
+pr-c11,comparativa,False,False,False,True,0,0.00010504,6.026274800000465,,,ninguna,,0,,,
+pr-c12,comparativa,False,False,False,True,0,0.00010488,5.443632699999398,,,xbrl,,0,,,
+pr-c13,comparativa,False,False,False,False,0,9.536000000000001e-05,3.493682900000749,,,ninguna,,0,,,
