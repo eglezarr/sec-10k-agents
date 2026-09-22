@@ -189,6 +189,19 @@
   .chip[aria-pressed="true"]{ background:var(--accent); border-color:var(--accent); color:#fff; }
   .chip:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
 
+  /* ---------- pestañas: golden propio / hold-out ---------- */
+  .pestanas{ display:flex; gap:8px; }
+  .pestana{ appearance:none; border:1px solid var(--border); background:var(--surface); color:var(--ink-secondary); font:inherit; font-size:0.86rem; font-weight:700; border-radius:10px; padding:9px 16px; cursor:pointer; }
+  .pestana[aria-selected="true"]{ background:var(--accent); border-color:var(--accent); color:#fff; }
+  .pestana:disabled{ opacity:0.4; cursor:not-allowed; }
+  .pestana:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+
+  .stat-fila{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+  @media (max-width:640px){ .stat-fila{ grid-template-columns:repeat(2,1fr); } }
+  .stat{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:12px 14px; display:flex; flex-direction:column; gap:3px; }
+  .stat .etiqueta{ font-size:0.74rem; color:var(--ink-muted); text-transform:uppercase; letter-spacing:0.04em; }
+  .stat .valor{ font-size:1.32rem; font-weight:700; }
+
   /* ---------- tarjetas ---------- */
   .rejilla{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
   @media (max-width:720px){ .rejilla{ grid-template-columns: 1fr; } }
@@ -262,15 +275,23 @@
     </div>
   </section>
 
+  <div class="paso" id="paso-propio">
+    <div class="paso-cab"><span class="paso-num" id="paso-propio-num">·</span><h2>Vuestro golden propio</h2></div>
+    <p class="paso-hint">Se carga solo, desde <span class="mono">resultados/eval_cifras_comparadas_propio.csv</span>, ya en el repo — es la otra mitad de la comparación. Si no se puede cargar sola (por ejemplo, si abres este fichero en local en vez de por el enlace), súbela a mano.</p>
+    <div id="paso-propio-cuerpo">
+      <div class="archivo-cargado" style="background:var(--neutral-wash)"><span>Cargando…</span></div>
+    </div>
+  </div>
+
   <div id="zona-tablero">
     <div class="vacio" id="vacio">
       <span style="font-size:1.6rem">🗂️</span>
-      <span>El tablero aparece aquí en cuanto subas el CSV de resultados.</span>
+      <span>El tablero aparece en cuanto se cargue alguno de los dos conjuntos.</span>
       <button class="ejemplo" id="btn-ejemplo">Ver con datos de ejemplo mientras tanto</button>
     </div>
   </div>
 
-  <footer>El .jsonl solo se valida en tu navegador; nada se envía a ningún sitio. El .csv sale de <span class="mono">resultados/eval_&lt;etiqueta&gt;.csv</span>.</footer>
+  <footer>El .jsonl solo se valida en tu navegador; nada se envía a ningún sitio. Los .csv salen de <span class="mono">resultados/eval_&lt;etiqueta&gt;.csv</span>.</footer>
 </div>
 
 <script>
@@ -601,50 +622,106 @@
       '</div>';
   }
 
-  function pintarTablero(tarjetas, filasCrudas, esEjemplo){
-    var m = esEjemplo
-      ? { cifra: tarjetas.filter(function(t){return t.familia!=="extractiva";}).length ? 0.9 : null, cita:0.833, tool:1.0, recall:1.0, coste: media(tarjetas.map(function(t){return t.coste;})), latencia: media(tarjetas.map(function(t){return t.latencia;})), tiempoTotal: tarjetas.reduce(function(a,t){return a+(t.latencia||0);},0), n: tarjetas.length }
-      : construirMarcador(filasCrudas, false);
+  /* ============================================================
+     Dos conjuntos, una sola pestaña activa a la vez. Cada uno se
+     empaqueta igual, venga de un fetch automático, de un CSV subido
+     a mano, o del botón de ejemplo — así el resto del código no
+     necesita saber de dónde salió.
+     ============================================================ */
+  var ESTADO = { propio: null, holdout: null };
+  var pestanaActiva = "propio";
 
-    var deltaCifra = m.cifra != null ? (m.cifra - PROPIO_REF.cifra) * 100 : null;
+  function empaquetarCSV(filas){
+    return { filas: filas, tarjetas: filas.map(csvATarjeta), marcador: construirMarcador(filas, false), esEjemplo: false };
+  }
+
+  function empaquetarEjemplo(){
+    var m = { cifra: 0.9, cita: 0.833, tool: 1.0, recall: 1.0,
+              coste: media(EJEMPLO.map(function(t){ return t.coste; })),
+              latencia: media(EJEMPLO.map(function(t){ return t.latencia; })),
+              tiempoTotal: EJEMPLO.reduce(function(a,t){ return a + (t.latencia||0); }, 0), n: EJEMPLO.length };
+    return { filas: [], tarjetas: EJEMPLO, marcador: m, esEjemplo: true };
+  }
+
+  function construirCabeceraComparada(mPropio, mHoldout){
+    var deltaCifra = (mHoldout.cifra != null && mPropio.cifra != null) ? (mHoldout.cifra - mPropio.cifra) * 100 : null;
     var claseDelta = deltaCifra == null ? "igual" : deltaCifra > 0.5 ? "up" : deltaCifra < -0.5 ? "down" : "igual";
     var textoDelta = deltaCifra == null ? "—" : (deltaCifra > 0 ? "+" : "") + deltaCifra.toLocaleString("es-ES",{maximumFractionDigits:1}) + " pp";
-
-    var html = "";
-    if (esEjemplo){
-      html += '<div class="banner-ejemplo"><span>🧪</span><span><b>DATOS DE EJEMPLO.</b> Preguntas y citas reales de <span class="mono">oficial_20.jsonl</span> + 2 huecos; respuestas y trazas del agente, inventadas. Sube tu <span class="mono">eval_holdout.csv</span> arriba para ver el resultado real.</span></div>';
-    }
-    html += '<section class="marcador">' +
-      '<div class="hero-delta"><span class="etiqueta">Delta en cifra frente al golden propio</span>' +
+    return '<section class="marcador">' +
+      '<div class="hero-delta"><span class="etiqueta">Delta en cifra: hold-out frente a vuestro golden propio</span>' +
       '<span class="cifra tab ' + claseDelta + '">' + textoDelta + '</span>' +
       '<span class="glosa">Si esto sale negativo, no es un suspenso: es el hallazgo que pide el enunciado — cuánto de la mejora era general y cuánto memoria del conjunto con el que se iteró.</span></div>' +
       '<div class="kpis">' +
-        filaKPI("Cifra correcta", PROPIO_REF.cifra, m.cifra) +
-        filaKPI("Cita correcta", PROPIO_REF.cita, m.cita) +
-        filaKPI("Trayectoria", PROPIO_REF.tool, m.tool) +
-        filaKPI("Recall@5", PROPIO_REF.recall, m.recall) +
+        filaKPI("Cifra correcta", mPropio.cifra, mHoldout.cifra) +
+        filaKPI("Cita correcta", mPropio.cita, mHoldout.cita) +
+        filaKPI("Trayectoria", mPropio.tool, mHoldout.tool) +
+        filaKPI("Recall@5", mPropio.recall, mHoldout.recall) +
         '<div class="tiempo">' +
-          '<div class="fila-etq"><span>Tiempo usado</span><span class="tab">' + (m.tiempoTotal/60).toLocaleString("es-ES",{maximumFractionDigits:1}) + ' min de 20</span></div>' +
-          '<div class="pista"><div class="relleno" style="width:' + Math.min(100, (m.tiempoTotal/60/20)*100) + '%"></div></div>' +
-          '<div class="fila-etq"><span>Coste de la tirada</span><span class="tab">' + (m.coste!=null ? (m.coste*m.n).toLocaleString("es-ES",{maximumFractionDigits:1}) + ' ¢' : '—') + ' (' + (m.coste!=null?m.coste.toLocaleString("es-ES",{maximumFractionDigits:2}):'—') + ' ¢/pregunta · propio ' + PROPIO_REF.coste.toLocaleString("es-ES",{maximumFractionDigits:2}) + ' ¢/pregunta)</span></div>' +
+          '<div class="fila-etq"><span>Tiempo usado (hold-out)</span><span class="tab">' + (mHoldout.tiempoTotal/60).toLocaleString("es-ES",{maximumFractionDigits:1}) + ' min de 20</span></div>' +
+          '<div class="pista"><div class="relleno" style="width:' + Math.min(100, (mHoldout.tiempoTotal/60/20)*100) + '%"></div></div>' +
+          '<div class="fila-etq"><span>Coste por pregunta</span><span class="tab">hold-out ' + (mHoldout.coste!=null?mHoldout.coste.toLocaleString("es-ES",{maximumFractionDigits:2}):'—') + ' ¢ · propio ' + (mPropio.coste!=null?mPropio.coste.toLocaleString("es-ES",{maximumFractionDigits:2}):'—') + ' ¢</span></div>' +
         '</div>' +
       '</div></section>';
+  }
+
+  function construirCabeceraSola(m, nombre){
+    function fmt(v, pct){ return v == null ? "—" : (pct ? (v*100).toLocaleString("es-ES",{maximumFractionDigits:1}) + " %" : v.toLocaleString("es-ES",{maximumFractionDigits:2})); }
+    return '<section class="stat-fila">' +
+      '<div class="stat"><span class="etiqueta">Cifra correcta (' + nombre + ')</span><span class="valor tab">' + fmt(m.cifra,true) + '</span></div>' +
+      '<div class="stat"><span class="etiqueta">Cita correcta</span><span class="valor tab">' + fmt(m.cita,true) + '</span></div>' +
+      '<div class="stat"><span class="etiqueta">Trayectoria</span><span class="valor tab">' + fmt(m.tool,true) + '</span></div>' +
+      '<div class="stat"><span class="etiqueta">Coste medio</span><span class="valor tab">' + fmt(m.coste,false) + ' ¢</span></div>' +
+      '</section>' +
+      '<div class="siguiente-paso-hint">👉 Falta el otro conjunto para calcular el delta. ' +
+      (nombre === "propio" ? "Sube el <code>eval_holdout.csv</code> en el paso 2." : "El golden propio no se pudo cargar solo; súbelo a mano abajo.") + '</div>';
+  }
+
+  function renderTodo(){
+    var cont = document.getElementById("zona-tablero");
+    if (!ESTADO.propio && !ESTADO.holdout){
+      cont.innerHTML = '<div class="vacio" id="vacio"><span style="font-size:1.6rem">🗂️</span>' +
+        '<span>El tablero aparece en cuanto se cargue alguno de los dos conjuntos.</span>' +
+        '<button class="ejemplo" id="btn-ejemplo">Ver con datos de ejemplo mientras tanto</button></div>';
+      document.getElementById("btn-ejemplo").addEventListener("click", function(){
+        ESTADO.holdout = empaquetarEjemplo(); pestanaActiva = "holdout"; renderTodo();
+      });
+      return;
+    }
+    if (pestanaActiva === "propio" && !ESTADO.propio) pestanaActiva = "holdout";
+    if (pestanaActiva === "holdout" && !ESTADO.holdout) pestanaActiva = "propio";
+    var activo = ESTADO[pestanaActiva];
+
+    var html = "";
+    if (activo.esEjemplo){
+      html += '<div class="banner-ejemplo"><span>🧪</span><span><b>DATOS DE EJEMPLO en "hold-out".</b> Preguntas y citas reales de <span class="mono">oficial_20.jsonl</span> + 2 huecos; respuestas y trazas del agente, inventadas. Sube tu <span class="mono">eval_holdout.csv</span> arriba para ver el resultado real.</span></div>';
+    }
+    html += (ESTADO.propio && ESTADO.holdout)
+      ? construirCabeceraComparada(ESTADO.propio.marcador, ESTADO.holdout.marcador)
+      : construirCabeceraSola(activo.marcador, pestanaActiva);
+
+    html += '<div class="pestanas">' +
+      '<button class="pestana" data-pestana="propio" aria-selected="' + (pestanaActiva==="propio") + '"' + (ESTADO.propio?'':' disabled') + '>Golden propio' + (ESTADO.propio ? ' (' + ESTADO.propio.tarjetas.length + ')' : ' — sin cargar') + '</button>' +
+      '<button class="pestana" data-pestana="holdout" aria-selected="' + (pestanaActiva==="holdout") + '"' + (ESTADO.holdout?'':' disabled') + '>Hold-out del día 24' + (ESTADO.holdout ? ' (' + ESTADO.holdout.tarjetas.length + ')' : ' — sin cargar') + '</button>' +
+      '</div>';
 
     html += '<div class="barra-control"><div class="leyenda">' +
       ["numerica","extractiva","comparativa"].map(function(f){ return '<span class="item"><span class="punto2" style="background:var(--fam-' + f + ')"></span>' + f + '</span>'; }).join('') +
       '</div><div class="filtros" id="filtros">' +
-        '<button class="chip" data-filtro="todas" aria-pressed="true">Todas (' + tarjetas.length + ')</button>' +
-        '<button class="chip" data-filtro="good" aria-pressed="false">✔ Correctas (' + tarjetas.filter(function(t){return t.estado==="good";}).length + ')</button>' +
-        '<button class="chip" data-filtro="warning" aria-pressed="false">⚠ Con aviso (' + tarjetas.filter(function(t){return t.estado==="warning";}).length + ')</button>' +
-        '<button class="chip" data-filtro="critical" aria-pressed="false">✖ Falladas (' + tarjetas.filter(function(t){return t.estado==="critical";}).length + ')</button>' +
+        '<button class="chip" data-filtro="todas" aria-pressed="true">Todas (' + activo.tarjetas.length + ')</button>' +
+        '<button class="chip" data-filtro="good" aria-pressed="false">✔ Correctas (' + activo.tarjetas.filter(function(t){return t.estado==="good";}).length + ')</button>' +
+        '<button class="chip" data-filtro="warning" aria-pressed="false">⚠ Con aviso (' + activo.tarjetas.filter(function(t){return t.estado==="warning";}).length + ')</button>' +
+        '<button class="chip" data-filtro="critical" aria-pressed="false">✖ Falladas (' + activo.tarjetas.filter(function(t){return t.estado==="critical";}).length + ')</button>' +
       '</div></div>';
 
     html += '<section class="rejilla" id="rejilla"></section>';
+    cont.innerHTML = html;
 
-    document.getElementById("zona-tablero").innerHTML = html;
     function pintarRejilla(filtro){
-      document.getElementById("rejilla").innerHTML = tarjetas.filter(function(t){ return filtro === "todas" || t.estado === filtro; }).map(tarjetaHTML).join("");
+      document.getElementById("rejilla").innerHTML = activo.tarjetas.filter(function(t){ return filtro === "todas" || t.estado === filtro; }).map(tarjetaHTML).join("");
     }
+    document.querySelectorAll(".pestana").forEach(function(b){
+      b.addEventListener("click", function(){ if (!b.disabled){ pestanaActiva = b.dataset.pestana; renderTodo(); } });
+    });
     document.getElementById("filtros").addEventListener("click", function(ev){
       var boton = ev.target.closest(".chip"); if (!boton) return;
       document.querySelectorAll("#filtros .chip").forEach(function(c){ c.setAttribute("aria-pressed","false"); });
@@ -684,35 +761,64 @@
       '<span class="principal">Arrastra el .csv aquí, o haz clic</span>' +
       '<span class="secundario">resultados/eval_holdout.csv</span></label>' +
       '<input type="file" id="input-csv" accept=".csv">';
-    engancharDropzoneCSV();
+    engancharDropzoneCSV("dz-csv", "input-csv", "paso2-cuerpo", "paso2", "paso2-num", "holdout");
   }
 
-  function engancharDropzoneCSV(){
-    engancharDropzone("dz-csv", "input-csv", function(texto, nombre){
+  /* Se reutiliza para el paso 2 (hold-out) y para la carga a mano del golden
+     propio si el fetch automático falla — misma lógica, distinto destino. */
+  function engancharDropzoneCSV(idZona, idInput, idCuerpo, idPaso, idNum, clave){
+    engancharDropzone(idZona, idInput, function(texto, nombre){
       var filas = parsearCSV(texto);
-      if (!filas.length){ mostrarErrorCarga("paso2-cuerpo", "El CSV está vacío o no se pudo interpretar."); return; }
-      var tarjetas = filas.map(csvATarjeta);
-      pintarTablero(tarjetas, filas, false);
-      document.getElementById("paso2-cuerpo").innerHTML = '<div class="archivo-cargado"><span><b>' + nombre + '</b> · ' + filas.length + ' preguntas</span><button id="btn-quitar-csv">quitar</button></div>';
-      document.getElementById("btn-quitar-csv").addEventListener("click", function(){ reiniciarPaso2(); document.getElementById("zona-tablero").innerHTML = document.getElementById("zona-tablero").dataset.vacioHtml || ""; mostrarVacio(); });
-      document.getElementById("paso2").classList.add("paso--hecho");
-      document.getElementById("paso2-num").textContent = "✔";
-    }, function(msg){ mostrarErrorCarga("paso2-cuerpo", msg); });
+      if (!filas.length){ mostrarErrorCarga(idCuerpo, "El CSV está vacío o no se pudo interpretar."); return; }
+      ESTADO[clave] = empaquetarCSV(filas);
+      pestanaActiva = clave;
+      renderTodo();
+      document.getElementById(idCuerpo).innerHTML = '<div class="archivo-cargado"><span><b>' + nombre + '</b> · ' + filas.length + ' preguntas</span><button id="btn-quitar-' + clave + '">quitar</button></div>';
+      document.getElementById("btn-quitar-" + clave).addEventListener("click", function(){
+        ESTADO[clave] = null;
+        if (clave === "holdout") reiniciarPaso2(); else reiniciarPasoPropio();
+        renderTodo();
+      });
+      if (document.getElementById(idPaso)) document.getElementById(idPaso).classList.add("paso--hecho");
+      if (document.getElementById(idNum)) document.getElementById(idNum).textContent = "✔";
+    }, function(msg){ mostrarErrorCarga(idCuerpo, msg); });
   }
 
-  function mostrarVacio(){
-    document.getElementById("zona-tablero").innerHTML =
-      '<div class="vacio" id="vacio"><span style="font-size:1.6rem">🗂️</span>' +
-      '<span>El tablero aparece aquí en cuanto subas el CSV de resultados.</span>' +
-      '<button class="ejemplo" id="btn-ejemplo">Ver con datos de ejemplo mientras tanto</button></div>';
-    document.getElementById("btn-ejemplo").addEventListener("click", function(){
-      pintarTablero(EJEMPLO, [], true);
-    });
+  /* ============================== el golden propio: solo, y si no, a mano ============================== */
+  function reiniciarPasoPropio(){
+    document.getElementById("paso-propio-num").textContent = "·";
+    document.getElementById("paso-propio-cuerpo").innerHTML =
+      '<label class="dropzone" id="dz-propio" for="input-propio"><span class="icono-drop">📁</span>' +
+      '<span class="principal">No se pudo cargar solo — arrastra aquí el CSV, o haz clic</span>' +
+      '<span class="secundario">resultados/eval_cifras_comparadas_propio.csv</span></label>' +
+      '<input type="file" id="input-propio" accept=".csv">';
+    engancharDropzoneCSV("dz-propio", "input-propio", "paso-propio-cuerpo", "paso-propio", "paso-propio-num", "propio");
+  }
+
+  function cargarPropioAutomaticamente(){
+    fetch("../resultados/eval_cifras_comparadas_propio.csv")
+      .then(function(r){ if (!r.ok) throw new Error("HTTP " + r.status); return r.text(); })
+      .then(function(texto){
+        var filas = parsearCSV(texto);
+        if (!filas.length) throw new Error("CSV vacío");
+        ESTADO.propio = empaquetarCSV(filas);
+        document.getElementById("paso-propio-num").textContent = "✔";
+        document.getElementById("paso-propio").classList.add("paso--hecho");
+        document.getElementById("paso-propio-cuerpo").innerHTML =
+          '<div class="archivo-cargado"><span>Cargado automáticamente · <b>' + filas.length + ' preguntas</b></span></div>';
+        renderTodo();
+      })
+      .catch(function(){
+        // Sin red al fichero (p. ej. abierto en local con file://, o el CSV
+        // no está en esa ruta): se ofrece subirlo a mano, sin romper nada más.
+        reiniciarPasoPropio();
+      });
   }
 
   /* ============================== arranque ============================== */
   reiniciarPaso1();
   reiniciarPaso2();
-  mostrarVacio();
+  cargarPropioAutomaticamente();
+  renderTodo();
 })();
 </script>
