@@ -263,14 +263,9 @@
 
     <div class="paso" id="paso2">
       <div class="paso-cab"><span class="paso-num" id="paso2-num">2</span><h2>Ver los resultados</h2></div>
-      <p class="paso-hint">Sube el <span class="mono">.csv</span> que genera <span class="mono">interfaz.evaluar()</span> al ejecutar el notebook 06 de verdad — eso sí llama al agente.</p>
+      <p class="paso-hint">Se carga solo, desde <span class="mono">resultados/eval_holdout.csv</span>, en cuanto ese fichero esté en el repo — nadie tiene que subir nada a mano. Solo aparece una zona para arrastrarlo si todavía no está.</p>
       <div id="paso2-cuerpo">
-        <label class="dropzone" id="dz-csv" for="input-csv">
-          <span class="icono-drop">📊</span>
-          <span class="principal">Arrastra el .csv aquí, o haz clic</span>
-          <span class="secundario">resultados/eval_holdout.csv</span>
-        </label>
-        <input type="file" id="input-csv" accept=".csv">
+        <div class="archivo-cargado" style="background:var(--neutral-wash)"><span>Buscando resultados…</span></div>
       </div>
     </div>
   </section>
@@ -815,10 +810,32 @@
       });
   }
 
+  /* ============================== el hold-out: solo, y si no, a mano ============================== */
+  function cargarHoldoutAutomaticamente(){
+    fetch("../resultados/eval_holdout.csv")
+      .then(function(r){ if (!r.ok) throw new Error("HTTP " + r.status); return r.text(); })
+      .then(function(texto){
+        var filas = parsearCSV(texto);
+        if (!filas.length) throw new Error("CSV vacío");
+        ESTADO.holdout = empaquetarCSV(filas);
+        pestanaActiva = "holdout";
+        document.getElementById("paso2-num").textContent = "✔";
+        document.getElementById("paso2").classList.add("paso--hecho");
+        document.getElementById("paso2-cuerpo").innerHTML =
+          '<div class="archivo-cargado"><span>Cargado automáticamente · <b>' + filas.length + ' preguntas</b></span></div>';
+        renderTodo();
+      })
+      .catch(function(){
+        // Aún no está en el repo (p. ej. antes del día 24) o se ve en local
+        // con file://: se ofrece arrastrarlo a mano, sin romper nada más.
+        reiniciarPaso2();
+      });
+  }
+
   /* ============================== arranque ============================== */
   reiniciarPaso1();
-  reiniciarPaso2();
   cargarPropioAutomaticamente();
+  cargarHoldoutAutomaticamente();
   renderTodo();
 })();
 </script>
