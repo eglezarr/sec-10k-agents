@@ -158,13 +158,20 @@ def evaluar(preguntas: list[dict], funcion_responder, etiqueta: str = "run",
     filas = []
     for item in preguntas:
         fila = {"id": item["id"], "familia": item.get("familia"),
+                # La pregunta y lo esperado van del golden, no de la respuesta:
+                # se rellenan siempre, aunque la invocación falle. Sin esto, un
+                # informe (o un tablero) tendría que volver a abrir el JSONL
+                # para saber de qué trataba cada fila.
+                "pregunta": item.get("pregunta"),
+                "cifra_esperada": item.get("cifra_esperada"),
                 "cita_ok": None, "cifra_ok": None, "tool_ok": None,
                 "recall": None, "n_tools": None,
                 "coste_usd": None, "latencia_s": None, "error": None,
                 "cifra_agente": None, "fuente": None,
                 "herramientas": None, "n_avisos": None,
                 "cifra_anterior": None, "variacion_pct": None,
-                "avisos_texto": None}
+                "avisos_texto": None,
+                "respuesta": None, "cita": None, "chunk_id": None}
         try:
             resultado = funcion_responder(
                 item["pregunta"], thread_id=f"{etiqueta}-{item['id']}")
@@ -179,6 +186,9 @@ def evaluar(preguntas: list[dict], funcion_responder, etiqueta: str = "run",
             fila["fuente"] = s.fuente
             fila["cifra_anterior"] = s.cifra_anterior       # solo las comparaciones las rellenan
             fila["variacion_pct"] = s.variacion_pct
+            fila["respuesta"] = s.respuesta                 # la prosa: para leer, no solo comparar
+            fila["cita"] = s.cita
+            fila["chunk_id"] = s.chunk_id
             fila["herramientas"] = ",".join(trazas.herramientas_usadas(resultado))
             avisos = [str(m.content) for m in resultado["messages"]
                       if type(m).__name__ == "HumanMessage"][1:]   # avisos de los guardrails

@@ -1,0 +1,4 @@
+sistema,cita,cifra,trayectoria,recall@5,coste (¢),latencia (s),errores
+golden propio (informe),0.929,0.923,1.0,0.923,2.076,25.862,0.0
+oficial (ensayo),1.0,1.0,1.0,0.846,1.442,25.753,0.0
+delta,0.071,0.077,0.0,-0.077,-0.634,-0.109,0.0

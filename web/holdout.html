@@ -1,0 +1,718 @@
+<title>Diez Preguntas Ciegas</title>
+<style>
+  :root{
+    color-scheme: light;
+    --page:            #f9f9f7;
+    --surface:         #fcfcfb;
+    --surface-raised:  #ffffff;
+    --ink-primary:     #0b0b0b;
+    --ink-secondary:   #52514e;
+    --ink-muted:       #898781;
+    --hairline:        #e1e0d9;
+    --border:          rgba(11,11,11,0.10);
+    --accent:          #2a78d6;
+    --accent-wash:     #eaf1fb;
+    --fam-numerica:    #2a78d6;
+    --fam-extractiva:  #eb6834;
+    --fam-comparativa: #1baf7a;
+    --fam-numerica-wash:    #eaf1fb;
+    --fam-extractiva-wash:  #fdece3;
+    --fam-comparativa-wash: #e6f7f0;
+    --good:            #0ca30c;
+    --good-wash:       #e8f6e8;
+    --warning:         #b8790a;
+    --warning-wash:    #fdf1dc;
+    --critical:        #d03b3b;
+    --critical-wash:   #fbe9e9;
+    --neutral-wash:    #f0efec;
+    --up:              #006300;
+    --down:            #b8330f;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme: dark;
+      --page:#0d0d0d; --surface:#1a1a19; --surface-raised:#202020;
+      --ink-primary:#ffffff; --ink-secondary:#c3c2b7; --ink-muted:#898781;
+      --hairline:#2c2c2a; --border:rgba(255,255,255,0.10);
+      --accent:#3987e5; --accent-wash:#17263a;
+      --fam-numerica:#3987e5; --fam-extractiva:#d95926; --fam-comparativa:#199e70;
+      --fam-numerica-wash:#17263a; --fam-extractiva-wash:#33200f; --fam-comparativa-wash:#0f2c22;
+      --good:#0ca30c; --good-wash:#10280f;
+      --warning:#fab219; --warning-wash:#332708;
+      --critical:#e66767; --critical-wash:#341414;
+      --neutral-wash:#232320; --up:#0ca30c; --down:#e66767;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --page:#0d0d0d; --surface:#1a1a19; --surface-raised:#202020;
+    --ink-primary:#ffffff; --ink-secondary:#c3c2b7; --ink-muted:#898781;
+    --hairline:#2c2c2a; --border:rgba(255,255,255,0.10);
+    --accent:#3987e5; --accent-wash:#17263a;
+    --fam-numerica:#3987e5; --fam-extractiva:#d95926; --fam-comparativa:#199e70;
+    --fam-numerica-wash:#17263a; --fam-extractiva-wash:#33200f; --fam-comparativa-wash:#0f2c22;
+    --good:#0ca30c; --good-wash:#10280f;
+    --warning:#fab219; --warning-wash:#332708;
+    --critical:#e66767; --critical-wash:#341414;
+    --neutral-wash:#232320; --up:#0ca30c; --down:#e66767;
+  }
+
+  *{ box-sizing:border-box; }
+  body{
+    background:var(--page); color:var(--ink-primary);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    padding-inline:16px;
+    padding-block: max(20px, env(safe-area-inset-top,0px)) max(48px, env(safe-area-inset-bottom,0px));
+  }
+  .mono{ font-family: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace; }
+  .tab{ font-variant-numeric: tabular-nums; }
+  .wrap{ max-width: 1000px; margin: 0 auto; display:flex; flex-direction:column; gap:22px; }
+
+  h1{ font-size: 1.5rem; font-weight:750; letter-spacing:-0.01em; margin:0; text-wrap:balance; }
+  .subtitulo{ color:var(--ink-secondary); font-size:0.9rem; margin:2px 0 0; }
+
+  /* ---------- pasos ---------- */
+  .pasos{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
+  @media (max-width:720px){ .pasos{ grid-template-columns:1fr; } }
+
+  .paso{
+    background:var(--surface); border:1px solid var(--border); border-radius:14px;
+    padding:16px; display:flex; flex-direction:column; gap:10px;
+  }
+  .paso.paso--hecho{ border-color: color-mix(in srgb, var(--good) 40%, var(--border)); }
+  .paso-num{
+    width:22px; height:22px; border-radius:50%; background:var(--neutral-wash); color:var(--ink-secondary);
+    display:flex; align-items:center; justify-content:center; font-size:0.76rem; font-weight:800; flex:none;
+  }
+  .paso--hecho .paso-num{ background:var(--good); color:#fff; }
+  .paso-cab{ display:flex; align-items:center; gap:9px; }
+  .paso-cab h2{ font-size:0.98rem; margin:0; }
+  .paso-hint{ font-size:0.8rem; color:var(--ink-secondary); margin:0; }
+
+  .dropzone{
+    border:2px dashed var(--hairline); border-radius:10px; padding:20px 14px;
+    display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center;
+    cursor:pointer; transition: border-color .15s, background .15s;
+  }
+  .dropzone:hover, .dropzone.arrastrando{ border-color:var(--accent); background:var(--accent-wash); }
+  .dropzone .icono-drop{ font-size:1.4rem; }
+  .dropzone .principal{ font-size:0.86rem; font-weight:600; }
+  .dropzone .secundario{ font-size:0.74rem; color:var(--ink-muted); }
+  .dropzone input[type=file]{ display:none; }
+
+  .archivo-cargado{
+    display:flex; align-items:center; justify-content:space-between; gap:8px;
+    background:var(--good-wash); border-radius:9px; padding:8px 11px; font-size:0.82rem;
+  }
+  .archivo-cargado b{ color:var(--good); }
+  .archivo-cargado button{
+    appearance:none; border:none; background:none; color:var(--ink-muted); font:inherit; font-size:0.76rem;
+    cursor:pointer; text-decoration:underline;
+  }
+
+  .informe{ display:flex; flex-direction:column; gap:5px; }
+  .chequeo{ display:flex; gap:7px; align-items:flex-start; font-size:0.8rem; }
+  .chequeo .marca{ flex:none; width:16px; }
+  .chequeo.ok .marca{ color:var(--good); }
+  .chequeo.mal .marca{ color:var(--critical); }
+  .chequeo.mal{ color:var(--critical); }
+  .conteo-familias{ display:flex; gap:8px; flex-wrap:wrap; margin-top:2px; }
+
+  .error-carga{
+    background:var(--critical-wash); border-radius:9px; padding:9px 11px; font-size:0.8rem; color:var(--critical);
+  }
+
+  .siguiente-paso-hint{
+    background:var(--accent-wash); border-radius:9px; padding:9px 11px; font-size:0.78rem; display:flex; gap:8px; align-items:flex-start;
+  }
+  .siguiente-paso-hint code{ background:var(--surface-raised); border-radius:4px; padding:1px 4px; }
+
+  /* ---------- estado vacío del tablero ---------- */
+  .vacio{
+    background:var(--surface); border:1px dashed var(--hairline); border-radius:14px;
+    padding:30px 16px; text-align:center; color:var(--ink-muted); font-size:0.86rem;
+    display:flex; flex-direction:column; gap:10px; align-items:center;
+  }
+  .vacio button.ejemplo{
+    appearance:none; border:1px solid var(--border); background:var(--surface-raised); color:var(--ink-secondary);
+    font:inherit; font-size:0.8rem; font-weight:600; border-radius:999px; padding:7px 14px; cursor:pointer;
+  }
+  .vacio button.ejemplo:hover{ border-color:var(--accent); color:var(--accent); }
+
+  .banner-ejemplo{
+    display:flex; align-items:center; gap:10px;
+    background: var(--warning-wash); border:1px solid var(--border); border-left: 4px solid var(--warning);
+    border-radius:10px; padding:11px 14px; font-size:0.86rem; color:var(--ink-primary);
+  }
+  .banner-ejemplo b{ color:var(--warning); }
+
+  /* ---------- marcador ---------- */
+  .marcador{ display:grid; grid-template-columns: 1.15fr 1fr; gap: 14px; }
+  @media (max-width:640px){ .marcador{ grid-template-columns: 1fr; } }
+
+  .hero-delta{
+    background:var(--surface); border:1px solid var(--border); border-radius:14px;
+    padding:20px 22px; display:flex; flex-direction:column; gap:6px; justify-content:center;
+  }
+  .hero-delta .etiqueta{ font-size:0.78rem; color:var(--ink-muted); text-transform:uppercase; letter-spacing:0.06em; }
+  .hero-delta .cifra{ font-size:2.6rem; font-weight:800; line-height:1; letter-spacing:-0.02em; }
+  .hero-delta .cifra.up{ color:var(--up); } .hero-delta .cifra.down{ color:var(--down); } .hero-delta .cifra.igual{ color:var(--ink-secondary); }
+  .hero-delta .glosa{ font-size:0.85rem; color:var(--ink-secondary); max-width:46ch; }
+
+  .kpis{ display:grid; grid-template-columns: repeat(2, 1fr); gap:10px; }
+  @media (max-width:420px){ .kpis{ grid-template-columns: 1fr; } }
+  .kpi{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:12px 14px; display:flex; flex-direction:column; gap:7px; }
+  .kpi .etiqueta{ font-size:0.74rem; color:var(--ink-muted); text-transform:uppercase; letter-spacing:0.04em; }
+  .kpi .barra-comp{ display:flex; align-items:center; gap:6px; }
+  .kpi .pista-dbl{ position:relative; flex:1; height:6px; border-radius:4px; background:var(--neutral-wash); }
+  .kpi .punto{ position:absolute; top:50%; width:9px; height:9px; border-radius:50%; transform:translate(-50%,-50%); border:2px solid var(--surface); }
+  .kpi .punto.propio{ background:var(--ink-muted); }
+  .kpi .punto.holdout{ background:var(--accent); }
+  .kpi .valores{ display:flex; justify-content:space-between; font-size:0.78rem; }
+  .kpi .valores .v-propio{ color:var(--ink-muted); }
+  .kpi .valores .v-holdout{ color:var(--accent); font-weight:700; }
+  .kpi .delta-mini{ font-size:0.76rem; font-weight:600; align-self:flex-end; }
+  .kpi .delta-mini.up{ color:var(--up); } .kpi .delta-mini.down{ color:var(--down); } .kpi .delta-mini.igual{ color:var(--ink-muted); }
+
+  .tiempo{ grid-column: 1 / -1; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:12px 14px; display:flex; flex-direction:column; gap:8px; }
+  .tiempo .fila-etq{ display:flex; justify-content:space-between; font-size:0.8rem; color:var(--ink-secondary); }
+  .tiempo .pista{ height:8px; border-radius:5px; background:var(--neutral-wash); overflow:hidden; }
+  .tiempo .relleno{ height:100%; background:var(--accent); border-radius:5px; }
+
+  /* ---------- leyenda + filtros ---------- */
+  .barra-control{ display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+  .leyenda{ display:flex; gap:14px; flex-wrap:wrap; }
+  .leyenda .item{ display:flex; align-items:center; gap:6px; font-size:0.82rem; color:var(--ink-secondary); }
+  .leyenda .punto2{ width:9px; height:9px; border-radius:50%; flex:none; }
+  .filtros{ display:flex; gap:6px; flex-wrap:wrap; }
+  .chip{ appearance:none; border:1px solid var(--border); background:var(--surface); color:var(--ink-secondary); font: inherit; font-size:0.8rem; font-weight:600; border-radius:999px; padding:6px 12px; cursor:pointer; }
+  .chip[aria-pressed="true"]{ background:var(--accent); border-color:var(--accent); color:#fff; }
+  .chip:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+
+  /* ---------- tarjetas ---------- */
+  .rejilla{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
+  @media (max-width:720px){ .rejilla{ grid-template-columns: 1fr; } }
+  .tarjeta{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:16px; display:flex; flex-direction:column; gap:10px; border-left: 3px solid var(--hairline); }
+  .tarjeta[data-estado="good"]{ border-left-color:var(--good); }
+  .tarjeta[data-estado="warning"]{ border-left-color:var(--warning); }
+  .tarjeta[data-estado="critical"]{ border-left-color:var(--critical); }
+  .tarjeta-cab{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .badges{ display:flex; gap:6px; flex-wrap:wrap; }
+  .badge{ font-size:0.72rem; font-weight:700; padding:3px 8px; border-radius:6px; white-space:nowrap; }
+  .badge-fam{ text-transform:uppercase; letter-spacing:0.03em; }
+  .badge-fam.numerica{ background:var(--fam-numerica-wash); color:var(--fam-numerica); }
+  .badge-fam.extractiva{ background:var(--fam-extractiva-wash); color:var(--fam-extractiva); }
+  .badge-fam.comparativa{ background:var(--fam-comparativa-wash); color:var(--fam-comparativa); }
+  .badge-hueco{ background:var(--neutral-wash); color:var(--ink-secondary); }
+  .badge-id{ color:var(--ink-muted); font-size:0.76rem; }
+  .estado{ display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; flex:none; }
+  .estado .icono{ width:18px; height:18px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.72rem; color:#fff; flex:none; }
+  .estado[data-estado="good"] .icono{ background:var(--good); } .estado[data-estado="good"]{ color:var(--good); }
+  .estado[data-estado="warning"] .icono{ background:var(--warning); color:#3a2c00; } .estado[data-estado="warning"]{ color:var(--warning); }
+  .estado[data-estado="critical"] .icono{ background:var(--critical); } .estado[data-estado="critical"]{ color:var(--critical); }
+  .pregunta{ font-size:0.94rem; font-weight:600; line-height:1.35; }
+  .ticker{ color:var(--ink-muted); font-size:0.78rem; }
+  .rastro{ display:flex; align-items:center; gap:5px; flex-wrap:wrap; font-size:0.72rem; }
+  .paso-tool{ background:var(--neutral-wash); color:var(--ink-secondary); border-radius:6px; padding:3px 7px; white-space:nowrap; }
+  .flecha{ color:var(--ink-muted); }
+  .bloque-cifra{ display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; background:var(--surface-raised); border:1px dashed var(--hairline); border-radius:9px; padding:8px 10px; font-size:0.8rem; }
+  .bloque-cifra .par{ display:flex; flex-direction:column; gap:1px; }
+  .bloque-cifra .etq{ color:var(--ink-muted); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.03em; }
+  .cita{ border-left:2px solid var(--hairline); padding-left:9px; font-size:0.8rem; color:var(--ink-secondary); font-style:italic; line-height:1.4; }
+  .cita .chunk{ display:block; margin-top:3px; font-style:normal; color:var(--ink-muted); font-size:0.72rem; }
+  .respuesta{ font-size:0.82rem; color:var(--ink-primary); line-height:1.4; }
+  .aviso{ display:flex; gap:7px; align-items:flex-start; background:var(--warning-wash); border-radius:8px; padding:7px 9px; font-size:0.76rem; color:var(--ink-primary); }
+  .aviso b{ color:var(--warning); flex:none; }
+  .huecomsg{ background:var(--neutral-wash); border-radius:8px; padding:7px 9px; font-size:0.78rem; color:var(--ink-secondary); }
+  .meta{ display:flex; gap:12px; font-size:0.72rem; color:var(--ink-muted); border-top:1px solid var(--hairline); padding-top:8px; }
+  footer{ text-align:center; color:var(--ink-muted); font-size:0.75rem; padding-top:6px; }
+</style>
+
+<div class="wrap">
+  <div>
+    <h1>Marcador del hold-out</h1>
+    <p class="subtitulo">Sistema oficial (<span class="mono">cifras_comparadas</span>) · las 10 preguntas ciegas del día 24</p>
+  </div>
+
+  <section class="pasos">
+    <div class="paso" id="paso1">
+      <div class="paso-cab"><span class="paso-num" id="paso1-num">1</span><h2>Validar las preguntas</h2></div>
+      <p class="paso-hint">Sube el <span class="mono">.jsonl</span> del hold-out. Se comprueba el esquema al momento, en el navegador — sin clave, sin ejecutar el agente.</p>
+      <div id="paso1-cuerpo">
+        <label class="dropzone" id="dz-json" for="input-json">
+          <span class="icono-drop">📄</span>
+          <span class="principal">Arrastra el .jsonl aquí, o haz clic</span>
+          <span class="secundario">holdout.jsonl · 10 preguntas, mismo esquema que el golden</span>
+        </label>
+        <input type="file" id="input-json" accept=".jsonl,.json,.txt">
+      </div>
+    </div>
+
+    <div class="paso" id="paso2">
+      <div class="paso-cab"><span class="paso-num" id="paso2-num">2</span><h2>Ver los resultados</h2></div>
+      <p class="paso-hint">Sube el <span class="mono">.csv</span> que genera <span class="mono">interfaz.evaluar()</span> al ejecutar el notebook 06 de verdad — eso sí llama al agente.</p>
+      <div id="paso2-cuerpo">
+        <label class="dropzone" id="dz-csv" for="input-csv">
+          <span class="icono-drop">📊</span>
+          <span class="principal">Arrastra el .csv aquí, o haz clic</span>
+          <span class="secundario">resultados/eval_holdout.csv</span>
+        </label>
+        <input type="file" id="input-csv" accept=".csv">
+      </div>
+    </div>
+  </section>
+
+  <div id="zona-tablero">
+    <div class="vacio" id="vacio">
+      <span style="font-size:1.6rem">🗂️</span>
+      <span>El tablero aparece aquí en cuanto subas el CSV de resultados.</span>
+      <button class="ejemplo" id="btn-ejemplo">Ver con datos de ejemplo mientras tanto</button>
+    </div>
+  </div>
+
+  <footer>El .jsonl solo se valida en tu navegador; nada se envía a ningún sitio. El .csv sale de <span class="mono">resultados/eval_&lt;etiqueta&gt;.csv</span>.</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ============================================================
+     Referencia REAL: el sistema oficial sobre el golden propio
+     (resultados/tabla_baseline_vs_final_propio.csv, fila "+ cifras
+     completas (final oficial)"). Con esto se calcula el delta.
+     ============================================================ */
+  var PROPIO_REF = { cita:0.929, cifra:0.923, tool:1.00, recall:0.923, coste:2.076, latencia:25.862, n:20 };
+
+  var CAMPOS_PREGUNTA = ["id","pregunta","familia","ticker","fiscal_year","respuesta_esperada",
+    "cifra_esperada","unidad","concept_xbrl","item_esperado","ancla_texto","ancla_inicio",
+    "ancla_fin","chunk_id_esperado","herramienta_esperada","autor"];
+  var FAMILIAS_VALIDAS = ["numerica","extractiva","comparativa"];
+  var HERRAMIENTAS_VALIDAS = ["list_available","get_xbrl_fact","search_filings","read_section"];
+
+  var EJEMPLO = [
+    { id:"of-008", familia:"numerica", ticker:"AAPL", fy:2025, estado:"good",
+      pregunta:"¿Cuánto facturó Apple en el ejercicio fiscal 2025?",
+      rastro:["get_xbrl_fact","RespuestaFinanciera"], cifraEsperada:"416.161 M USD", cifraAgente:"416.161 M USD",
+      coste:0.35, latencia:5.2, avisos:[], hueco:false },
+    { id:"of-011", familia:"numerica", ticker:"AMZN", fy:2025, estado:"good",
+      pregunta:"¿Cuánto efectivo generaron las actividades de explotación de Amazon en 2025?",
+      rastro:["get_xbrl_fact","RespuestaFinanciera"], cifraEsperada:"139.514 M USD", cifraAgente:"139.514 M USD",
+      coste:0.33, latencia:4.8, avisos:[], hueco:false },
+    { id:"of-005", familia:"extractiva", ticker:"GOOGL", fy:2025, estado:"good",
+      pregunta:"¿Qué demanda antimonopolio sobre su negocio de búsqueda menciona Alphabet en su 10-K de FY2025?",
+      rastro:["list_available","search_filings","RespuestaFinanciera"],
+      respuesta:"La del Departamento de Justicia y varios fiscales generales estatales sobre sus prácticas de búsqueda y publicidad en búsqueda.",
+      cita:"For example, the DOJ and a number of state Attorneys General filed a lawsuit concerning our Search and Search advertising practices and our compliance with US antitrust laws.",
+      chunk:"GOOGL-2025-1A-0025", coste:1.10, latencia:18.0, avisos:[], hueco:false },
+    { id:"of-002", familia:"extractiva", ticker:"MSFT", fy:2025, estado:"warning",
+      pregunta:"¿Qué riesgo de seguridad asocia Microsoft en FY2025 al uso creciente de modelos de IA generativa en sus sistemas internos?",
+      rastro:["search_filings","search_filings","RespuestaFinanciera"],
+      respuesta:"Que puede abrir nuevas superficies de ataque o dar métodos nuevos a los adversarios.",
+      cita:"Increasing use of generative AI models in our internal systems may create new attack surfaces or methods for adversaries.",
+      chunk:"MSFT-2025-1A-0009", coste:1.60, latencia:27.0,
+      avisos:["No has devuelto la respuesta estructurada. Responde de nuevo usando el esquema completo."], hueco:false },
+    { id:"of-003", familia:"extractiva", ticker:"META", fy:2025, estado:"critical",
+      pregunta:"¿Qué dice Meta en FY2025 sobre las bases legales en las que se apoya para transferir datos de la Unión Europea a Estados Unidos?",
+      rastro:["search_filings","RespuestaFinanciera"],
+      respuesta:"Que las bases de transferencia de datos UE→EE. UU. han estado bajo revisión regulatoria.",
+      cita:"Las bases de transferencia de datos UE→EE. UU. han estado bajo revisión regulatoria.", chunk:"META-2025-1A-0056",
+      falloCita:"la cita no es literal: parafraseó en vez de copiar el fragmento", coste:0.90, latencia:14.0, avisos:[], hueco:false },
+    { id:"of-018", familia:"comparativa", ticker:"GOOGL", fy:2025, estado:"good",
+      pregunta:"¿Cuánto crecieron los ingresos de Alphabet entre 2024 y 2025, y cuánto invirtió en capex en cada uno de esos ejercicios?",
+      rastro:["get_xbrl_fact","get_xbrl_fact","search_filings","RespuestaFinanciera"],
+      cifraEsperada:"402.836 M USD", cifraAgente:"402.836 M USD", cifraAnterior:"350.018 M USD", variacion:"+15,1 %",
+      respuesta:"Pasaron de 350.018 M a 402.836 M (+15,1 %). Capex: 52.500 M en 2024 y 91.400 M en 2025.",
+      cita:"During the years ended December 31, 2024 and 2025, we spent $52.5 billion and $91.4 billion on capital expenditures, respectively.",
+      chunk:"GOOGL-2025-7-0019", coste:1.90, latencia:24.0, avisos:[], hueco:false },
+    { id:"of-017", familia:"comparativa", ticker:"AMZN", fy:2025, estado:"good",
+      pregunta:"¿Cómo evolucionó el beneficio operativo de Amazon entre 2024 y 2025, y qué previsión dio para el primer trimestre siguiente?",
+      rastro:["get_xbrl_fact","get_xbrl_fact","search_filings","RespuestaFinanciera"],
+      cifraEsperada:"79.975 M USD", cifraAgente:"79.975 M USD", cifraAnterior:"68.593 M USD", variacion:"+16,6 %",
+      respuesta:"Pasó de 68.593 M a 79.975 M (+16,6 %). Prevé entre 16.500 y 21.500 M para el trimestre siguiente.",
+      cita:"Operating income is expected to be between $16.5 billion and $21.5 billion, compared with $18.4 billion in first quarter 2025.",
+      chunk:"AMZN-2025-7-0024", coste:2.00, latencia:29.0, avisos:[], hueco:false },
+    { id:"of-020", familia:"comparativa", ticker:"META", fy:2025, estado:"warning",
+      pregunta:"¿Cómo varió el beneficio neto de Meta entre 2024 y 2025, y qué explica esa variación?",
+      rastro:["get_xbrl_fact","get_xbrl_fact","get_xbrl_fact","search_filings","RespuestaFinanciera"],
+      cifraEsperada:"60.458 M USD", cifraAgente:"60.458 M USD", cifraAnterior:"62.360 M USD", variacion:"−3,1 %",
+      respuesta:"Bajó de 62.360 M a 60.458 M (−3,1 %) por el aumento del tipo impositivo efectivo.",
+      cita:"Our provision for income taxes in 2025 increased $17.17 billion or 207% compared to 2024, primarily due to an increase in the effective tax rate.",
+      chunk:"META-2025-7-0028", coste:2.30, latencia:33.0,
+      avisos:["Tu cifra_anterior 61.200.000.000,00 no coincide con XBRL: NetIncomeLoss de META en FY2024 es 62.360.000.000,00."], hueco:false },
+    { id:"hx-01", familia:"numerica", ticker:"AMZN", fy:2025, estado:"good",
+      pregunta:"¿Cuál fue el margen bruto (GrossProfit) de Amazon en FY2025?",
+      rastro:["get_xbrl_fact","RespuestaFinanciera"], coste:0.40, latencia:6.5, avisos:[], hueco:true,
+      huecoMsg:"Amazon no reporta GrossProfit en XBRL. Respondió fuente='ninguna', sin cifra — correcto." },
+    { id:"hx-05", familia:"numerica", ticker:"MSFT", fy:2023, estado:"good",
+      pregunta:"¿Cuál fue el beneficio neto de Microsoft en FY2023?",
+      rastro:["list_available","get_xbrl_fact","RespuestaFinanciera"], coste:0.50, latencia:8.1, avisos:[], hueco:true,
+      huecoMsg:"FY2023 no está en el corpus (solo FY2024-FY2025). Respondió fuente='ninguna' — correcto." }
+  ];
+
+  var ICONO = { good:"✔", warning:"!", critical:"✕" };
+  var TEXTO_ESTADO = { good:"Correcta", warning:"Correcta, con aviso", critical:"Fallada" };
+
+  /* ============================== utilidades ============================== */
+  function esc(s){
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
+    });
+  }
+  function num(v){ var n = parseFloat(v); return isFinite(n) ? n : null; }
+  function esVerdadero(v){ return v === "True" || v === true; }
+  function esFalso(v){ return v === "False" || v === false; }
+  function vacio(v){ return v === undefined || v === null || v === "" || (typeof v === "number" && isNaN(v)); }
+
+  /* Parser CSV que respeta comillas RFC4180 (campos con comas, comillas
+     dobladas o saltos de línea) — el que escribe pandas por defecto. */
+  function parsearCSV(texto){
+    var filas = [], fila = [], campo = "", enComillas = false;
+    for (var i = 0; i < texto.length; i++){
+      var c = texto[i];
+      if (enComillas){
+        if (c === '"'){
+          if (texto[i+1] === '"'){ campo += '"'; i++; } else { enComillas = false; }
+        } else campo += c;
+      } else if (c === '"'){ enComillas = true; }
+      else if (c === ','){ fila.push(campo); campo = ""; }
+      else if (c === '\n' || c === '\r'){
+        if (c === '\r' && texto[i+1] === '\n') i++;
+        fila.push(campo); campo = "";
+        if (fila.length > 1 || fila[0] !== ""){ filas.push(fila); }
+        fila = [];
+      } else campo += c;
+    }
+    if (campo !== "" || fila.length){ fila.push(campo); filas.push(fila); }
+    if (!filas.length) return [];
+    var cabecera = filas[0];
+    return filas.slice(1).map(function(f){
+      var obj = {};
+      cabecera.forEach(function(nombre, j){ obj[nombre] = f[j]; });
+      return obj;
+    });
+  }
+
+  function formatearCifra(v, unidad){
+    if (v == null || v === "") return "—";
+    var n = num(v);
+    if (n == null) return esc(v);
+    unidad = unidad || "";
+    if (Math.abs(n) >= 1e6){
+      return (n/1e6).toLocaleString("es-ES", { maximumFractionDigits: 0 }) + " M " + unidad;
+    }
+    if (Math.abs(n) >= 1000){
+      return n.toLocaleString("es-ES", { maximumFractionDigits: 0 }) + " " + unidad;
+    }
+    return n.toLocaleString("es-ES", { maximumFractionDigits: 2 }) + " " + unidad;
+  }
+
+  /* ============================== Paso 1: validar el .jsonl ============================== */
+  function validarPreguntas(lineas){
+    var problemas = [], preguntas = [], vistos = {};
+    lineas.forEach(function(linea, i){
+      if (!linea.trim()) return;
+      var q;
+      try { q = JSON.parse(linea); }
+      catch(e){ problemas.push("Línea " + (i+1) + ": no es JSON válido."); return; }
+
+      var faltan = CAMPOS_PREGUNTA.filter(function(c){ return !(c in q); });
+      if (faltan.length){ problemas.push(q.id ? q.id + ": faltan campos " + faltan.join(", ") : "Línea " + (i+1) + ": faltan campos " + faltan.join(", ")); }
+      if (q.id){ if (vistos[q.id]) problemas.push(q.id + ": id duplicado"); vistos[q.id] = true; }
+      if (q.familia && FAMILIAS_VALIDAS.indexOf(q.familia) === -1) problemas.push((q.id||"?") + ": familia desconocida '" + q.familia + "'");
+      if (q.herramienta_esperada){
+        var malas = (Array.isArray(q.herramienta_esperada) ? q.herramienta_esperada : []).filter(function(h){ return HERRAMIENTAS_VALIDAS.indexOf(h) === -1; });
+        if (malas.length) problemas.push((q.id||"?") + ": herramienta_esperada desconocida " + malas.join(", "));
+      }
+      if (q.familia === "numerica" || q.familia === "comparativa"){
+        if (q.concept_xbrl == null && q.cifra_esperada != null) problemas.push((q.id||"?") + ": tiene cifra_esperada pero no concept_xbrl");
+      }
+      if ((q.familia === "extractiva" || q.familia === "comparativa") && !q.ancla_texto){
+        problemas.push((q.id||"?") + ": " + q.familia + " sin ancla_texto");
+      }
+      preguntas.push(q);
+    });
+    return { preguntas: preguntas, problemas: problemas };
+  }
+
+  function pintarInformePreguntas(resultado){
+    var cuerpo = document.getElementById("paso1-cuerpo");
+    var preguntas = resultado.preguntas, problemas = resultado.problemas;
+    var porFamilia = {};
+    preguntas.forEach(function(q){ porFamilia[q.familia] = (porFamilia[q.familia]||0) + 1; });
+    var huecos = preguntas.filter(function(q){
+      return (q.familia === "numerica" || q.familia === "comparativa") && vacio(q.cifra_esperada);
+    }).length;
+
+    var html = '<div class="archivo-cargado"><span><b>' + preguntas.length + ' preguntas</b> cargadas y validadas en el navegador.</span>' +
+      '<button id="btn-quitar-json">quitar</button></div>';
+    html += '<div class="informe">';
+    if (problemas.length){
+      problemas.forEach(function(p){ html += '<div class="chequeo mal"><span class="marca">✕</span><span>' + esc(p) + '</span></div>'; });
+    } else {
+      html += '<div class="chequeo ok"><span class="marca">✔</span><span>Esquema correcto: los ' + CAMPOS_PREGUNTA.length + ' campos están en cada pregunta.</span></div>';
+    }
+    html += '<div class="chequeo ' + (preguntas.length === 10 ? "ok" : "mal") + '"><span class="marca">' + (preguntas.length === 10 ? "✔" : "✕") + '</span><span>' + preguntas.length + ' preguntas (se esperan 10).</span></div>';
+    html += '<div class="chequeo ' + (huecos >= 2 ? "ok" : "mal") + '"><span class="marca">' + (huecos >= 2 ? "✔" : "✕") + '</span><span>' + huecos + ' sin respuesta en el corpus (el enunciado exige al menos 2).</span></div>';
+    html += '<div class="conteo-familias">' + FAMILIAS_VALIDAS.map(function(f){
+      return '<span class="badge badge-fam ' + f + '">' + f + ' · ' + (porFamilia[f]||0) + '</span>';
+    }).join('') + '</div>';
+    html += '</div>';
+    html += '<div class="siguiente-paso-hint">👉 Ahora ejecuta el notebook 06 con este mismo fichero como <code>RUTA_HOLDOUT</code>, y sube abajo el <code>eval_holdout.csv</code> que produce.</div>';
+
+    cuerpo.innerHTML = html;
+    document.getElementById("btn-quitar-json").addEventListener("click", function(){ reiniciarPaso1(); });
+    document.getElementById("paso1").classList.add("paso--hecho");
+    document.getElementById("paso1-num").textContent = "✔";
+  }
+
+  function reiniciarPaso1(){
+    document.getElementById("paso1").classList.remove("paso--hecho");
+    document.getElementById("paso1-num").textContent = "1";
+    document.getElementById("paso1-cuerpo").innerHTML =
+      '<label class="dropzone" id="dz-json" for="input-json"><span class="icono-drop">📄</span>' +
+      '<span class="principal">Arrastra el .jsonl aquí, o haz clic</span>' +
+      '<span class="secundario">holdout.jsonl · 10 preguntas, mismo esquema que el golden</span></label>' +
+      '<input type="file" id="input-json" accept=".jsonl,.json,.txt">';
+    engancharDropzone("dz-json", "input-json", function(texto){
+      pintarInformePreguntas(validarPreguntas(texto.split("\n")));
+    }, function(msg){ mostrarErrorCarga("paso1-cuerpo", msg); });
+  }
+
+  /* ============================== Paso 2: resultados reales ============================== */
+  function filaAEstado(fila){
+    if (fila.error) return "critical";
+    if (esFalso(fila.cifra_ok) || esFalso(fila.cita_ok) || esFalso(fila.tool_ok)) return "critical";
+    if (num(fila.n_avisos) > 0) return "warning";
+    return "good";
+  }
+
+  function csvATarjeta(fila){
+    var esHueco = (fila.familia === "numerica" || fila.familia === "comparativa") && vacio(fila.cifra_esperada) && !fila.error;
+    var avisos = (fila.avisos_texto || "").split(" || ").filter(Boolean);
+    return {
+      id: fila.id, familia: fila.familia, ticker: fila.ticker || "", fy: fila.fiscal_year || "",
+      estado: filaAEstado(fila), pregunta: fila.pregunta || "(sin texto: CSV de una versión anterior)",
+      rastro: (fila.herramientas || "").split(",").filter(Boolean).concat(fila.error ? [] : ["RespuestaFinanciera"]),
+      cifraEsperada: vacio(fila.cifra_esperada) ? null : formatearCifra(fila.cifra_esperada, "USD"),
+      cifraAgente: vacio(fila.cifra_agente) ? null : formatearCifra(fila.cifra_agente, "USD"),
+      cifraAnterior: vacio(fila.cifra_anterior) ? null : formatearCifra(fila.cifra_anterior, "USD"),
+      variacion: vacio(fila.variacion_pct) ? null : (num(fila.variacion_pct) > 0 ? "+" : "") + num(fila.variacion_pct).toLocaleString("es-ES",{maximumFractionDigits:1}) + " %",
+      respuesta: fila.respuesta || null, cita: fila.cita || null, chunk: fila.chunk_id || null,
+      falloCita: esFalso(fila.cita_ok) ? "la cita no pasó la comprobación (no está literal en el fragmento, o falta)" : null,
+      falloCifraTexto: esFalso(fila.cifra_ok) ? "la cifra no coincide con XBRL (o falta)" : null,
+      falloToolTexto: esFalso(fila.tool_ok) ? "no pasó por la herramienta que tocaba" : null,
+      errorTexto: fila.error || null,
+      coste: fila.coste_usd == null || fila.coste_usd === "" ? null : num(fila.coste_usd) * 100,
+      latencia: fila.latencia_s == null || fila.latencia_s === "" ? null : num(fila.latencia_s),
+      avisos: avisos, hueco: esHueco,
+      huecoMsg: esHueco ? "Sin respuesta esperada en el corpus. El agente respondió fuente='" + (fila.fuente || "ninguna") + "'" + (vacio(fila.cifra_agente) ? ", sin cifra — correcto." : ", con una cifra — revisar.") : null
+    };
+  }
+
+  function tarjetaHTML(p){
+    var badges = '<span class="badge badge-fam ' + p.familia + '">' + esc(p.familia) + '</span>' +
+      '<span class="badge-id mono">' + esc(p.id) + '</span>' + (p.hueco ? '<span class="badge badge-hueco">hueco</span>' : '');
+    var rastro = p.rastro.map(function(paso, i){
+      return (i > 0 ? '<span class="flecha">→</span>' : '') + '<span class="paso-tool mono">' + esc(paso) + '</span>';
+    }).join('');
+
+    var cuerpo = "";
+    if (p.errorTexto){
+      cuerpo = '<div class="aviso"><b>✕</b><span>La invocación falló: ' + esc(p.errorTexto) + '</span></div>';
+    } else if (p.hueco){
+      cuerpo = '<div class="huecomsg">' + esc(p.huecoMsg) + '</div>';
+    } else if (p.familia === "extractiva" || p.familia === "comparativa"){
+      if (p.familia === "comparativa" && (p.cifraAnterior || p.cifraAgente)){
+        cuerpo += '<div class="bloque-cifra">' +
+          '<div class="par"><span class="etq">Ejercicio anterior</span><span class="tab">' + esc(p.cifraAnterior || "—") + '</span></div>' +
+          '<div class="par"><span class="etq">Ejercicio pedido</span><span class="tab">' + esc(p.cifraAgente || "—") + '</span></div>' +
+          '<div class="par"><span class="etq">Variación</span><span class="tab">' + esc(p.variacion || "—") + '</span></div>' +
+          '</div>';
+      }
+      if (p.respuesta) cuerpo += '<div class="respuesta">' + esc(p.respuesta) + '</div>';
+      if (p.cita) cuerpo += '<div class="cita">“' + esc(p.cita) + '”<span class="chunk mono">' + esc(p.chunk || "") + '</span></div>';
+      if (p.falloCita) cuerpo += '<div class="aviso"><b>✕</b><span>' + esc(p.falloCita) + '</span></div>';
+    } else {
+      cuerpo = '<div class="bloque-cifra">' +
+        '<div class="par"><span class="etq">Esperada</span><span class="tab">' + esc(p.cifraEsperada || "—") + '</span></div>' +
+        '<div class="par"><span class="etq">Dada por el agente</span><span class="tab">' + esc(p.cifraAgente || "—") + '</span></div>' +
+        '</div>';
+      if (p.falloCifraTexto) cuerpo += '<div class="aviso"><b>✕</b><span>' + esc(p.falloCifraTexto) + '</span></div>';
+    }
+    if (p.falloToolTexto) cuerpo += '<div class="aviso"><b>✕</b><span>' + esc(p.falloToolTexto) + '</span></div>';
+
+    var avisos = p.avisos.map(function(a){ return '<div class="aviso"><b>⚠</b><span>' + esc(a) + '</span></div>'; }).join('');
+    var meta = '<div class="meta">' +
+      (p.coste != null ? '<span>coste ' + p.coste.toLocaleString("es-ES",{maximumFractionDigits:2}) + ' ¢</span>' : '') +
+      (p.latencia != null ? '<span>latencia ' + p.latencia.toLocaleString("es-ES",{maximumFractionDigits:1}) + ' s</span>' : '') +
+      '</div>';
+
+    return '<article class="tarjeta" data-estado="' + p.estado + '">' +
+      '<div class="tarjeta-cab"><div class="badges">' + badges + '</div>' +
+      '<span class="estado" data-estado="' + p.estado + '"><span class="icono">' + ICONO[p.estado] + '</span>' + TEXTO_ESTADO[p.estado] + '</span></div>' +
+      '<div><div class="pregunta">' + esc(p.pregunta) + '</div><div class="ticker mono">' + esc(p.ticker) + (p.fy ? ' · FY' + esc(p.fy) : '') + '</div></div>' +
+      '<div class="rastro">' + rastro + '</div>' + cuerpo + avisos + meta + '</article>';
+  }
+
+  function media(valores){
+    var v = valores.filter(function(x){ return x != null && !isNaN(x); });
+    return v.length ? v.reduce(function(a,b){return a+b;},0) / v.length : null;
+  }
+  function tasa(valores){
+    var v = valores.filter(function(x){ return x === true || x === false; });
+    return v.length ? v.filter(Boolean).length / v.length : null;
+  }
+
+  function construirMarcador(filas, esEjemplo){
+    var cifraOk = filas.map(function(f){ return esVerdadero(f.cifra_ok) ? true : esFalso(f.cifra_ok) ? false : null; }).filter(function(x){return x!==null;});
+    var citaOk = filas.map(function(f){ return esVerdadero(f.cita_ok) ? true : esFalso(f.cita_ok) ? false : null; }).filter(function(x){return x!==null;});
+    var toolOk = filas.map(function(f){ return esVerdadero(f.tool_ok) ? true : esFalso(f.tool_ok) ? false : null; }).filter(function(x){return x!==null;});
+    var recallOk = filas.map(function(f){ return esVerdadero(f.recall) ? true : esFalso(f.recall) ? false : null; }).filter(function(x){return x!==null;});
+    var costes = filas.map(function(f){ return num(f.coste_usd); }).filter(function(x){return x!=null;});
+    var latencias = filas.map(function(f){ return num(f.latencia_s); }).filter(function(x){return x!=null;});
+
+    var m = {
+      cifra: tasa(cifraOk), cita: tasa(citaOk), tool: tasa(toolOk), recall: tasa(recallOk),
+      coste: media(costes) != null ? media(costes) * 100 : null,
+      latencia: media(latencias), tiempoTotal: latencias.reduce(function(a,b){return a+b;}, 0), n: filas.length
+    };
+    return m;
+  }
+
+  function filaKPI(etiqueta, propioVal, holdoutVal, esCoste){
+    if (holdoutVal == null) return "";
+    var d = holdoutVal - propioVal;
+    var mejor = esCoste ? d < 0 : d > 0;
+    var clase = Math.abs(d) < (esCoste ? 0.01 : 0.005) ? "igual" : (mejor ? "up" : "down");
+    var flecha = clase === "igual" ? "—" : (mejor ? "▲" : "▼");
+    var fmt = function(v){ return esCoste ? v.toLocaleString("es-ES",{maximumFractionDigits:2}) + " ¢" : (v*100).toLocaleString("es-ES",{maximumFractionDigits:1}) + " %"; };
+    var min = Math.min(propioVal, holdoutVal), max = Math.max(propioVal, holdoutVal);
+    var rango = esCoste ? Math.max(max, 0.01) * 1.3 : 1;
+    var pp = function(v){ return Math.max(3, Math.min(97, (v/rango)*100)); };
+    return '<div class="kpi">' +
+      '<span class="etiqueta">' + etiqueta + '</span>' +
+      '<div class="barra-comp"><div class="pista-dbl">' +
+        '<span class="punto propio" style="left:' + pp(propioVal) + '%"></span>' +
+        '<span class="punto holdout" style="left:' + pp(holdoutVal) + '%"></span>' +
+      '</div></div>' +
+      '<div class="valores"><span class="v-propio">propio ' + fmt(propioVal) + '</span><span class="v-holdout">hold-out ' + fmt(holdoutVal) + '</span></div>' +
+      '<span class="delta-mini ' + clase + '">' + flecha + ' ' + (clase==="igual" ? "sin cambio" : (d>0?"+":"") + (esCoste ? d.toLocaleString("es-ES",{maximumFractionDigits:2})+" ¢" : (d*100).toLocaleString("es-ES",{maximumFractionDigits:1})+" pp")) + '</span>' +
+      '</div>';
+  }
+
+  function pintarTablero(tarjetas, filasCrudas, esEjemplo){
+    var m = esEjemplo
+      ? { cifra: tarjetas.filter(function(t){return t.familia!=="extractiva";}).length ? 0.9 : null, cita:0.833, tool:1.0, recall:1.0, coste: media(tarjetas.map(function(t){return t.coste;})), latencia: media(tarjetas.map(function(t){return t.latencia;})), tiempoTotal: tarjetas.reduce(function(a,t){return a+(t.latencia||0);},0), n: tarjetas.length }
+      : construirMarcador(filasCrudas, false);
+
+    var deltaCifra = m.cifra != null ? (m.cifra - PROPIO_REF.cifra) * 100 : null;
+    var claseDelta = deltaCifra == null ? "igual" : deltaCifra > 0.5 ? "up" : deltaCifra < -0.5 ? "down" : "igual";
+    var textoDelta = deltaCifra == null ? "—" : (deltaCifra > 0 ? "+" : "") + deltaCifra.toLocaleString("es-ES",{maximumFractionDigits:1}) + " pp";
+
+    var html = "";
+    if (esEjemplo){
+      html += '<div class="banner-ejemplo"><span>🧪</span><span><b>DATOS DE EJEMPLO.</b> Preguntas y citas reales de <span class="mono">oficial_20.jsonl</span> + 2 huecos; respuestas y trazas del agente, inventadas. Sube tu <span class="mono">eval_holdout.csv</span> arriba para ver el resultado real.</span></div>';
+    }
+    html += '<section class="marcador">' +
+      '<div class="hero-delta"><span class="etiqueta">Delta en cifra frente al golden propio</span>' +
+      '<span class="cifra tab ' + claseDelta + '">' + textoDelta + '</span>' +
+      '<span class="glosa">Si esto sale negativo, no es un suspenso: es el hallazgo que pide el enunciado — cuánto de la mejora era general y cuánto memoria del conjunto con el que se iteró.</span></div>' +
+      '<div class="kpis">' +
+        filaKPI("Cifra correcta", PROPIO_REF.cifra, m.cifra) +
+        filaKPI("Cita correcta", PROPIO_REF.cita, m.cita) +
+        filaKPI("Trayectoria", PROPIO_REF.tool, m.tool) +
+        filaKPI("Recall@5", PROPIO_REF.recall, m.recall) +
+        '<div class="tiempo">' +
+          '<div class="fila-etq"><span>Tiempo usado</span><span class="tab">' + (m.tiempoTotal/60).toLocaleString("es-ES",{maximumFractionDigits:1}) + ' min de 20</span></div>' +
+          '<div class="pista"><div class="relleno" style="width:' + Math.min(100, (m.tiempoTotal/60/20)*100) + '%"></div></div>' +
+          '<div class="fila-etq"><span>Coste de la tirada</span><span class="tab">' + (m.coste!=null ? (m.coste*m.n).toLocaleString("es-ES",{maximumFractionDigits:1}) + ' ¢' : '—') + ' (' + (m.coste!=null?m.coste.toLocaleString("es-ES",{maximumFractionDigits:2}):'—') + ' ¢/pregunta · propio ' + PROPIO_REF.coste.toLocaleString("es-ES",{maximumFractionDigits:2}) + ' ¢/pregunta)</span></div>' +
+        '</div>' +
+      '</div></section>';
+
+    html += '<div class="barra-control"><div class="leyenda">' +
+      ["numerica","extractiva","comparativa"].map(function(f){ return '<span class="item"><span class="punto2" style="background:var(--fam-' + f + ')"></span>' + f + '</span>'; }).join('') +
+      '</div><div class="filtros" id="filtros">' +
+        '<button class="chip" data-filtro="todas" aria-pressed="true">Todas (' + tarjetas.length + ')</button>' +
+        '<button class="chip" data-filtro="good" aria-pressed="false">✔ Correctas (' + tarjetas.filter(function(t){return t.estado==="good";}).length + ')</button>' +
+        '<button class="chip" data-filtro="warning" aria-pressed="false">⚠ Con aviso (' + tarjetas.filter(function(t){return t.estado==="warning";}).length + ')</button>' +
+        '<button class="chip" data-filtro="critical" aria-pressed="false">✖ Falladas (' + tarjetas.filter(function(t){return t.estado==="critical";}).length + ')</button>' +
+      '</div></div>';
+
+    html += '<section class="rejilla" id="rejilla"></section>';
+
+    document.getElementById("zona-tablero").innerHTML = html;
+    function pintarRejilla(filtro){
+      document.getElementById("rejilla").innerHTML = tarjetas.filter(function(t){ return filtro === "todas" || t.estado === filtro; }).map(tarjetaHTML).join("");
+    }
+    document.getElementById("filtros").addEventListener("click", function(ev){
+      var boton = ev.target.closest(".chip"); if (!boton) return;
+      document.querySelectorAll("#filtros .chip").forEach(function(c){ c.setAttribute("aria-pressed","false"); });
+      boton.setAttribute("aria-pressed","true"); pintarRejilla(boton.dataset.filtro);
+    });
+    pintarRejilla("todas");
+  }
+
+  /* ============================== carga de ficheros ============================== */
+  function mostrarErrorCarga(idContenedor, msg){
+    var c = document.getElementById(idContenedor);
+    var div = document.createElement("div"); div.className = "error-carga"; div.textContent = msg;
+    c.appendChild(div);
+  }
+
+  function engancharDropzone(idZona, idInput, alTexto, alError){
+    var zona = document.getElementById(idZona), input = document.getElementById(idInput);
+    if (!zona || !input) return;
+    function leer(archivo){
+      if (!archivo) return;
+      var lector = new FileReader();
+      lector.onload = function(){ try { alTexto(lector.result, archivo.name); } catch(e){ alError("No se pudo leer " + archivo.name + ": " + e.message); } };
+      lector.onerror = function(){ alError("No se pudo leer " + archivo.name + "."); };
+      lector.readAsText(archivo);
+    }
+    input.addEventListener("change", function(){ leer(input.files[0]); });
+    zona.addEventListener("dragover", function(e){ e.preventDefault(); zona.classList.add("arrastrando"); });
+    zona.addEventListener("dragleave", function(){ zona.classList.remove("arrastrando"); });
+    zona.addEventListener("drop", function(e){ e.preventDefault(); zona.classList.remove("arrastrando"); leer(e.dataTransfer.files[0]); });
+  }
+
+  function reiniciarPaso2(){
+    document.getElementById("paso2").classList.remove("paso--hecho");
+    document.getElementById("paso2-num").textContent = "2";
+    document.getElementById("paso2-cuerpo").innerHTML =
+      '<label class="dropzone" id="dz-csv" for="input-csv"><span class="icono-drop">📊</span>' +
+      '<span class="principal">Arrastra el .csv aquí, o haz clic</span>' +
+      '<span class="secundario">resultados/eval_holdout.csv</span></label>' +
+      '<input type="file" id="input-csv" accept=".csv">';
+    engancharDropzoneCSV();
+  }
+
+  function engancharDropzoneCSV(){
+    engancharDropzone("dz-csv", "input-csv", function(texto, nombre){
+      var filas = parsearCSV(texto);
+      if (!filas.length){ mostrarErrorCarga("paso2-cuerpo", "El CSV está vacío o no se pudo interpretar."); return; }
+      var tarjetas = filas.map(csvATarjeta);
+      pintarTablero(tarjetas, filas, false);
+      document.getElementById("paso2-cuerpo").innerHTML = '<div class="archivo-cargado"><span><b>' + nombre + '</b> · ' + filas.length + ' preguntas</span><button id="btn-quitar-csv">quitar</button></div>';
+      document.getElementById("btn-quitar-csv").addEventListener("click", function(){ reiniciarPaso2(); document.getElementById("zona-tablero").innerHTML = document.getElementById("zona-tablero").dataset.vacioHtml || ""; mostrarVacio(); });
+      document.getElementById("paso2").classList.add("paso--hecho");
+      document.getElementById("paso2-num").textContent = "✔";
+    }, function(msg){ mostrarErrorCarga("paso2-cuerpo", msg); });
+  }
+
+  function mostrarVacio(){
+    document.getElementById("zona-tablero").innerHTML =
+      '<div class="vacio" id="vacio"><span style="font-size:1.6rem">🗂️</span>' +
+      '<span>El tablero aparece aquí en cuanto subas el CSV de resultados.</span>' +
+      '<button class="ejemplo" id="btn-ejemplo">Ver con datos de ejemplo mientras tanto</button></div>';
+    document.getElementById("btn-ejemplo").addEventListener("click", function(){
+      pintarTablero(EJEMPLO, [], true);
+    });
+  }
+
+  /* ============================== arranque ============================== */
+  reiniciarPaso1();
+  reiniciarPaso2();
+  mostrarVacio();
+})();
+</script>
