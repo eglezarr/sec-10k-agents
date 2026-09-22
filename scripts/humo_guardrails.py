@@ -63,6 +63,29 @@ assert fallos == 0, f"{fallos} caso(s) no se comportan como se esperaba"
 print("\n   Lo que recibiría el modelo si se equivoca en la variación:")
 print("  ", guardrails.revisar_comparacion(resp(variacion_pct=30.0)))
 
+print("\n1b) La cifra es la variación y no el valor del ejercicio")
+CASOS_VARIACION = [   # (caso, respuesta, texto que debe llevar el aviso o None si no debe nombrar variación)
+    ("Variación absoluta en `cifra` (MSFT I+D, 2.978 M)", resp(cifra=2978000000.0), "variación absoluta"),
+    ("Variación de un descenso, con signo negativo", resp(cifra=-2978000000.0), "variación absoluta"),
+    ("Variación porcentual en `cifra` (10,1)", resp(cifra=10.1), "variación porcentual"),
+    ("Valor equivocado que no es la variación", resp(cifra=5e9), None),
+    ("Valor correcto: no avisa", resp(), "correcto"),
+]
+for nombre, respuesta, esperado in CASOS_VARIACION:
+    aviso = guardrails.revisar_cifra(respuesta)
+    if esperado == "correcto":
+        bien = aviso is None
+    elif esperado is None:
+        bien = aviso is not None and "variación" not in aviso.split("no coincide")[0]
+    else:
+        bien = aviso is not None and esperado in aviso
+    fallos += not bien
+    print(f"   {'OK ' if bien else 'MAL'} {nombre}")
+assert fallos == 0, f"{fallos} caso(s) no se comportan como se esperaba"
+
+print("\n   Lo que recibiría el modelo si pone la variación absoluta en `cifra`:")
+print("  ", guardrails.revisar_cifra(resp(cifra=2978000000.0)))
+
 print("\n2) Compatibilidad: sin los campos nuevos, todo como antes")
 for cifra in (32488000000.0, 2978000000.0):
     antes = guardrails.revisar_cifra(RespuestaFinanciera(

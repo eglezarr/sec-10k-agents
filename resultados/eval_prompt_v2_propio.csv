@@ -1,21 +1,21 @@
-id,familia,cita_ok,cifra_ok,tool_ok,recall,n_tools,coste_usd,latencia_s,error,cifra_agente,fuente,herramientas,n_avisos
-pr-n03,numerica,,True,True,,2.0,0.0046425,13.011074400041252,,8675000000.0,xbrl,"get_xbrl_fact,RespuestaFinanciera",0.0
-pr-n05,numerica,,True,True,,2.0,0.005004,6.056767599890009,,5.53,xbrl,"get_xbrl_fact,RespuestaFinanciera",0.0
-pr-n07,numerica,,True,True,,2.0,0.00411,6.2618501000106335,,56950000000.0,xbrl,"get_xbrl_fact,RespuestaFinanciera",0.0
-pr-n10,numerica,,True,True,,2.0,0.00461625,6.148995799943805,,243686000000.0,xbrl,"get_xbrl_fact,RespuestaFinanciera",0.0
-pr-n11,numerica,,True,True,,3.0,0.0084285,16.338257299968973,,350018000000.0,xbrl,"list_available,get_xbrl_fact,RespuestaFinanciera",0.0
-pr-n12,numerica,True,True,True,,4.0,0.01005675,52.71552430000156,,72880000000.0,xbrl,"list_available,get_xbrl_fact,search_filings,RespuestaFinanciera",0.0
-pr-n13,numerica,True,True,True,,6.0,0.021144,25.201234000036493,,200966000000.0,xbrl,"list_available,get_xbrl_fact,search_filings,search_filings,search_filings,RespuestaFinanciera",0.0
-pr-e13,extractiva,True,,True,True,4.0,0.01525875,18.78758280002512,,,texto,"list_available,search_filings,search_filings,RespuestaFinanciera",0.0
-pr-e14,extractiva,True,,True,True,3.0,0.01089,23.6120356998872,,,texto,"list_available,search_filings,RespuestaFinanciera",0.0
-pr-e15,extractiva,True,,True,False,2.0,0.00816375,14.553494600113481,,849000000.0,texto,"search_filings,RespuestaFinanciera",0.0
-pr-e16,extractiva,True,,True,True,5.0,0.02754,21.235720299882814,,,texto,"search_filings,search_filings,search_filings,search_filings,RespuestaFinanciera",0.0
-pr-e18,extractiva,True,,True,True,5.0,0.0323565,36.57641290011816,,22.0,texto,"list_available,search_filings,search_filings,get_xbrl_fact,RespuestaFinanciera",0.0
-pr-e19,extractiva,True,,True,True,3.0,0.0097545,17.8709265999496,,508000000.0,texto,"list_available,search_filings,RespuestaFinanciera",0.0
-pr-e20,extractiva,True,,True,True,2.0,0.007206,15.046422900166363,,,texto,"search_filings,RespuestaFinanciera",0.0
-pr-c06,comparativa,True,True,True,True,7.0,0.02638725,18.067537600174546,,112010000000.0,ambas,"list_available,get_xbrl_fact,get_xbrl_fact,search_filings,search_filings,search_filings,RespuestaFinanciera",0.0
-pr-c09,comparativa,True,True,True,True,5.0,0.013056,13.674181399866939,,32488000000.0,ambas,"list_available,get_xbrl_fact,get_xbrl_fact,search_filings,RespuestaFinanciera",0.0
-pr-c10,comparativa,,,,,,,,RuntimeError: La invocación no devolvió structured_response,,,,
-pr-c11,comparativa,,,,,,,,RuntimeError: La invocación no devolvió structured_response,,,,
-pr-c12,comparativa,,,,,,,,RuntimeError: La invocación no devolvió structured_response,,,,
-pr-c13,comparativa,True,True,True,False,5.0,0.0173295,28.262290500104427,,164713000000.0,ambas,"list_available,get_xbrl_fact,get_xbrl_fact,search_filings,RespuestaFinanciera",0.0
+id,familia,cita_ok,cifra_ok,tool_ok,recall,n_tools,coste_usd,latencia_s,error,cifra_agente,fuente,herramientas,n_avisos,cifra_anterior,variacion_pct
+pr-n03,numerica,,True,True,,2,0.004956,6.612788900034502,,8675000000.0,xbrl,"get_xbrl_fact,RespuestaFinanciera",0,,
+pr-n05,numerica,,True,True,,2,0.00410625,13.657133499858901,,5.53,xbrl,"get_xbrl_fact,RespuestaFinanciera",0,,
+pr-n07,numerica,,True,True,,2,0.005181,25.90986920008436,,56950000000.0,xbrl,"get_xbrl_fact,RespuestaFinanciera",0,,
+pr-n10,numerica,,True,True,,2,0.00533175,10.119253000011668,,243686000000.0,xbrl,"get_xbrl_fact,RespuestaFinanciera",0,,
+pr-n11,numerica,,True,True,,3,0.006954,8.846133299870417,,350018000000.0,xbrl,"list_available,get_xbrl_fact,RespuestaFinanciera",0,,
+pr-n12,numerica,,True,True,,3,0.00728775,9.24789120000787,,72880000000.0,xbrl,"list_available,get_xbrl_fact,RespuestaFinanciera",0,,
+pr-n13,numerica,True,True,True,,4,0.016233,30.002420800039545,,200966000000.0,xbrl,"list_available,get_xbrl_fact,search_filings,RespuestaFinanciera",0,,
+pr-e13,extractiva,True,,True,True,2,0.00679725,7.691403499804437,,,texto,"search_filings,RespuestaFinanciera",0,,
+pr-e14,extractiva,True,,True,True,3,0.01003125,15.858483799966052,,,texto,"list_available,search_filings,RespuestaFinanciera",0,,
+pr-e15,extractiva,True,,True,True,2,0.008157,9.099879000103101,,849000000.0,texto,"search_filings,RespuestaFinanciera",0,,
+pr-e16,extractiva,True,,True,True,4,0.020475,23.815097900107503,,,texto,"search_filings,search_filings,search_filings,RespuestaFinanciera",0,,
+pr-e18,extractiva,True,,True,True,5,0.030642,65.16134710004553,,22.0,texto,"list_available,search_filings,search_filings,get_xbrl_fact,RespuestaFinanciera",0,,
+pr-e19,extractiva,True,,True,True,2,0.007764,9.235261800000444,,508000000.0,texto,"search_filings,RespuestaFinanciera",0,,
+pr-e20,extractiva,True,,True,True,3,0.0131745,9.657669899985194,,,texto,"search_filings,search_filings,RespuestaFinanciera",0,,
+pr-c06,comparativa,True,True,True,True,7,0.0280395,56.86800069990568,,112010000000.0,ambas,"list_available,get_xbrl_fact,get_xbrl_fact,search_filings,search_filings,search_filings,RespuestaFinanciera",0,93736000000.0,19.5
+pr-c09,comparativa,True,True,True,True,5,0.01402575,21.19860180001706,,32488000000.0,ambas,"list_available,get_xbrl_fact,get_xbrl_fact,search_filings,RespuestaFinanciera",0,29510000000.0,10.09
+pr-c10,comparativa,True,True,True,True,4,0.01056525,11.80758100003004,,97858000000.0,ambas,"get_xbrl_fact,get_xbrl_fact,search_filings,RespuestaFinanciera",0,44301000000.0,120.89
+pr-c11,comparativa,True,False,True,True,9,0.077016,65.18236060021445,,2590000000.0,texto,"list_available,search_filings,search_filings,search_filings,search_filings,search_filings,get_xbrl_fact,get_xbrl_fact,RespuestaFinanciera",0,,
+pr-c12,comparativa,True,True,True,True,8,0.04941225,51.009380700066686,,79975000000.0,ambas,"list_available,get_xbrl_fact,get_xbrl_fact,search_filings,search_filings,search_filings,search_filings,RespuestaFinanciera",0,68593000000.0,16.59
+pr-c13,comparativa,True,True,True,False,6,0.02793825,40.04045350011438,,164713000000.0,ambas,"list_available,get_xbrl_fact,get_xbrl_fact,search_filings,search_filings,RespuestaFinanciera",0,125299000000.0,31.46

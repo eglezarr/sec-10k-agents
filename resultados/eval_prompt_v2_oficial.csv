@@ -1,21 +1,21 @@
-id,familia,cita_ok,cifra_ok,tool_ok,recall,n_tools,coste_usd,latencia_s,error,cifra_agente,fuente,herramientas,n_avisos
-of-001,extractiva,True,,True,False,5.0,0.02938575,47.43250370002352,,,texto,"list_available,search_filings,search_filings,search_filings,RespuestaFinanciera",0.0
-of-002,extractiva,True,,True,True,3.0,0.00920925,20.59105910011567,,,texto,"list_available,search_filings,RespuestaFinanciera",0.0
-of-003,extractiva,True,,True,True,3.0,0.01282425,26.60586840007454,,,texto,"list_available,search_filings,RespuestaFinanciera",0.0
-of-004,extractiva,True,,True,True,3.0,0.009942,10.880272200098261,,,texto,"list_available,search_filings,RespuestaFinanciera",0.0
-of-005,extractiva,True,,True,True,3.0,0.01217775,9.712552700191736,,,texto,"list_available,search_filings,RespuestaFinanciera",0.0
-of-006,extractiva,True,,True,True,3.0,0.01004025,6.63671789993532,,23.0,texto,"list_available,search_filings,RespuestaFinanciera",0.0
-of-007,numerica,,True,True,,2.0,0.00533775,3.5705397999845445,,60922000000.0,xbrl,"get_xbrl_fact,RespuestaFinanciera",0.0
-of-008,numerica,,True,True,,3.0,0.00996075,8.009038999909535,,416161000000.0,xbrl,"list_available,get_xbrl_fact,RespuestaFinanciera",0.0
-of-009,numerica,,True,True,,4.0,0.01995225,42.81395910005085,,101832000000.0,xbrl,"list_available,get_xbrl_fact,search_filings,RespuestaFinanciera",0.0
-of-010,numerica,True,True,True,,3.0,0.01370325,16.849643500056118,,43873000000.0,xbrl,"get_xbrl_fact,search_filings,RespuestaFinanciera",0.0
-of-011,numerica,,,,,,,,RuntimeError: La invocación no devolvió structured_response,,,,
-of-012,numerica,,,,,,,,RuntimeError: La invocación no devolvió structured_response,,,,
-of-013,numerica,,True,True,,2.0,0.00398025,7.399861700134352,,97858000000.0,xbrl,"get_xbrl_fact,RespuestaFinanciera",0.0
-of-014,comparativa,True,True,True,True,5.0,0.01645875,18.832627299940214,,281724000000.0,ambas,"list_available,get_xbrl_fact,get_xbrl_fact,search_filings,RespuestaFinanciera",0.0
-of-015,comparativa,True,True,True,False,4.0,0.0114195,14.506379600148648,,130497000000.0,ambas,"get_xbrl_fact,get_xbrl_fact,search_filings,RespuestaFinanciera",0.0
-of-016,comparativa,True,True,True,True,5.0,0.0119445,14.17795559996739,,57372000000.0,ambas,"list_available,get_xbrl_fact,get_xbrl_fact,search_filings,RespuestaFinanciera",0.0
-of-017,comparativa,True,True,True,True,6.0,0.03699075,45.728310000151396,,79975000000.0,ambas,"list_available,get_xbrl_fact,get_xbrl_fact,search_filings,search_filings,RespuestaFinanciera",0.0
-of-018,comparativa,True,True,True,False,7.0,0.0354285,75.63030650001019,,402836000000.0,ambas,"list_available,get_xbrl_fact,get_xbrl_fact,search_filings,search_filings,search_filings,RespuestaFinanciera",0.0
-of-019,comparativa,,,,,,,,RuntimeError: La invocación no devolvió structured_response,,,,
-of-020,comparativa,True,True,True,False,6.0,0.02207475,24.48781540011987,,60458000000.0,ambas,"list_available,get_xbrl_fact,get_xbrl_fact,search_filings,search_filings,RespuestaFinanciera",0.0
+id,familia,cita_ok,cifra_ok,tool_ok,recall,n_tools,coste_usd,latencia_s,error,cifra_agente,fuente,herramientas,n_avisos,cifra_anterior,variacion_pct
+of-001,extractiva,True,,True,False,4,0.02010525,28.99649820011109,,,texto,"list_available,search_filings,search_filings,RespuestaFinanciera",0,,
+of-002,extractiva,True,,True,True,3,0.00854325,17.885325399925932,,,texto,"list_available,search_filings,RespuestaFinanciera",0,,
+of-003,extractiva,True,,True,True,4,0.0199125,62.6520905001089,,,texto,"list_available,search_filings,search_filings,RespuestaFinanciera",0,,
+of-004,extractiva,True,,True,True,4,0.016566,16.242203400004655,,,texto,"list_available,search_filings,search_filings,RespuestaFinanciera",0,,
+of-005,extractiva,True,,True,True,3,0.013725,16.909623600076884,,,texto,"list_available,search_filings,RespuestaFinanciera",0,,
+of-006,extractiva,True,,True,True,3,0.00983325,12.618879900081083,,23.0,texto,"list_available,search_filings,RespuestaFinanciera",0,,
+of-007,numerica,,True,True,,2,0.0043995,17.860841299872845,,60922000000.0,xbrl,"get_xbrl_fact,RespuestaFinanciera",0,,
+of-008,numerica,,True,True,,3,0.00773325,23.69754339987412,,416161000000.0,xbrl,"list_available,get_xbrl_fact,RespuestaFinanciera",0,,
+of-009,numerica,,True,True,,3,0.0067875,10.463656600099057,,101832000000.0,xbrl,"list_available,get_xbrl_fact,RespuestaFinanciera",0,,
+of-010,numerica,,True,True,,2,0.004992,6.056698800064623,,43873000000.0,xbrl,"get_xbrl_fact,RespuestaFinanciera",0,,
+of-011,numerica,True,True,True,,4,0.0158085,25.417659800034016,,139514000000.0,xbrl,"list_available,get_xbrl_fact,search_filings,RespuestaFinanciera",0,,
+of-012,numerica,,True,True,,3,0.0079575,14.74916570005007,,402836000000.0,xbrl,"list_available,get_xbrl_fact,RespuestaFinanciera",0,,
+of-013,numerica,,True,True,,2,0.00426825,13.201602699933574,,97858000000.0,xbrl,"get_xbrl_fact,RespuestaFinanciera",0,,
+of-014,comparativa,True,True,True,True,5,0.01871175,54.048782699974254,,281724000000.0,ambas,"list_available,get_xbrl_fact,get_xbrl_fact,search_filings,RespuestaFinanciera",0,245122000000.0,14.93
+of-015,comparativa,True,True,True,True,4,0.01042575,28.043409100035205,,130497000000.0,ambas,"get_xbrl_fact,get_xbrl_fact,search_filings,RespuestaFinanciera",0,60922000000.0,114.2
+of-016,comparativa,False,True,True,True,5,0.01407525,22.31647379999049,,57372000000.0,ambas,"list_available,get_xbrl_fact,get_xbrl_fact,search_filings,RespuestaFinanciera",0,43873000000.0,30.77
+of-017,comparativa,True,True,True,True,5,0.015006,15.500351800117642,,79975000000.0,ambas,"list_available,get_xbrl_fact,get_xbrl_fact,search_filings,RespuestaFinanciera",0,68593000000.0,16.59
+of-018,comparativa,False,True,True,False,6,0.023568,33.27084750006907,,402836000000.0,ambas,"list_available,get_xbrl_fact,get_xbrl_fact,search_filings,search_filings,RespuestaFinanciera",0,350018000000.0,15.09
+of-019,comparativa,True,True,True,True,5,0.017742,42.73753639985807,,195201000000.0,ambas,"list_available,get_xbrl_fact,get_xbrl_fact,search_filings,RespuestaFinanciera",0,180683000000.0,8.04
+of-020,comparativa,True,True,True,True,7,0.03122325,45.94013909995556,,60458000000.0,ambas,"list_available,get_xbrl_fact,get_xbrl_fact,search_filings,search_filings,search_filings,RespuestaFinanciera",0,62360000000.0,-3.05

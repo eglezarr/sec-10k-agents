@@ -1,6 +1,6 @@
-id,familia,cita_ok,cifra_ok,tool_ok,recall,n_tools,coste_usd,latencia_s,error,cifra_agente,fuente,herramientas,n_avisos
-hx-01,numerica,True,True,True,,6,0.02964,30.642741299932823,,,ninguna,"get_xbrl_fact,list_available,search_filings,search_filings,search_filings,RespuestaFinanciera",0
-hx-02,numerica,True,True,True,,3,0.0106425,15.693079999880865,,,ninguna,"get_xbrl_fact,search_filings,RespuestaFinanciera",1
-hx-03,numerica,,True,True,,6,0.0269655,30.75123709999025,,,ninguna,"list_available,get_xbrl_fact,search_filings,search_filings,search_filings,RespuestaFinanciera",0
-hx-04,numerica,,True,True,,2,0.004044,6.005030599888414,,,ninguna,"list_available,RespuestaFinanciera",0
-hx-05,numerica,,True,True,,3,0.007962,7.946694900048897,,,ninguna,"get_xbrl_fact,list_available,RespuestaFinanciera",0
+id,familia,cita_ok,cifra_ok,tool_ok,recall,n_tools,coste_usd,latencia_s,error,cifra_agente,fuente,herramientas,n_avisos,cifra_anterior,variacion_pct
+hx-01,numerica,True,True,True,,6,0.02811675,61.11713579995558,,,ninguna,"list_available,get_xbrl_fact,search_filings,search_filings,search_filings,RespuestaFinanciera",0,,
+hx-02,numerica,True,True,True,,7,0.041598,41.63890319992788,,,ninguna,"get_xbrl_fact,list_available,search_filings,search_filings,search_filings,search_filings,RespuestaFinanciera",0,,
+hx-03,numerica,,True,True,,5,0.018669,21.381107300054282,,,ninguna,"list_available,get_xbrl_fact,search_filings,search_filings,RespuestaFinanciera",0,,
+hx-04,numerica,,True,True,,2,0.00429,7.93679349985905,,,ninguna,"list_available,RespuestaFinanciera",0,,
+hx-05,numerica,,True,True,,3,0.0057675,13.068885100074112,,,ninguna,"get_xbrl_fact,list_available,RespuestaFinanciera",0,,

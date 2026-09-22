@@ -163,7 +163,8 @@ def evaluar(preguntas: list[dict], funcion_responder, etiqueta: str = "run",
                 "coste_usd": None, "latencia_s": None, "error": None,
                 "cifra_agente": None, "fuente": None,
                 "herramientas": None, "n_avisos": None,
-                "cifra_anterior": None, "variacion_pct": None}
+                "cifra_anterior": None, "variacion_pct": None,
+                "avisos_texto": None}
         try:
             resultado = funcion_responder(
                 item["pregunta"], thread_id=f"{etiqueta}-{item['id']}")
@@ -179,8 +180,10 @@ def evaluar(preguntas: list[dict], funcion_responder, etiqueta: str = "run",
             fila["cifra_anterior"] = s.cifra_anterior       # solo las comparaciones las rellenan
             fila["variacion_pct"] = s.variacion_pct
             fila["herramientas"] = ",".join(trazas.herramientas_usadas(resultado))
-            fila["n_avisos"] = max(0, sum(type(m).__name__ == "HumanMessage"
-                                          for m in resultado["messages"]) - 1)   # avisos de los guardrails
+            avisos = [str(m.content) for m in resultado["messages"]
+                      if type(m).__name__ == "HumanMessage"][1:]   # avisos de los guardrails
+            fila["n_avisos"] = len(avisos)
+            fila["avisos_texto"] = " || ".join(avisos)              # qué se le dijo al modelo
             fila["coste_usd"] = resultado.get("coste_usd")
             fila["latencia_s"] = resultado.get("latencia_s")
             if buscar_para_recall is not None and item.get("ancla_texto"):

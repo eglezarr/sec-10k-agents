@@ -91,6 +91,13 @@ def revisar_cifra(r) -> str | None:
     if evaluadores.cuadra(r.cifra, esperado, TOLERANCIA):
         return None
 
+    variacion = _es_variacion(r, esperado)
+    if variacion:
+        return (f"Tu cifra {r.cifra:,.2f} es {variacion} de {r.concept_xbrl} de {r.ticker} "
+                f"entre FY{r.ejercicio - 1} y FY{r.ejercicio}, no el valor del ejercicio. En "
+                f"`cifra` va el valor XBRL de FY{r.ejercicio}, {esperado:,.2f}; la variación "
+                f"va en `respuesta`.")
+
     pista = ""
     if any(evaluadores.cuadra(r.cifra * k, esperado, TOLERANCIA)
            for k in (1e3, 1e6, 1e9)):
@@ -100,6 +107,23 @@ def revisar_cifra(r) -> str | None:
             f"{r.ticker} en FY{r.ejercicio} es {esperado:,.2f}.{pista} En `cifra` "
             f"va el valor XBRL del ejercicio pedido; si comparas dos ejercicios "
             f"o das una variación, ponla en `respuesta`.")
+
+
+def _es_variacion(r, actual: float) -> str | None:
+    """Si la cifra de `r` es la variación entre ejercicios y no el valor del ejercicio.
+
+    Es el error que más se repite en las comparaciones: el agente calcula la
+    variación (absoluta o en %) y la escribe en `cifra`. Devuelve una descripción
+    para el aviso, o None si la cifra no se parece a ninguna de las dos.
+    """
+    anterior = valor_xbrl(r.ticker, r.ejercicio - 1, r.concept_xbrl)
+    if anterior is None:
+        return None
+    if evaluadores.cuadra(abs(r.cifra), abs(actual - anterior), TOLERANCIA):
+        return "la variación absoluta"
+    if anterior != 0 and abs(abs(r.cifra) - abs((actual / anterior - 1) * 100)) <= TOLERANCIA_PP:
+        return "la variación porcentual"
+    return None
 
 
 def revisar_comparacion(r) -> str | None:
