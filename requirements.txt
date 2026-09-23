@@ -9,6 +9,12 @@ langchain-huggingface==1.2.2
 sentence-transformers==6.0.1
 faiss-cpu==1.15.0
 rank-bm25==0.2.2
-# Datos (sin fijar: API estable para lo que usamos)
+# Datos (sin fijar: API estable para lo que usamos). numpy y requests ya
+# llegan como dependencias de lo anterior; se listan porque el código las
+# importa directamente.
 pandas
 pyarrow
+numpy
+requests
+# Para ejecutar los notebooks en VS Code o Jupyter (no hace falta para
+# responder()/evaluar()): pip install ipykernel

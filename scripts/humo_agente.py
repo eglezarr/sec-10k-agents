@@ -1,7 +1,7 @@
-"""Prueba de humo de la entrega 2: el agente baseline de punta a punta.
+"""Prueba de humo del agente de punta a punta (sistema oficial por defecto).
 
 Necesita OPENROUTER_API_KEY en el entorno y cuesta dinero de verdad
-(orden de 10-15 céntimos en total con gemini-3.8-flash). Tres preguntas,
+(unos 5 céntimos en total con gemini-3.8-flash). Tres preguntas,
 cada una con un propósito:
 
   1. Numérica pura — lo que TIENE que salir bien: get_xbrl_fact en la

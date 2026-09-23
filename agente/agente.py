@@ -1,27 +1,30 @@
-"""El agente: esquema de respuesta, system prompt y constructor.
+"""El agente: esquema de respuesta, prompts, sistemas y constructor.
 
-Tres piezas, y las tres son contrato o casi:
+1. `RespuestaFinanciera` es el esquema del enunciado §7 (los ocho campos,
+   literales) MÁS tres campos añadidos — el enunciado permite añadir campos,
+   no quitarlos ni renombrarlos:
+   - `concept_xbrl`: el concepto del que sale `cifra`, para que el
+     verificador la compare contra ESE hecho y no contra cualquiera (en
+     Microsoft FY2024 los pasivos y los ingresos están a un 0,6 %).
+   - `cifra_anterior` y `variacion_pct`: las otras dos cifras de una
+     comparativa, que el verificador también comprueba contra XBRL.
 
-1. `RespuestaFinanciera` es el esquema del enunciado §7, literal, MÁS un
-   campo añadido (`concept_xbrl`) — el enunciado permite añadir campos,
-   no quitarlos ni renombrarlos. La justificación del añadido está en el
-   propio campo.
+2. Tres prompts, cada uno sobre el anterior:
+   - `SYSTEM` (v1, el del baseline): parte del prompt del profesor con dos
+     matices nuestros — las magnitudes que solo existen en la prosa (capex,
+     guidance) van por search_filings con cita, y las comparativas se
+     consultan ejercicio a ejercicio.
+   - `SYSTEM_V2`: la convención de `cifra` en las comparativas, las citas
+     literales y el vocabulario del informe (sale del notebook 03).
+   - `SYSTEM_V3`: las tres cifras de cada comparativa (sistema oficial).
 
-2. `SYSTEM` parte del prompt del profesor (sesiones 1 y 2) con dos matices
-   nuestros, los dos respaldados por el golden set oficial:
-   - Magnitudes que SOLO existen en la prosa (capex, porcentajes de
-     segmento, guidance) van por search_filings con cita — el corpus no
-     tiene concepto XBRL de capex y of-006/of-017/of-018 las preguntan.
-   - Las comparativas se descomponen: una consulta POR ejercicio. Es el
-     fallo n.º 3 del diagnóstico de la S2 ("no supo comparar"), atacado
-     desde el prompt antes de llegar al middleware.
+3. `CONFIGURACIONES`: los cinco sistemas de la ablación (notebook 05), cada
+   uno con una mejora más que el anterior. `CONFIG_POR_DEFECTO` es el
+   sistema oficial, el que ejecutan `responder()` y `evaluar()` el día 24.
 
-3. `crear_agente()` monta el `create_agent` de LangChain 1.x igual que el
-   `baseline()` de `miax_s2`: mismas piezas, nuestras herramientas. El
-   parámetro `middleware` queda preparado para la entrega de guardrails
-   (límites + verificación de cifras); el BASELINE se construye sin
-   ninguno, que es exactamente lo que la celda 29 de la S2 compara contra
-   el sistema final.
+4. `crear_agente()` monta el `create_agent` de LangChain 1.x con las cuatro
+   herramientas, la salida estructurada y, si la configuración lo pide, los
+   guardrails de `guardrails.py` (límites, reintento y verificador).
 """
 
 from __future__ import annotations
@@ -31,9 +34,9 @@ from typing import Literal
 from pydantic import BaseModel, Field
 
 # El modelo de referencia del curso (notebooks S1 y S2), vía OpenRouter.
-# temperature=0 en todo lo evaluable: con temperatura, dos ejecuciones de
-# la misma pregunta dan métricas distintas y no se sabe si mejoraste el
-# sistema o tuviste suerte.
+# temperature=0 en todo lo evaluable: reduce la variabilidad entre
+# ejecuciones, aunque no la elimina (el proveedor no es determinista; el
+# notebook 05 lo mide), así que las diferencias pequeñas se leen como ruido.
 MODELO = "openrouter:google/gemini-3.8-flash"
 
 
@@ -148,9 +151,10 @@ CONFIGURACIONES = {
     "guardrails": {"prompt": SYSTEM_V2, "guardrails": True,  "busqueda": "densa"},
     "final":      {"prompt": SYSTEM_V2, "guardrails": True,  "busqueda": "hibrida"},
     # El final más las cifras completas de las comparaciones (prompt v3): el
-    # sistema OFICIAL. En su tirada real (notebook 05) rellenó cifra_anterior
-    # y variacion_pct en 13 de 13 comparativas (propio + oficial), las 13
-    # correctas contra XBRL y sin necesitar un solo aviso del verificador.
+    # sistema OFICIAL. En su tirada del notebook 05 rellenó cifra_anterior y
+    # variacion_pct en 12 de las 13 comparativas (propio + oficial), todas
+    # correctas contra XBRL y sin un solo aviso del verificador; la que falta
+    # es pr-c11, que responde con una cifra del texto.
     "cifras_comparadas": {"prompt": SYSTEM_V3, "guardrails": True, "busqueda": "hibrida"},
 }
 CONFIG_POR_DEFECTO = "cifras_comparadas"     # el sistema oficial: el que ejecuta responder() el día 24
